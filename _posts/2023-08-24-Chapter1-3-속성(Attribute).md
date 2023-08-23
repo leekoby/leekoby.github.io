@@ -1,9 +1,9 @@
-ㅠ---
+---
 layout: post
 title: Chapter 1-3 속성 (Attribute)
 author: admin
-date: 2023-08-24 03:10:00 +900
-lastmod: 2023-08-24 03:10:00 +900
+date: 2023-08-24 03:20:00 +900
+lastmod: 2023-08-24 03:20:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
