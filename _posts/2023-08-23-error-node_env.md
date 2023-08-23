@@ -7,7 +7,7 @@ lastmod: 2023-08-23 21:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [Error, node]
+categories: [ERROR, NODE]
 tags: [error]
 ---
 
