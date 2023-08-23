@@ -1,6 +1,6 @@
 ---
 layout: post
-title: node_env 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다
+title: error node_env 
 author: admin
 date: 2023-08-24 21:00:00 +900
 lastmod: 2023-08-24 21:00:00 +900
