@@ -33,7 +33,7 @@ Jekyll Blog를 만드는 중에 Build 시 아래와 같은 에러메세지가 �
 # Error 내용 
 
 >ERROR : 'node_env'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.<br />
-{: .prompt-error }
+{: .prompt-danger }
 
 
 
