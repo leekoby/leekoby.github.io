@@ -24,19 +24,29 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 # 🌈 1. 정규화 (Normalization)
 
-- <span style="color:tomato"><strong >테이블 간의 중복된 데이터를 허용하지 않겠다.</strong></span>
+- <span style="color:tomato">테이블 간의 중복된 데이터를 허용하지 않겠다.</span>
 
 - 무결성을 유지, DB의 저장용량은 당연히 줄어들 것이다.
 
-- <span style="color:tomato"><strong >정규화는 데이터의 `일관성`, `최소한의 데이터 중복`, 최대한의 데이터 `유연성`을 위한 방법이며 데이터를 분해하는 과정이다</strong></span>
+- <span style="color:tomato">정규화는 데이터의 `일관성`, `최소한의 데이터 중복`, 최대한의 데이터 `유연성`을 위한 방법이며 데이터를 분해하는 과정이다</span>
 
-- <span style="color:tomato"><strong >정규화는 데이터 중복을 제거하고 데이터 모델의 `독립성`을 확보하기 위한 방법</strong></span>
+- <span style="color:tomato">정규화는 데이터 중복을 제거하고 데이터 모델의 `독립성`을 확보하기 위한 방법</span>
 
 - 정규화를 수행하면 비지니스에 변화가 발생해도 데이터 모델의 변경을 최소화할 수 있다. 
 
 - 정규화는 제 1정규화부터 제 5정규화까지 있지만, 실직적으로 제 3정규화 까지만 수행한다. 
 
 - 정규화를 할 경우 데이터 조회성능은 처리조건에 따라 향상되는 경우도 있고 저하되는 경우도 있다. <br/> 입력, 수정, 삭제 성능은 일반적으로 향상
+
+
+<br/>
+
+> **<span style="color:#3366ff">엔터티의</span> <span style="color:#ff6600">의미해석이 명확해진다.</span>**<br/>
+> **<span style="color:#3366ff">정규화를 수행하면</span> 일반적으로 <span style="color:#ff6600">테이블 수가 증가</span>한다.**<br/>
+> **<span style="color:#3366ff">정규화는</span> 모델의 <span style="color:#ff6600">독립성을 향상</span>시킨다.**<br/>
+{:.prompt-tip}
+
+<br/>
 
 > 정규화는 장점만 있을까? <br/>
 > 정규화를 하면 엔터티가 계속 증가하게 된다.<br/>
@@ -50,7 +60,7 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 > - 이 테이블은 정규화를 수행하지 않은것으로, 부서 테이블과 직원 테이블을 하나로 합쳐둔 것이다. <br/>
 > - 만약 좌측의 테이블에서 새로운 직원이 추가되는 경우 부서 정보가 없으면 부서코드를 임의의 값으로 넣어야 한다. <br/>
 > - 즉, 불필요한 정보가 같이 추가되는 것이다. 또한 새로운 "총무부"가 추가되어야 할 경우 사원 정보가 없기 때문에 임의의 값으로 사원 번호를 입력하거나 추가할 수 없게 된다. <br/>
-> - 이러한 문제를 <span style="color:tomato"><strong >이상현상(Anomaly)</strong></span>이라고 한다. <br/>
+> - 이러한 문제를 <span style="color:tomato">이상현상(Anomaly)</span>이라고 한다. <br/>
 {:.prompt-warning}
 
 <br/>
@@ -68,8 +78,8 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
  |정규화 절차|설명|
  |:-|:-|
  |제1정규화|- 속성(Attribute)의 원자성을 확보한다. <br/> - 기본키(Primary)를 설정한다.|
- |제2정규화|- 기본키가 `2개 이상`의 속성으로 이루어진 경우 <span style="color:tomato"><strong >부분 함수 종속성</strong></span>을 제거 분해 한다.|
- |제3정규화|- 기본키를 제외한 칼럼 간에 종속성을 제거한다. 즉, <span style="color:tomato"><strong >이행 함수 종속성</strong></span>을 제거한다.|
+ |제2정규화|- 기본키가 `2개 이상`의 속성으로 이루어진 경우 <span style="color:tomato">부분 함수 종속성</span>을 제거 분해 한다.|
+ |제3정규화|- 기본키를 제외한 칼럼 간에 종속성을 제거한다. 즉, <span style="color:tomato">이행 함수 종속성</span>을 제거한다.|
  |BCNF|- 기본키를 제외하고 후보키가 있는 경우, 후보키가 기본키를 종속시키면 분해한다. |
  |제4정규화| - 여러 칼럼들이 하나의 칼럼을 종속시키는 경우 분해하여 다중값 종속성을 제거한다.|
 |제5정규화|- 조인에 의해서 종속성이 발생되는 경우 분해한다. |
@@ -83,17 +93,17 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 > 테이블의 컬럼이 원자값(Atomic Value)을 갖도록 테이블을 분해하는 것<br/>
 {:.prompt-info}
 
-- <span style="color:tomato"><strong >정규화는 함수적 종속성을 근거</strong></span>로 한다. <br/>
+- <span style="color:tomato">정규화는 함수적 종속성을 근거</span>로 한다. <br/>
 
-- <span style="color:tomato"><strong >함수적 종속성이란 X➡Y 이면 Y는 X에 함수적으로 종속</strong></span>된다고 한다.<br/>
+- <span style="color:tomato">함수적 종속성이란 X➡Y 이면 Y는 X에 함수적으로 종속</span>된다고 한다.<br/>
 
 ![함수적 종속 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/e866b9a7-77a7-4649-8e46-d6b81dd1ca62){: width="500" height="500" } 
 
-- 이런 경우는 회원ID가 기본키가 되고, <span style="color:tomato"><strong >회원ID가 이름을 함수적으로 종속</strong></span>한다고 한다.<br/>
+- 이런 경우는 회원ID가 기본키가 되고, <span style="color:tomato">회원ID가 이름을 함수적으로 종속</span>한다고 한다.<br/>
     - 위의 예를 보면 계좌 테이블 X가 Y의 칼럼들을 함수적으로 족속하고 있다.<br/>
     - X는 계좌번호 하나만으로는 `유일성`을 만족하지 못한다고 가정한 것이다.<br/>
     - 그래서 계좌번호와 회원ID를 기본키로 설정한 것.<br/>
-    - 이처럼 <span style="color:tomato"><strong >기본키를 잡는 것과 원자성을 가지는 것이 바로 제1정규화</strong></span>이다.<br/>
+    - 이처럼 <span style="color:tomato">기본키를 잡는 것과 원자성을 가지는 것이 바로 제1정규화</span>이다.<br/>
 
 <br/>
 
@@ -139,22 +149,22 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 ## 💻 1.2 제2정규화 <br />
 
-><span style="color:tomato"><strong >부분 함수 종속성이란?</strong></span><br/>
-><strong>기본키를 제외하고 칼람 간에 종속성이 발생하는 것</strong><br/>
+>**<span style="color:tomato">부분 함수 종속성이란?</span>**<br/>
+>**기본키를 제외하고 칼람 간에 종속성이 발생하는 것**<br/>
 {:.prompt-info}
 
-- <span style="color:tomato"><strong > `기본키가 2개 이상의 칼럼`으로 이루어진 경우에만 발생</strong></span>한다.<br/>
+- <span style="color:tomato"> `기본키가 2개 이상의 칼럼`으로 이루어진 경우에만 발생</span>한다.<br/>
 
 ![제2정규화 대상 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/b5c7f692-61a5-42d8-964b-a24db512e195){: width="500" height="500" } 
 
 - 위의 예는 기본키가 2개이기 떄문에 제2정규화 대상이다.<br/>
     - 기본키에 있는 회원ID가 변경되면 이름이 변경된다.<br/>
     - 회원ID가 이름을 함수적으로 종속하고 있는 것이다.<br/> 
-    - 바로 이러한 경우를 <span style="color:tomato"><strong >부분 함수 종속성</strong></span>이라고 한다. 부분 함수 종속성이 발생하면 분해해야 한다.<br/>
+    - 바로 이러한 경우를 <span style="color:tomato">부분 함수 종속성</span>이라고 한다. 부분 함수 종속성이 발생하면 분해해야 한다.<br/>
 
 ![부분 함수 종속성을 제거한 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/0eb575e6-0af9-4156-96ed-a85efe92e1f3){: width="500" height="500" } 
 - 부분 함수 종송성을 제거하면 위와 같다. <br/>
-<span style="color:tomato"><strong >회원이라는 새로운 테이블이 도출되고 회원ID가 기본키가 된다.</strong></span>
+<span style="color:tomato">회원이라는 새로운 테이블이 도출되고 회원ID가 기본키가 된다.</span>
 
 <br/>
 
@@ -162,16 +172,22 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 - 주식별자가 단일식별자가 아닌 복합식별자인 경우 일반속성이 주식별자의 일부에만 종속될 수 있다.<br/> 
 
+> **<span style="color:#ff6600">제2정규화</span>**<br/>
+> 제2정규화는 제1정규화 수행 이후에 하는 것으로 기본키가 2개 이상의 속성으로 이루어진 관계에서만 제2정규화를 수행하고 하나의 속성으로 이루어져있다면 제2정규화는 생략가능하다.<br/>
+{:.prompt-tip} 
+
 <br/>
 
 ## 💻 1.3 제3정규화 <br />
 
 - 주식별자가 아닌 모든 속성 간에는 서로 종속될 수 없다.
 
+- 주식별자를 제외한 컬럼 간에 종속성을 확인해서 종석성이 있을 경우 분할하는 과정이므로 `주식별자와의 관련성이 낮음` 
+
 - 제3정규화는 이행 함수 종속성을 제거한다. 
 
-><span style="color:tomato"><strong >이행 함수종속성이란?</strong></span><br/>
-><strong>기본키를 제외하고 칼람 간에 종속성이 발생하는 것</strong><br/>
+><span style="color:tomato">이행 함수종속성이란?</span><br/>
+>기본키를 제외하고 칼람 간에 종속성이 발생하는 것<br/>
 {:.prompt-info}
 
 - 제3정규화는 제1정규화와 제2정규화를 수행한 다음에 해야 한다.
@@ -188,7 +204,7 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 - 제3정규화보다 좀 더 강한 것
 
-- <span style="color:tomato"><strong >BCNF는 `복수의 후보키`가 있고, 후보키들이 `복합 속성`이어야 하며, `서로 중첩`되어야 한다.</strong></span>
+- <span style="color:tomato">BCNF는 `복수의 후보키`가 있고, 후보키들이 `복합 속성`이어야 하며, `서로 중첩`되어야 한다.</span>
 
 ![BCNF image](https://github.com/leekoby/leekoby.github.io/assets/118284808/c8e33615-6edb-4338-aeb8-90811444d9f5)
 
@@ -196,6 +212,11 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
     - 이 때 교수가 후보키(최소성과 유일성을 만족)이고 교수가 과목 번호를 함수적으로 종속하는 경우 분해가 일어난다.<br/>
     - 즉, 위와 같은 경우 교수 테이블을 새롭게 만들고 기본키는 교수로 하고 칼럼은 과목번호가 된다.<br/>
     - 이러한 작업을 BCNF라고 한다.<br/>
+
+>**<span style="color:#ff6600">BCNF</span>**<br/>
+> 복수의 후보키가 존재하고, 후보키들이 복합 속성이여야 하며, 서로 중첩되어 있어야 한다. <br/>
+> 후보키가 기본키의 속성 중 하나를 함수적으로 종속할 때 테이블 분해를 하는 정규화 과정이다.<br/>
+{:.prompt-tip}
 
 <br/>
 
@@ -243,9 +264,9 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 ### ✍ 1.5.2 제2정규화<br />
 
-- <span style="color:tomato"><strong >제2정규화는 `기본키가 두 개 이상인 경우` 대상이 된다.</strong></span>
+- <span style="color:tomato">제2정규화는 `기본키가 두 개 이상인 경우` 대상이 된다.</span>
 
-- <span style="color:tomato"><strong >기본키가 제품번호 + 주문번호이므로 제2정규화 대상</strong></span>이다.
+- <span style="color:tomato">기본키가 제품번호 + 주문번호이므로 제2정규화 대상</span>이다.
 
 - 제2정규화는 모든 속성(제품명, 재고 수량, 수출 여부 등)이 식별자에 종속해야 하며 그렇지 않은 경우에는 분해한다.
 
@@ -311,7 +332,7 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 - 정규화는 테이블을 분해해서 데이터 중복을 제거하기 때문에 데이터 모델의 유연성을 높인다.
  
- - <span style="color:tomato"><strong >정규화는 데이터 조회(SELECT) 시에 조인(Join)을 유발하기 때문에 CPU와 메모리를 많이 사용</strong></span>한다.
+ - <span style="color:tomato">정규화는 데이터 조회(SELECT) 시에 조인(Join)을 유발하기 때문에 CPU와 메모리를 많이 사용</span>한다.
 
 - 적절한 정규화는 성능상 이롭지만 지나친 정규화는 오히려 성능 저하를 일으킬 수 있다.
 
@@ -341,7 +362,7 @@ for(i = 0; i < N; i++)
 
 - 물론 실제로 위와 같은 비효율이 발생하지는 않는다. 
 
-- 이러한 문제를 해결하기 위해서 <span style="color:tomato"><strong >인덱스</strong></span>와 <span style="color:tomato"><strong >옵티마이저(Optimizer)</strong></span>가 있는 것이다.
+- 이러한 문제를 해결하기 위해서 <span style="color:tomato">인덱스</span>와 <span style="color:tomato">옵티마이저(Optimizer)</span>가 있는 것이다.
 
 - 결론적으로 조인이 부하를 유발하는 것은 분명하다.
 
@@ -351,12 +372,12 @@ for(i = 0; i < N; i++)
 
 <br/>
 
-> <span style="color:tomato"><strong >옵티마이저(Optimizer)란? 🎯</strong></span><br/>
+> <span style="color:tomato">옵티마이저(Optimizer)란? 🎯</span><br/>
 > 옵티마이저는 가장 효율적인 방법으로 SQL을 수행할 최적의 처리 경로를 생성해주는 DBMS의 핵심 엔진이다. <br/>
 > 컴퓨터의 두뇌가 CPU인 것처럼 DBMS의 두뇌는 옵티마이저라고 할 수 있다. <br/>
 {:.prompt-info}
 
-> <span style="color:tomato"><strong >인덱스(INDEX)란? 🎯</strong></span><br/>
+> <span style="color:tomato">인덱스(INDEX)란? 🎯</span><br/>
 > 인덱스는 RDBMS에서 검색 속도를 높이기 위한 기술이다. <br/>
 > TABLE의 컬럼을 색인화(따로 파일로 저장)하여 검색 시 해당 TABLE의 레코드를 Full Scan하는 것이 아니라 색인화 되어있는 인덱스 파일을 검색하여 검색 속도를 빠르게 한다.<br/>
 {:.prompt-info}
@@ -403,6 +424,15 @@ for(i = 0; i < N; i++)
 ![1.4.2의 예시 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/371a7170-3ce4-4b05-87a5-8ca6a5880aec){: width="500" height="500" } 
 
 <br />
+
+
+# 🎯 **기출 내용 추가**
+
+## ❌
+
+👉
+
+<br/>
 
 
 # 📚 레퍼런스
