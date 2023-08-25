@@ -42,7 +42,7 @@ tags: [sql, sqld, data modeiling]
 
 ### 🔍 4.2.1 존재 관계  <br />
 
-- <span style="color:tomato"><strong >존재 관계는 엔터티 간의 `상태`를 의미</strong></span>
+- <span style="color:tomato">존재 관계는 엔터티 간의 `상태`를 의미</span>
 
 - 엄마와 아기처럼 존재 자체로 연관성이 있는 관계를 의미 <br />
 
@@ -58,7 +58,7 @@ tags: [sql, sqld, data modeiling]
 
 ### 🔍 4.2.2 행위 관계  <br />
 
-- <span style="color:tomato"><strong >행위관계는 엔터티 간에 어떤 행위가 있는 것</strong></span>
+- <span style="color:tomato">행위관계는 엔터티 간에 어떤 행위가 있는 것</span>
 
 - 특정한 행위를 함으로써 연관성이 생기는 관계를 의미 <br />
 
@@ -179,6 +179,15 @@ tags: [sql, sqld, data modeiling]
 
 
 <br />
+
+
+# 🎯 **기출 내용 추가**
+
+## ❌
+
+👉
+
+<br/>
 
 
 # 📚 레퍼런스
