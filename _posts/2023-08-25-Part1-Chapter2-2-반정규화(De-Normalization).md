@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 2-2 반정규화 (De-Normalization)
+title: Part1 Chapter 2-2 반정규화 (De-Normalization)
 author: admin
 date: 2023-08-25 07:10:00 +900
 lastmod: 2023-08-25 07:10:00 +900

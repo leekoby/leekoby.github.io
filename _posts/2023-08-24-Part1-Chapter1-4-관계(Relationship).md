@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 1-4 관계 (Relationship)
+title: Part1 Chapter 1-4 관계 (Relationship)
 author: admin
 date: 2023-08-24 06:00:00 +900
 lastmod: 2023-08-24 06:00:00 +900

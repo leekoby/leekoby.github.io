@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 2-1 정규화 (Normalization)
+title: Part1 Chapter 2-1 정규화 (Normalization)
 author: admin
 date: 2023-08-25 04:10:00 +900
 lastmod: 2023-08-25 04:10:00 +900

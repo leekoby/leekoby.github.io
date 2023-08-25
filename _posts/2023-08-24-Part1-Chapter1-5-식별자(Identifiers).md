@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 1-5 식별자 (Identifiers)
+title: Part1 Chapter 1-5 식별자 (Identifiers)
 author: admin
 date: 2023-08-24 18:10:00 +900
 lastmod: 2023-08-24 18:10:00 +900

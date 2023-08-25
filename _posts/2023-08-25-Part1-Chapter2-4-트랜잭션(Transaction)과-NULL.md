@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 2-4 트랜잭션 (Transaction)과 NULL
+title: Part1 Chapter 2-4 트랜잭션 (Transaction)과 NULL
 author: admin
 date: 2023-08-25 21:10:00 +900
 lastmod: 2023-08-25 21:10:00 +900

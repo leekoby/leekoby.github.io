@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 2-3 분산데이터베이스 (Distributed Database)
+title: Part1 Chapter 2-3 분산데이터베이스 (Distributed Database)
 author: admin
 date: 2023-08-25 20:10:00 +900
 lastmod: 2023-08-25 20:10:00 +900

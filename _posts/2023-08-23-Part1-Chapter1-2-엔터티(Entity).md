@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chapter 1-2 엔터티(Entity)
+title: Part1 Chapter 1-2 엔터티(Entity)
 author: admin
 date: 2023-08-24 00:10:00 +900
 lastmod: 2023-08-26 00:40:00 +900
