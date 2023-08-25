@@ -24,13 +24,17 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 # 🌈 2. 반정규화 (De-Normalization)
 
-- <span style="color:tomato"><strong >데이터베이스의 성능 향상을 위하여, 데이터 중복을 허용거나 그룹핑하여 JOIN을 줄이는 데이터베이스 성능 향상 방법</strong></span>
+- <span style="color:tomato">데이터베이스의 성능 향상을 위하여, 데이터 중복을 허용거나 그룹핑하여 JOIN을 줄이는 데이터베이스 성능 향상 방법</span>
 
-- <span style="color:tomato"><strong >반정규화는 조회(SELECT)속도는 향상시키지만, 데이터 모델의 유연성은 낮아진다.</strong></span>
+- <span style="color:tomato">반정규화는 조회(SELECT)속도는 향상시키지만, 데이터 모델의 유연성은 낮아진다.</span>
 
-> 주의해야할 점<br/>
+> **주의해야할 점**<br/>
 > 조회 성능을 향상될 수 있으나, 입력, 수정, 삭제 성능은 저하될 수 있으며 데이터 정합성 이슈가 발생할 수 있다는 점이다. <br/>
+> 반정규화는 정규화가 수행되고 난 뒤, 반드시 해야하는 것은 아니며 수행속도가 느려지는 등 문제가 발생할 시에 고려해볼 사항이다.<br/>
 {:.prompt-warning} 
+
+
+
 
 - 반정규화의 과정은 정규화가 끝난 후 거치게 되며 정규화와 마찬가지로 일정한 룰이 존재한다. 
 
@@ -55,7 +59,7 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 <br/>
 
-> <span style="color:tomato"><strong >클러스터링</strong></span><br/>
+> <span style="color:tomato">클러스터링</span><br/>
 > - 클러스터링 인덱스라는 것은 인덱스 정보를 저장할 때 `물리적으로 정렬해서 저장`하는 방법이다.<br/>
 > - 조회 시에 인접 블록을 연속적으로 읽기 때문에 성능이 향상된다.<br/>
 {:.prompt-info}
@@ -131,19 +135,19 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 <br/>
 
-> <span style="color:tomato"><strong >파티션 기법</strong></span><br/>
+> <span style="color:tomato">파티션 기법</span><br/>
 > - 데이터베이스에서 파티션을 사용하여 테이블을 분할할 수 있다.<br/>
 > - 파티션을 사용하면 논리적으로는 하나의 테이블이지만 여러 개의 데이터 파일에 분산되어 저장된다. <br/>
-> - <span style="color:tomato"><strong >Range Partition</strong></span>: `데이터 값의 범위를 기준으로 파티션을 수행`한다.<br/>
-> - <span style="color:tomato"><strong >List Partition</strong></span>: `특정한 값을 지정하여 파티션을 수행`한다.<br/>
-> - <span style="color:tomato"><strong >Hash Partition</strong></span>: `해시 함수를 적용하여 파티션을 수행`한다.<br/>
-> - <span style="color:tomato"><strong >Composite Partition</strong></span>: `범위와 해시를 복합적으로 사용하여 파티션을 수행`한다. 2개 이상의 기법을 사용<br/> 
+> - <span style="color:tomato">Range Partition</span>: `데이터 값의 범위를 기준으로 파티션을 수행`한다.<br/>
+> - <span style="color:tomato">List Partition</span>: `특정한 값을 지정하여 파티션을 수행`한다.<br/>
+> - <span style="color:tomato">Hash Partition</span>: `해시 함수를 적용하여 파티션을 수행`한다.<br/>
+> - <span style="color:tomato">Composite Partition</span>: `범위와 해시를 복합적으로 사용하여 파티션을 수행`한다. 2개 이상의 기법을 사용<br/> 
 {:.prompt-info}
 
 
 <br/>
 
-> <span style="color:tomato"><strong >해시 함수</strong></span><br/>
+> <span style="color:tomato">해시 함수</span><br/>
 > 
 > 임의의 길이를 갖는 메세지를 입력 받아 고정된 길이의 해시 값을 출력하는 함수.<br/>
 > 
@@ -154,7 +158,7 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 <br/>
 
-> <span style="color:tomato"><strong >파티션 테이블의 장점</strong></span><br/>
+> <span style="color:tomato">파티션 테이블의 장점</span><br/>
 >- 데이터 조회 시에 액세스 범위가 줄어들기 때문에 성능이 향상된다.<br/>
 >- 데이터가 분할되어 있기 때문에 I/O의 성능이 향상된다.<br/>
 >- 각 파티션을 독립적으로 백업 및 복구가 가능하다.<br/>
@@ -197,6 +201,16 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 
 <br/>
+
+
+# 🎯 **기출 내용 추가**
+
+## ❌하나의 테이블에 많은 칼럼을 추가하는 방법으로 반정규화를 수행하면 정규화된 모델보다 조회 속도는 항상 빨라진다. 그 이유는 조인이 없어지기 때문이다.
+
+👉 하나의 테이블에 컬럼의 수가 많아지면 조인의 수가 감소하는 것은 당연하다. 하지만, 하나의 테이블의 행의 길이가 길어져서 입출력을 하는데 있어서 `Block Size`가 커지기 떄문에 하나의 행을 조회할 때도 여러 번에 입출력이 발생하여 항상 속도가 빨라지는 것은 아니고 오히려 성능이 떨어진다. 
+
+<br/>
+
 
 # 📚 레퍼런스
 
