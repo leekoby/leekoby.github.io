@@ -222,7 +222,6 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 > 정미나. (유튜브 선생님에게 배우는) 유선배 SQL개발자(SQLD) 과외노트 / [정미나 저] (2023). Print.
 {:.prompt-info }
 
-
 > 한국데이터산업진흥원. SQL 자격검정 실전문제 : 국가공인 SQL전문가·국가공인 SQL개발자 / 한국데이터산업진흥원 [편] (2020). Print.
 {:.prompt-info }
 
