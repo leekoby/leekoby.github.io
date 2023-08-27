@@ -484,14 +484,13 @@ for(i = 0; i < N; i++)
 
 ![1.4.2의 예시 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/371a7170-3ce4-4b05-87a5-8ca6a5880aec){: width="500" height="500" } 
 
-<br />
+<br/>
 
+## 🎯 **기출 내용 추가**
 
-# 🎯 **기출 내용 추가**
+### ❌
 
-## ❌
-
-👉
+#### 👉
 
 <br/>
 

@@ -176,17 +176,15 @@ tags: [sql, sqld, data modeiling]
 
 ![관계선택사양 (Optionality) image](https://github.com/leekoby/leekoby.github.io/assets/118284808/555f2050-bedc-4d5e-b230-b95bacaa19e4)
 
-<br />
-
-
-# 🎯 **기출 내용 추가**
-
-## ❌
-
-👉
-
 <br/>
 
+## 🎯 **기출 내용 추가**
+
+### ❌
+
+#### 👉
+
+<br/>
 
 # **📚 레퍼런스**
 

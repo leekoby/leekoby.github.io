@@ -207,18 +207,15 @@ tags: [sql, sqld, data modeiling]
 > - <span style="color:tomato">약한 개체는 개체의 존재가 다른 개체의 존재에 종속되어 있는 개체(Entity)이다.</span><br/>
 {:.prompt-info}
 
-
-<br />
-
-
-# 🎯 **기출 내용 추가**
-
-## ❌
-
-👉
-
 <br/>
 
+## 🎯 **기출 내용 추가**
+
+### ❌
+
+#### 👉
+
+<br/>
 
 # **📚 레퍼런스**
 
