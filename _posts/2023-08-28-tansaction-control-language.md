@@ -33,11 +33,11 @@ tags: [sql, sqld, data modeiling] # 소문자로 작성
 
 다른 모든 데이터베이스 사용자는 변경된 데이터를 볼 수 있다.
 
-COMMIT이 완료되면 데이터베이스 변경으로 인한 LOCK이 해제(UNLOCK)된다.
+**<span style="color:#ff6600">COMMIT이 완료되면 데이터베이스 변경으로 인한 LOCK이 해제(UNLOCK)된다.</span>**
 
 COMMIT이 완료되면 다른 모든 데이터베이스 사용자는 변경된 데이터를 조작할 수 있다.
 
-COMMIT을 실행하면 하나의 트랜잭션 과정을 종료한다.
+**<span style="color:#ff6600">COMMIT을 실행하면 하나의 트랜잭션 과정을 종료한다.</span>**
 
 ![COMMIT](https://github.com/leekoby/leekoby.github.io/assets/118284808/1a5e155f-65bb-41df-b589-2689b05040b9){: width="500" height="500" }
 
@@ -62,9 +62,9 @@ COMMIT을 실행하면 하나의 트랜잭션 과정을 종료한다.
 
 **<span style="color:#ff6600">ROLLBACK을 실행하면 데이터에 대한 변경 사용을 모두 취소하고 트랜잭션을 종료한다.</span>**
 
-INSERT, UPDATE, DELETE문의 작업을 모두 취소한다. 
+**<span style="color:#ff6600">INSERT, UPDATE, DELETE문의 작업을 모두 취소한다. </span>**
 
-- 단, 이 전에 COMMIT한 곳까지만 복구한다.
+- **<span style="color:#ff6600">단, 이 전에 COMMIT한 곳까지만 복구한다.</span>**
 
 ROLLBACK을 실행하면 LOCK이 해제되고 다른 사용자도 데이터베이스 행을 조작할 수 있다.
 
