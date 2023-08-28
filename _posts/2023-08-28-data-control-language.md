@@ -73,7 +73,7 @@ GRANT privileges ON object TO user;
 
 ## **REVOKE**
 
-REVOKE문은 데이터베이스 사용자에게 부여된 권한을 회수한다.
+**<span style="color:#ff6600">REVOKE문은 데이터베이스 사용자에게 부여된 권한을 회수한다.</span>**
 
 REVOKE문
 ```sql
