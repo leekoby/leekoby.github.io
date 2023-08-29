@@ -8,7 +8,7 @@ sitemap:
   changefreq: monthly
   priority: 0.5
 categories: [DATABASE(DB), SQLD]  # 대문자로 작성
-tags: [sql, sqld, data modeiling] # 소문자로 작성
+tags: [sql, sqld, distributed-database] # 소문자로 작성
 ---
 
 

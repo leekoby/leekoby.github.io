@@ -8,7 +8,7 @@ sitemap:
   changefreq: monthly
   priority: 0.5
 categories: [DATABASE(DB), SQLD]  # 대문자로 작성
-tags: [sql, sqld, data modeiling] # 소문자로 작성
+tags: [sql, sqld, data manipulation language, dml] # 소문자로 작성
 ---
 
 > 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.<br />

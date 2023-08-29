@@ -8,7 +8,7 @@ sitemap:
   changefreq: monthly
   priority: 0.5
 categories: [DATABASE(DB), SQLD]
-tags: [sql, sqld, data modeiling]
+tags: [sql, sqld, attribute]
 ---
 
 
