@@ -64,7 +64,9 @@ COMMIT이 완료되면 다른 모든 데이터베이스 사용자는 변경된 �
 
 **<span style="color:#ff6600">INSERT, UPDATE, DELETE문의 작업을 모두 취소한다. </span>**
 
-- **<span style="color:#ff6600">단, 이 전에 COMMIT한 곳까지만 복구한다.</span>**
+- **<span style="color:#ff6600">같은 이름으로 저장한 SAVEPOINT가 있을 경우 처음의 SAVEPOINT로ROLLBACK된다.</span>**
+
+- **<span style="color:#ff6600">단, 이전에 COMMIT한 곳까지만 복구한다.</span>**
 
 ROLLBACK을 실행하면 LOCK이 해제되고 다른 사용자도 데이터베이스 행을 조작할 수 있다.
 
