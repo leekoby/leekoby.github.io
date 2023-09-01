@@ -292,9 +292,14 @@ ANSI-SPARC 아키텍처에서 이렇게 스키마를 3단계 구조로 나누는
 
 <br/>
 
-### 🔎 **IE/Crow's Foot 표기법** 
+### 🔎 **IE / Crow's Foot 표기법** 
 
 ![IE/Crow's Foot 표기법](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcO5sbX%2Fbtqyg9qA61z%2FAVeys7L8XhHskMSRJx8Skk%2Fimg.png){: width="500" height="500" } 
+
+> 관계의 1:N관계에서 N쪽에 새발을 표식으로 하고 
+> 
+> 선택, 필수 참여관계에서 선택참여에 `○` , 필수 참여에 `|`로 표시한다.<br.>
+{:.prompt-tip}
 
 <br />
 
