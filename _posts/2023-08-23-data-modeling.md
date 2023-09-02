@@ -356,7 +356,35 @@ ANSI-SPARC 아키텍처에서 이렇게 스키마를 3단계 구조로 나누는
 
 ## 🎯 **기출 내용 추가**
 
-### ❌
+> ### **데이터베이스 무결성을 보장하기 위한 방법들**
+>
+> **<span style="color:#3366ff">기본 키 (Primary Key)</span>: <span style="color:#ff6600">각 테이블에 기본 키를 설정하여, 각 레코드의 고유함을 보장. 기본 키는 NULL 값을 가질 수 없으며, 중복된 값을 가질 수 없다.</span>** 
+> 
+>**<span style="color:#3366ff">외래 키 (Foreign Key)</span>:  <span style="color:#ff6600">외래 키를 이용하여 두 테이블 간의 관계를 정의하고, 참조 무결성을 보장. 외래키는 참조하는 주테이블의 기본키 값들 중 하나를 가져야 하며, 그렇지 않은 잘못된 데이터 입력을 막는다.</span>**
+>
+>**<span style="color:#3366ff">체크 제약 조건 (Check Constraints)</span>:  <span style="color:#ff6600">체크 제약 조건을 사용하면 컬럼에 입력될 수 있는 값의 범위를 지정할 수 있어서 도메인 무결성을 보장.</span>**
+>
+>**<span style="color:#3366ff">고유 제약 조건 (Unique Constraints)</span>:  <span style="color:#ff6600">고유 제약 조건은 컬럼에 중복된 값을 가지지 못하게 하여 엔터티의 고유함을 보장.</span>**
+>
+>**<span style="color:#3366ff">NOT NULL 제약 조건</span>:  <span style="color:#ff6600">NOT NULL 제약 조건은 해당 컬럼에 NULL 값을 허용하지 않도록 한다.</span>**
+>
+>**<span style="color:#3366ff">트랜잭션 관리</span>:  <span style="color:#ff6600">ACID 속성(Atomicity 원자성, Consistency 일관성, Isolation 고립성, Durability 지속성) 을 만족시키는 트랜잭션 관리를 통해 데이터 무결성을 유지할 수 있다.</span>**
+>
+>**<span style="color:#3366ff">데이터 유효성 검사</span>:  <span style="color:#ff6600">애플리케이션 단에서도 데이터 유효성 검사 로직을 구현하여 잘못된 데이터 입력을 사전에 방지할 수 있다.</span>**
+>
+>**<span style="color:#3366ff">트리거 (Trigger)</span>:  <span style="color:#ff6600">데이터베이스에서 자동으로 실행되도록 설정하는 프로그램으로서 INSERT, UPDATE 및 DELETE 작업 전/후에 원하는 SQL문(데이터 확인 및 변경 등) 을 실행시켜 데이터 무결성을 확보할 수 있다.</span>**
+>
+>**<span style="color:#3366ff">어플리케이션 단에서의 데이터 유효성 검사</span>: <span style="color:#ff6600">애플리케이션 단에서도 데이터 유효성 검사 로직을 구현하여 잘못된 데이터 입력을 사전에 방지할 수 있다.</span>**
+> - 입력 검증: 사용자나 외부 시스템으로부터 받은 입력값이 유효한지 검사
+> - 비즈니스 규칙 적용: 비즈니스 로직에 따른 규칙을 적용하여 데이터의 일관성을 유지
+> - 트랜잭션 관리: 어플리케이션에서도 DBMS와 마찬가지로 트랜잭션을 활용하여 여러 작업들 사이에 일관성 있는 상태를 유지하고 원자적인 연산을 보장
+> - 오류 처리 및 복구 메커니즘: 예상치 못한 오류 발생 시 적절하게 처리하고 안전한 상태로 복구하는 메커니즘
+> - 데이터 접근 권한 관리: 사용자별로 접근 가능한 데이터와 기능을 제한하여 부적절한 변경으로부터 데이터를 보호
+{:.prompt-info}
+
+
+
+
 
 #### 👉
 
