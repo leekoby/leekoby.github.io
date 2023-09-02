@@ -27,8 +27,7 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 
 **<span style="color:#ff6600">­계층형 조회는 Oracle 데이터베이스에서 지원하는 것으로 계층형으로 데이터를 조회</span>**할 수 있다.
 
-예를 들어 부장에서 차장, 차장에서 과장, 과장에서 대리, 대리에서 사원 순으로 트리 형태의
-구조를 위에서 아래로 탐색하면서 조회하는 것이다. 
+예를 들어 부장에서 차장, 차장에서 과장, 과장에서 대리, 대리에서 사원 순으로 트리 형태의 구조를 위에서 아래로 탐색하면서 조회하는 것이다. 
 
 물론 역방향 조회도 가능하다.
 
@@ -37,6 +36,8 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 ![계층형 조회](https://github.com/leekoby/leekoby.github.io/assets/118284808/8d902099-f3c4-4d89-8d88-f9ba278f66d2){: width="500" height="500" }
 
 ![계층형 조회](https://github.com/leekoby/leekoby.github.io/assets/118284808/768110ea-36f8-44fa-9b98-1e70ecd4b056){: width="500" height="500" }
+
+- PRIOR 자식 = 부모 형태를 사용하면 계층 구조에서 **<span style="color:#ff6600">순방향 전개</span>**를 수행한다.
 
 - **<span style="color:#ff6600">Connect by는 트리 형태의 구조로 질의를 수행하는 것으로 `START WITH구는 시작 조건`을 의미하고 `CONNECT BY PRIOR는 조인 조건`이다. </span>**
 
@@ -65,6 +66,7 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 >**<span style="color:#ff6600">CONNECT_BY_ISLEAF</span>**
 > - 계층형 쿼리에서 해당하는 로우가 자식노드가 있는지 없는지 여부를 체크
 > - 자식 노드가 있는 경우 0, 자식 노드가 없을 경우 1
+> - 해당 데이터가 리프 데이터면 1, 그렇지 않으면 0 
 
 >**<span style="color:#ff6600">CONNECT_BY_ROOT</span>**
 > - 계층형 쿼리에서 최상위 노드를 찾고자 할 경우 사용
