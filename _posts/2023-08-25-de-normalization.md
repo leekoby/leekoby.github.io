@@ -125,8 +125,12 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 **🪓 테이블 수직 분할**
 
 - 엔터티의 일부 속성을 별도의 엔터티로 분할 
-  
+
 - 1:1 관계의 테이블이 2개 생긴다.
+
+- 수직 분할은 컬럼을 분할하여 테이블을 만드는 것이다.
+
+- 특정 테이블에서 컬럼 일부만 추출하는 경우 DISK I/O를 경감할 수 있는 방법이다.
 
 ![테이블 수직 분할 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/978e4681-7b94-4b03-91c8-2293c6531234){: width="500" height="500" } 
 
