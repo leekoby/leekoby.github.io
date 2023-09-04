@@ -24,9 +24,9 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 
 # **🌈 반정규화 (De-Normalization)**
 
-- **<span style="color:tomato">데이터베이스의 성능 향상을 위하여, `데이터 중복을 허용`하거나 그룹핑하여 `JOIN을 줄이는 데이터베이스 성능 향상 방법`</span>**
+- **<span style="color:#ff6600">데이터베이스의 성능 향상을 위하여, `데이터 중복을 허용`하거나 그룹핑하여 `JOIN을 줄이는 데이터베이스 성능 향상 방법`</span>**
 
-- **<span style="color:tomato">반정규화는 `조회(SELECT)속도는 향상`시키지만, `데이터 모델의 유연성은 낮아진다.`</span>**
+- **<span style="color:#ff6600">반정규화는 `조회(SELECT)속도는 향상`시키지만, `데이터 모델의 유연성은 낮아진다.`</span>**
 
 > **주의해야할 점**
 > 
@@ -58,7 +58,7 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 
 <br/>
 
-> **<span style="color:tomato">클러스터링</span>**
+> **<span style="color:#ff6600">클러스터링</span>**
 > 
 > - 클러스터링 인덱스라는 것은 인덱스 정보를 저장할 때 **`물리적으로 정렬해서 저장하는 방법`**이다.
 > 
@@ -144,25 +144,25 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 
 <br/>
 
-> **<span style="color:tomato">파티션 기법</span>**
+> **<span style="color:#ff6600">파티션 기법</span>**
 > 
 > - 데이터베이스에서 파티션을 사용하여 테이블을 분할할 수 있다.
 > 
 > - 파티션을 사용하면 논리적으로는 하나의 테이블이지만 여러 개의 데이터 파일에 분산되어 저장된다.
 > 
-> - **<span style="color:tomato">Range Partition</span>**: **`데이터 값의 범위를 기준으로 파티션을 수행`**한다.
+> - **<span style="color:#ff6600">Range Partition</span>**: **`데이터 값의 범위를 기준으로 파티션을 수행`**한다.
 > 
-> - **<span style="color:tomato">List Partition</span>**: **`특정한 값을 지정하여 파티션을 수행`**한다.
+> - **<span style="color:#ff6600">List Partition</span>**: **`특정한 값을 지정하여 파티션을 수행`**한다.
 > 
-> - **<span style="color:tomato">Hash Partition</span>**: **`해시 함수를 적용하여 파티션을 수행`**한다.
+> - **<span style="color:#ff6600">Hash Partition</span>**: **`해시 함수를 적용하여 파티션을 수행`**한다.
 > 
-> - **<span style="color:tomato">Composite Partition</span>**: **`범위와 해시를 복합적으로 사용하여 파티션을 수행`**한다. <br/> **`2개 이상의 기법을 사용`**<br/> 
+> - **<span style="color:#ff6600">Composite Partition</span>**: **`범위와 해시를 복합적으로 사용하여 파티션을 수행`**한다. <br/> **`2개 이상의 기법을 사용`**<br/> 
 {:.prompt-info}
 
 
 <br/>
 
-> **<span style="color:tomato">해시 함수</span>**
+> **<span style="color:#ff6600">해시 함수</span>**
 > 
 > 임의의 길이를 갖는 메세지를 입력 받아 고정된 길이의 해시 값을 출력하는 함수.
 > 
@@ -173,7 +173,7 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 
 <br/>
 
-> **<span style="color:tomato">파티션 테이블의 장점</span>**
+> **<span style="color:#ff6600">파티션 테이블의 장점</span>**
 > 
 > - 데이터 조회 시에 액세스 범위가 줄어들기 때문에 성능이 향상된다.
 >
