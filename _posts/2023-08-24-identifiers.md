@@ -7,7 +7,7 @@ lastmod: 2023-08-24 18:10:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [DATABASE(DB), SQLD]
+categories: [CERTIFICATION, SQLD]
 tags: [sql, sqld, identifiers]
 ---
 

@@ -7,7 +7,7 @@ lastmod: 2023-08-27 06:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [DATABASE(DB), SQLD]  # 대문자로 작성
+categories: [CERTIFICATION, SQLD]  # 대문자로 작성
 tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 ---
 
@@ -59,9 +59,9 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 >**<span style="color:#3366ff">VARVHAR vs CHAR</span>** 
 >
->**<span style="color:#3366ff">VARVHAR(n)</span>은 <span style="color:#ff6600">가변형으로 최대 n의 길이의 문자열을 저장할 수 있지만, 실제 사용하는 만큼만 공간을 차지</span>**
+>**<span style="color:#3366ff">VARVHAR(n)</span>은 <span style="color:#ff6600">가변형으로 최대 n의 길이의 문자열을 저장할 수 있지만, 실제 사용하는 만큼만 공간을 차지, 비교 시 서로 길이가 다른 경우, 다른 내용으로 판단.</span>**
 >
->**<span style="color:#3366ff">CHAR(n)</span>은 <span style="color:#ff6600">항상 n의 길이의 문자열을 저장. 만약 입력 문자열의 길이가 n보다 작으면, 나머지 공간은 공백으로 채워짐</span>**
+>**<span style="color:#3366ff">CHAR(n)</span>은 <span style="color:#ff6600">항상 n의 길이의 문자열을 저장. 만약 입력 문자열의 길이가 n보다 작으면, 나머지 공간은 공백으로 채워짐, 길이가 서로 다른 경우, 길이가 짧은 쪽에 공백을 추가하여 같은 내용인지 판단.</span>**
 >
 >**CHAR 필드의 처리 속도가 빠르고, VARCHAR 필드는 메모리를 보다 효율적으로 사용한다고 볼 수 있다.**<br/>
 {:.prompt-info}

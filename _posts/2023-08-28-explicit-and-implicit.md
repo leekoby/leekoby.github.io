@@ -7,7 +7,7 @@ lastmod: 2023-08-28 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [DATABASE(DB), SQLD]  # 대문자로 작성
+categories: [CERTIFICATION, SQLD]  # 대문자로 작성
 tags: [sql, sqld, explicit, implicit] # 소문자로 작성
 ---
 

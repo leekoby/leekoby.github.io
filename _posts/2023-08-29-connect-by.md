@@ -7,7 +7,7 @@ lastmod: 2023-08-29 04:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [DATABASE(DB), SQLD]  # 대문자로 작성
+categories: [CERTIFICATION, SQLD]  # 대문자로 작성
 tags: [sql, sqld, connect by] # 소문자로 작성
 ---
 
@@ -30,6 +30,9 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 예를 들어 부장에서 차장, 차장에서 과장, 과장에서 대리, 대리에서 사원 순으로 트리 형태의 구조를 위에서 아래로 탐색하면서 조회하는 것이다. 
 
 물론 역방향 조회도 가능하다.
+
+> **<span style="color:#3366ff">ORDER SIBLINGS BY</span>를 사용하여 <span style="color:#ff6600">전체 테이블을 대상으로 하는 것이 아닌 특정 컬럼을 기준으로 정렬을 수행할 수 있다.</span>**
+{:.prompt-tip}
 
 **계층형 조회 테스트 데이터 입력**
 
@@ -97,7 +100,7 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 |CONNECT_BY_ROOT|	- 계층구조에서 가장 최상위 값을 표시한다.|
 |CONNECT_BY_ISLEAF| -	계층구조에서 가장 최하위 값을 표시한다.|
 |SYS_CONNECT_BY_PATH	|- 계층구조에서 전체 전개 경로를 표시한다.|
-|NOCYCLE|	- 순환구조가 발생지점까지만 전개된다.|
+|NOCYCLE|	- 순환구조가 발생지점까지만 전개된다.<br/> - 중복이 생겼을 때 루프를 돌지 않기 위해 사용|
 |CONNECT_BY_ISCYCLE|-	순환구조 발생 지점을 표시한다.|
 
 <br/>
