@@ -45,7 +45,7 @@ tags: [sql, sqld, transaction] # 소문자로 작성
 
 그리고 사용자는 처음부터 다시 예매 과정을 진행하게 된다. 
 
-이런 것이 바로 **<span style="color:tomato">트랜잭션</span>**이 하는 일이다.
+이런 것이 바로 **<span style="color:#ff6600">트랜잭션</span>**이 하는 일이다.
 
 즉, **<span style="color:#3366ff">트랜잭션</span>은  <span style="color:#ff6600">일련의 작업들이 모두 정상적으로 처리되거나 아니면 전혀 실행되지 않아야 함을 보장하는 역할</span>을 한다.**
 
