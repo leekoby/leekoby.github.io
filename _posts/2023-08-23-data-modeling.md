@@ -284,7 +284,18 @@ ANSI-SPARC 아키텍처에서는 스키마를 3단계 구조로 나눈다. 이�
 
 ### 🔎 **3단계 스키마 구조** 
 
-**외부 스키마 (External Schema)**
+데이터베이스 스키마 구조는 3단계로 구분
+
+각각은 상호 독립적인 의미를 가지고 고유한 기능을 가짐
+
+>**<span style="color:#3366ff">3단계 스키마 구조</span>**
+>
+>-  **<span style="color:#ff6600">외부 스키마 (External Schema)</span>**
+>-  **<span style="color:#ff6600">개념 스키마 (Conceptual Schema)</span>**
+>-  **<span style="color:#ff6600">내부 스키마 (Internal Schema)</span>**
+{:.prompt-info}
+
+#### **외부 스키마 (External Schema)**
 
   - **<span style="color:#ff6600">사용자의 관점 </span>**: Multiple User's View 단계로 각 사용자가 보는 데이터베이스의 스키마를 정의한다. 
 
@@ -294,7 +305,7 @@ ANSI-SPARC 아키텍처에서는 스키마를 3단계 구조로 나눈다. 이�
 
 <br/>
 
-**개념 스키마 (Conceptual Schema)**
+#### **개념 스키마 (Conceptual Schema)**
 
 - **<span style="color:#ff6600">통합된 관점</span>** :  Community View of DB 단계로 모든 사용자가 보는 데이터베이스의 스키마를 통합하여 전체 데이터베이스를 나타내는 것이다. 
 
@@ -304,7 +315,7 @@ ANSI-SPARC 아키텍처에서는 스키마를 3단계 구조로 나눈다. 이�
 
 <br/>
 
-**내부 스키마 (Internal Schema)**
+#### **내부 스키마 (Internal Schema)**
 
 - **<span style="color:#ff6600">물리적인 관점</span>** : Physical Representation 단계로 **<span style="color:#ff6600">물리적인 저장 구조</span>**를 나타낸다.
 
@@ -332,10 +343,10 @@ ANSI-SPARC 아키텍처에서 이렇게 스키마를 3단계 구조로 나누는
 
 시스템에 어떤 엔터티들이 존재하며 그들 간에 어떤 관계가 있는지 나타내는 다이어그램이다. 
 
->ERD에서는존재에 의한 관계와 행위에 의한 관계를 구분하지 않고 표현
+>관계는 존재에 의한 관계와 행위에 의한 관계로 구분될 수 있으나 ERD에서는 관계를 연결할 때, 존재와 행위를 구분하지 않고 단일화된 표기법을 사용한다.
 >
->클래스 다이어그램에서는 이것을 구분하여 연관 관계와 의존 관계로 표현 
-{:.prompt-info}
+>UML(Unified Modeling Language)에는 클래스 다이어그램의 관계 중 연관 관계(Association)와 의존 관계(Dependency)가 있고 이것은 실선과 점선의 표기법으로 다르게 표현이 된다.
+{:.prompt-warning}
 
 <br/>
 
