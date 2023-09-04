@@ -74,9 +74,9 @@ tags: [sql, sqld, relationship]
 
 |  | | 
 | :--: | :-- |  
-| 관계명 <br/>(Membership)   | 관계의 이름   |      
-| 관계차수 <br/>(Cardinality)   | 관계에 참여하는 수    |
-| 관계선택사양 <br/>(Optionality)   | 필수인지 선택인지의 여부    |      
+| 관계명 <br/>(Membership)   | - 관계의 이름   |      
+| 관계차수 <br/>(Cardinality)   | - 관계에 참여하는 수 <br/> - `1:1`, `1:M`, `M:N`과 같은 관계의 `기수성`을 나타낸다.   |
+| 관계선택사양 <br/>(Optionality)   | - 관계가 필수 관계인지, 선택 관계인지 나타낸다.  |      
 
 <br />
 
