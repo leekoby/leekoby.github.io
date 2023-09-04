@@ -68,15 +68,15 @@ tags: [sql, sqld, relationship]
 
 ![행위 관계 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/cb1e6033-bd8d-48b8-bff0-b5eb946c381d)
 
- <br />
- 
+<br />
+
 ## **💻 표기법** 
 
 |  | | 
 | :--: | :-- |  
 | 관계명 <br/>(Membership)   | - 관계의 이름   |      
 | 관계차수 <br/>(Cardinality)   | - 관계에 참여하는 수 <br/> - `1:1`, `1:M`, `M:N`과 같은 관계의 `기수성`을 나타낸다.   |
-| 관계선택사양 <br/>(Optionality)   | - 관계가 필수 관계인지, 선택 관계인지 나타낸다.  |      
+| 관계선택사양(선택성) <br/>(Optionality)   | - 관계가 필수 관계인지, 선택 관계인지 나타낸다.  |      
 
 <br />
 
@@ -181,9 +181,14 @@ M대N  관계는 두 개 엔터티가 서로 여러 개의 관계를 가지고 �
 
 ## 🎯 **추가 내용**
 
-### ❌
-
-#### 👉
+>### **💡 <span style="color:#3366ff">엔터티 간의 관계를 정의할 때 고려해야할 사항</span>**
+>
+> - 두 엔터티 사이를 이어주는 **<span style="color:#ff6600">`동사`가 존재</span>**
+> - **<span style="color:#ff6600">조합이 되는 정보가 존재</span>**
+> - **<span style="color:#ff6600">영향력 있는 관계가 존재</span>**
+> - **<span style="color:#ff6600">관심있는 연관규칙 존재</span>**
+> - **<span style="color:#ff6600">관계 연결에 대한 규칙 서술</span>**
+{:.prompt-info}
 
 <br/>
 
