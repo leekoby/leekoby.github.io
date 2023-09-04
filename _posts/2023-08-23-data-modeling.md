@@ -11,12 +11,12 @@ categories: [CERTIFICATION, SQLD]
 tags: [sql, sqld, data modeiling]
 ---
 
-> **해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.**<br />
+> **해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.**
 {:.prompt-info}
 
 <br />
 
-> **이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.**<br />
+> **이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.**
 {:.prompt-tip}
 
 <br />
@@ -25,38 +25,72 @@ tags: [sql, sqld, data modeiling]
 
 ## 💻 **모델링이란?**
 
-> **데이터베이스의 모델링은 '현실 세계를 단순화하여 표현하는 기법'**<br />
+**데이터베이스의 모델링은 '현실 세계를 단순화하여 표현하는 기법'**
+
+- 정보 시스템을 구축하기 위한 데이터 관점의 **<span style="color:#ff6600">업무 분석 기법</span>**
+- 현실세계의 데이터(what)에 대해 **<span style="color:#ff6600">약속된 표기법에 의해 표현</span>**하는 과정 
+- 데이터베이스를 구축하기 위한 **<span style="color:#ff6600">분석/설계의 과정</span>**
+
+**<span style="color:#3366ff">현실 세계</span> 데이터베이스로 표현하기 위해서 <span style="color:#ff6600">추상화</span>**
+
+**<span style="color:#3366ff">고객의 업무프로세스</span>를 <span style="color:#ff6600">이해</span>**
+
+**<span style="color:#3366ff">업무 프로세스를 이해한 후</span> <span style="color:#ff6600">데이터 모델링 표기법을 사용해서 모델링</span>**
+
+**<span style="color:#3366ff">쉽게 이해할 수 있도록</span> <span style="color:#ff6600">복잡하지 않게 모델링</span>**
+
+**고객의 <span style="color:#3366ff">업무 프로세스를 추상화하고, 소프트웨어를 분석, 설계</span> 하면서 점점 더 <span style="color:#ff6600">상세 해진다.</span>**
+
+**<span style="color:#3366ff">고객의 비즈니스 프로세스를 이해하고</span> <span style="color:#ff6600">비즈니스 프로세스의 규칙을 정의</span>**
+
+**<span style="color:#3366ff">정의된 비즈니스규칙</span>을  <span style="color:#ff6600">데이터 모델로 표현</span>**
+
+>모델링은 단지 시스템 구현만을 위해 수행하는 타스크가 아니며, 시스템 구현을 포함한 업무분석 및 업무형상화를 하는 목적도 있음.
 {:.prompt-tip}
-
-> **<span style="color:#3366ff">현실 세계</span> 데이터베이스로 표현하기 위해서 <span style="color:#ff6600">추상화</span>한다.**
-
->**<span style="color:#3366ff">고객의 업무프로세스</span>를 <span style="color:#ff6600">이해해야 한다.</span>**
-
->**<span style="color:#3366ff">업무 프로세스를 이해한 후</span> <span style="color:#ff6600">데이터 모델링 표기법을 사용해서 모델링</span>한다.**
-
->**<span style="color:#3366ff">쉽게 이해할 수 있도록</span> <span style="color:#ff6600">복잡하지 않게 모델링</span>**
-
->**고객의 <span style="color:#3366ff">업무 프로세스를 추상화하고, 소프트웨어를 분석, 설계</span> 하면서 점점 더 <span style="color:#ff6600">상세 해진다</span>**
-
->**<span style="color:#3366ff">객의 비즈니스 프로세스를 이해하고</span> <span style="color:#ff6600">비즈니스 프로세스의 규칙을 정의</span>**
-
->**<span style="color:#3366ff">정의된 비즈니스규칙</span>을  <span style="color:#ff6600">데이터 모델로 표현</span>**
 
 <br/>
 
-> **<span style="color:#3366ff">모델링이 갖춰야할 조건</span>**<br />
-> - <span style="color:#ff6600">현실세계를 반영</span>해야 한다.<br />
-> - <span style="color:#ff6600">단순화</span>하여 표현해야 한다.<br />
-> - 관리하고자 하는 데이터를 모델로 설계한다. <br />
-{:.prompt-tip}
+>**<span style="color:#3366ff">데이터 모델링을 하는 주요한 이유</span>**
+> 
+> - 업무정보를 구성하는 기초가 되는 정보들에 대해서 **<span style="color:#ff6600">일정한 표기법에 의해 표현</span>**함으로써 정보시스템 구축의 **<span style="color:#ff6600">대상이 되는 업무 내용을 정확하게 분석</span>**하는 것
+> 
+> - 분석된 모델을 가지고 실제 데이터베이스를 생성하여 개발 및 데이터 관리에 사용하기 위한 것 
+> 
+> - 데이터 모델링은 단지 데이터베이스만을 구축하기 위한 용도로 쓰이는 것이 아니라  **<span style="color:#ff6600">데이터모델링 자체로 업무를 설명하고 분석하는 부분에서도 매우 중요한 의미</span>**를 가짐
+{:.prompt-info}
+
+
+<br/>
+
+> **<span style="color:#3366ff">모델링이 갖춰야할 조건</span>**
+> 
+> - <span style="color:#ff6600">현실세계를 반영</span>해야 한다.
+> 
+> - <span style="color:#ff6600">단순화</span>하여 표현해야 한다.
+> 
+> - 관리하고자 하는 데이터를 모델로 설계한다. 
+{:.prompt-info}
 
 <br />
 
-> **<span style="color:#3366ff">데이터 모델링시에 고려사항 </span>**<br/>
-> - <span style="color:#ff6600">데이터 중복</span><br/>
-> - <span style="color:#ff6600">비유연성</span><br/>
-> - <span style="color:#ff6600">비일관성</span> <br/>
-{:.prompt-tip}
+> **<span style="color:#3366ff">데이터 모델링시에 고려사항 </span>**
+> 
+> - <span style="color:#ff6600">데이터 중복 (DUPLICATION)</span>
+>
+>   - 데이터베이스가 여러 장소에 같은 정보를 저장하지 않도록 한다.
+> 
+> - <span style="color:#ff6600">비유연성 (INFLEXIBILITY)</span>
+>  
+>   - 데이터 모델을 어떻게 설계했느냐에 따라 사소한 업무 변화에도 데이터 모델이 수시로 변경되어 유지보수의 어려움을 가중시킬 수 있다.
+>   - **<span style="color:#ff6600">데이터의 정의를 데이터 사용 프로세스와 분리</span>**함하여 중대한 변화를 일으킬 수 있는 가능성을 줄인다.
+> 
+> - <span style="color:#ff6600">비일관성(INCONSISTENCY)</span>
+> 
+>   - 데이터의 중복이 없는 경우에도 발생할 수 있다.
+>   - 다른 데이터와의 연관성을 고려하지 않고 일부 데이터만 변경할 수 있기 때문
+>   - 이런 위험을 예방하기 위해서 데이터 모델링을 할 때 **<span style="color:#ff6600">데이터 간의 연관 관계</span>**에 대해 명확하게 정의해야 한다.
+>   - 프로세스 혹은 관련된 테이블의 **<span style="color:#ff6600">연계성을 높이는 것은</span>** 데이터 모델이 업무 변경에 대해 **<span style="color:#ff6600">취약하게 만드는 단점</span>**에 해당
+{:.prompt-info}
 
 <br />
 
@@ -85,10 +119,11 @@ tags: [sql, sqld, data modeiling]
 
 <br />
 
->**<span style="color:#ff6600">좋은 모델링의 요건</span>**<br/>
-> - **중복배제**<br/>
-> - **Business Rule**<br/>
-> - **완전성**<br/>
+>**<span style="color:#ff6600">좋은 모델링의 요건</span>**
+>
+> - **중복배제**
+> - **Business Rule**
+> - **완전성**
 {:.prompt-tip}
 
 <br/>
@@ -116,9 +151,9 @@ tags: [sql, sqld, data modeiling]
 >
 >**<span style="color:#ff6600">특정 조건에 의해서 선택될 것으로 예상되는 레코드의 비율을 의미</span>**하며 조건절에서 요청한 값의 범위/전체값으로 계산되어진다.
 >
-> - "선택도(Selectivity)"는 데이터베이스 쿼리 최적화에 사용되는 개념으로, 특정 조건에 맞는 행들이 전체 행 중에서 차지하는 비율을 뜻한다. 
+> - `선택도(Selectivity)`는 데이터베이스 쿼리 최적화에 사용되는 개념으로, 특정 조건에 맞는 행들이 전체 행 중에서 차지하는 비율을 뜻한다. 
 >  
-> - 즉, 특정 쿼리가 얼마나 '선택적'인지, 즉 테이블의 행들 중 몇 %를 선택하는지를 나타내는 지표다.
+> - 즉, 특정 쿼리가 얼마나 `선택적`인지, 즉 테이블의 행들 중 몇 %를 선택하는지를 나타내는 지표다.
 > 
 > - 예를 들어, "성별"이라는 열에서 '여성'인 행이 전체 행의 50%를 차지한다면, '성별이 여성인' 조건의 선택도는 0.5(50%)가 된다. 
 > 
@@ -129,18 +164,25 @@ tags: [sql, sqld, data modeiling]
 
 ## 💻 **모델링의 세 가지 관점**
 
-**1. 데이터 관점 (What, Data)** <br />
-`데이터 위주`의 모델링<br />
-어떤 데이터들이 업무와 관련이 있는지, 그 데이터들 간에는 어떤 관계가 있는지에 대해 모델링하는 방법<br />
+### **데이터 관점 (What, Data)**
 
-**2. 프로세스 관점 (How, Process)**<br />
-`프로세스위주`의 모델링 <br />
-이 업무가 실제로 처리하고 있는 일은 무엇인지<br />
-앞으로 처리해야하는 일은 무엇인지 모델링하는 방법<br />
+`데이터 위주`의 모델링
 
-**3. 데이터와 프로세스의 상관 관점 (Data vs Process, interaction)**<br />
-`데이터와 프로세스의 관계`를 위주로한 모델링<br />
-프로세스의 흐름에 따라 데이터가 어떤 영향을 받는지<br />
+어떤 데이터들이 업무와 관련이 있는지, 그 데이터들 간에는 어떤 관계가 있는지에 대해 모델링하는 방법
+
+### **프로세스 관점 (How, Process)**
+
+`프로세스위주`의 모델링
+
+이 업무가 실제로 처리하고 있는 일은 무엇인지
+
+앞으로 처리해야하는 일은 무엇인지 모델링하는 방법
+
+### **데이터와 프로세스의 상관 관점 (Data vs Process, interaction)**
+
+`데이터와 프로세스의 관계`를 위주로한 모델링
+
+프로세스의 흐름에 따라 데이터가 어떤 영향을 받는지
 
 | 관점 (View)| 설명 |
 |:----------|:------------------|
@@ -176,7 +218,7 @@ tags: [sql, sqld, data modeiling]
 > 
 > 엔터티는 `사람`, `장소`, `사건`, `개념` 등의 `명사`에 해당 
 > 
-> <span style="color:#ff6600">엔터티는 업무상 관리가 필요한 관심사에 해당한다.</span><br />
+> <span style="color:#ff6600">엔터티는 업무상 관리가 필요한 관심사에 해당한다.</span>
 {:.prompt-info}
 
 <br />
@@ -195,7 +237,7 @@ tags: [sql, sqld, data modeiling]
 
 중복된 데이터를 허용하지 않음으로써  **<span style="color:#ff6600">무결성(Integrity)를 유지</span>, DB의 저장 용량 감소**
 
-데이터 베이스 모델에 대한  **<span style="color:#ff6600">Key,속성, 관계등을 모두 표현</span>**
+데이터베이스 모델에 대한  **<span style="color:#ff6600">Key,속성, 관계등을 모두 표현</span>**
 
 <br/>
 
@@ -224,7 +266,7 @@ tags: [sql, sqld, data modeiling]
 
 ANSI-SPARC(American National Standards Institute, Standards Planning And Requirements Committee) 아키텍처는 1975년에 제안된 데이터베이스 관리 시스템(DBMS)의 추상적인 설계표준이다.
 
-ANSI-SPARC 아키텍처에서는 스키마를 3단계 구조로 나눈다. 이렇게 분리하는 목적은 데이터베이스에 대한 사용자들의 관점과 데이터 베이스가 실제로 표현되는 물리적인 방식을 분리하기 위함이다. <br />
+ANSI-SPARC 아키텍처에서는 스키마를 3단계 구조로 나눈다. 이렇게 분리하는 목적은 데이터베이스에 대한 사용자들의 관점과 데이터베이스가 실제로 표현되는 물리적인 방식을 분리하기 위함이다. <br />
 
 **<span style="color:#3366ff">3층 스키마</span>는 데이터베이스의  <span style="color:#ff6600">독립성</span>을 확보하기 위한 방법**
 
@@ -273,7 +315,7 @@ ANSI-SPARC 아키텍처에서는 스키마를 3단계 구조로 나눈다. 이�
 |구조 |설명 | 
 |:------------|:-----------------|
 |외부 스키마 <br/>(External Schema) | - `사용자 관점`, 업무상 관련이 있는 데이터 접근이다. <br /> - 관련 데이터베이스의 뷰(View)를 표시한다. <br /> - 응용 프로그램이 접근하는 데이터베이스를 정의한다.  | 
-|개념 스키마 <br/>(Conceptual Schema) | - `설계자 관점, 조직 전체적인 괌점`, 사용자 전체 집단의 데이터베이스 구조이다. <br /> - 전체 데이터 베이스 내의 규칙과 구조를 표현한다. <br /> - 통합 데이터베이스 구조이다. | 
+|개념 스키마 <br/>(Conceptual Schema) | - `설계자 관점, 조직 전체적인 괌점`, 사용자 전체 집단의 데이터베이스 구조이다. <br /> - 전체 데이터베이스 내의 규칙과 구조를 표현한다. <br /> - 통합 데이터베이스 구조이다. | 
 |내부 스키마 <br/>(Internal Schema) | - `개발자 관점`, 데이터베이스의물리적 저장 구조이다. <br /> - 데이터 저장 구조, 레코드 구조, 필드 정의, 인덱스 등을 의미한다. | 
 
 <br/>
@@ -290,21 +332,26 @@ ANSI-SPARC 아키텍처에서 이렇게 스키마를 3단계 구조로 나누는
 
 시스템에 어떤 엔터티들이 존재하며 그들 간에 어떤 관계가 있는지 나타내는 다이어그램이다. 
 
+>ERD에서는존재에 의한 관계와 행위에 의한 관계를 구분하지 않고 표현
+>
+>클래스 다이어그램에서는 이것을 구분하여 연관 관계와 의존 관계로 표현 
+{:.prompt-info}
+
 <br/>
 
 ### 🔎 **ERD 표기 방식** 
 
-- **Peter Chen** : 주로 대학교재에서 사용하는 표기법으로 실무에서 사용하는 경우는 드물다. <br />
+- **Peter Chen** : 주로 대학교재에서 사용하는 표기법으로 실무에서 사용하는 경우는 드물다. 
 
-- **IDEF1X** (Integration Definition for Information Modeling) : 실무에서 사용하는 경우도 있으며 ERWin에서 사용되는 모델이기도 하다. <br />
+- **IDEF1X** (Integration Definition for Information Modeling) : 실무에서 사용하는 경우도 있으며 ERWin에서 사용되는 모델이기도 하다. 
 
-- **IE/Crow's Foot**: 까마귀발 표기법이라고도 부르며 가장 많이 사용한다. ERWin, ERStudio에서 사용되는 모델이다. <br />
+- **IE/Crow's Foot**: 까마귀발 표기법이라고도 부르며 가장 많이 사용한다. ERWin, ERStudio에서 사용되는 모델이다. 
 
-- **Min-Max/ISO** : 각 엔터티의 참여도를 좀 더 상세하게 나타내는 표기법이다. <br />
+- **Min-Max/ISO** : 각 엔터티의 참여도를 좀 더 상세하게 나타내는 표기법이다. 
 
-- **UML** : 소프트웨어 공학에서 주로 사용되는 모델이다. <br />
+- **UML** : 소프트웨어 공학에서 주로 사용되는 모델이다. 
 
-- **Case*Method/Barker** : Oracle에서 사용되는 모델로 Crow's Foot과 비슷하다. <br/>
+- **Case*Method/Barker** : Oracle에서 사용되는 모델로 Crow's Foot과 비슷하다.
 
 <br/>
 
@@ -314,7 +361,9 @@ ANSI-SPARC 아키텍처에서 이렇게 스키마를 3단계 구조로 나누는
 
 > 관계의 1:N관계에서 N쪽에 새발을 표식으로 하고 
 > 
-> 선택, 필수 참여관계에서 선택참여에 `○` , 필수 참여에 `|`로 표시한다.<br.>
+> 선택, 필수 참여관계에서 선택참여에 `○` , 필수 참여에 `|`로 표시한다.
+>
+> 까마귀 발 기호는 `2개 이상`을 의미한다.
 {:.prompt-tip}
 
 <br />
