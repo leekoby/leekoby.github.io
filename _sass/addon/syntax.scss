@@ -93,6 +93,7 @@ code {
   hyphens: none;
 
   &.highlighter-rouge {
+    font-family: $font-family-base;
     font-size: $code-font-size;
     padding: 3px 5px;
     word-break: break-word;
