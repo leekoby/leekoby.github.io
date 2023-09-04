@@ -70,6 +70,14 @@ GRANT privileges ON object TO user;
 
 ![GRANT](https://github.com/leekoby/leekoby.github.io/assets/118284808/4c2ae38e-4fe3-4410-aede-584307fa73a6)
 
+<br/>
+
+>**<span style="color:#3366ff">ROLE</span>** 
+>
+>**<span style="color:#ff6600">권한들을 묶어서 한꺼번에 부여한다.</span>**
+>
+>**<span style="color:#ff6600">DATABASE에서 OBJECT(테이블, 프로시져, 함수, 뷰, 트리거 등)의 권한을 묶어서 권한을 관리할 수가 있다.</span>**
+{:.prompt-info }
 
 ## **REVOKE**
 
