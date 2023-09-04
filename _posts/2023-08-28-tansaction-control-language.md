@@ -88,7 +88,7 @@ SAVEPOINT의 지정은 `SAVEPOINT〈SAVEPOINT명〉`을 실행한다,
 
 <br/>
 
-## 🎯 **기출 내용 추가**
+## 🎯 **추가 내용**
 
 ### ❌
 
@@ -97,7 +97,7 @@ SAVEPOINT의 지정은 `SAVEPOINT〈SAVEPOINT명〉`을 실행한다,
 <br/>
 
 
-# 📚 **레퍼런스**
+## 📚 **레퍼런스**
 
 > 정미나. (유튜브 선생님에게 배우는) 유선배 SQL개발자(SQLD) 과외노트 / [정미나 저] (2023). Print.
 {:.prompt-info }

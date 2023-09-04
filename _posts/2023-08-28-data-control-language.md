@@ -81,7 +81,7 @@ REVOKE privileges ON object FROM user;
 ```
 <br/>
 
-## 🎯 **기출 내용 추가**
+## 🎯 **추가 내용**
 
 ### ❌
 
@@ -90,7 +90,7 @@ REVOKE privileges ON object FROM user;
 <br/>
 
 
-# 📚 **레퍼런스**
+## 📚 **레퍼런스**
 
 > 정미나. (유튜브 선생님에게 배우는) 유선배 SQL개발자(SQLD) 과외노트 / [정미나 저] (2023). Print.
 {:.prompt-info }
