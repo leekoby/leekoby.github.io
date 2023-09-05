@@ -11,12 +11,12 @@ categories: [CERTIFICATION, SQLD]  # 대문자로 작성
 tags: [sql, sqld, window function] # 소문자로 작성
 ---
 
-> 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.<br />
+> 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.
 {:.prompt-info}
 
 <br />
 
-> 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.<br />
+> 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.
 {:.prompt-tip}
 
 <br />
