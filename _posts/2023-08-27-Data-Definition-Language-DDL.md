@@ -83,7 +83,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 즉 , Create Table로 생성된 테이블의 구조를 보고 싶을 때 사용한다.
 
-> order by 의 desc와는 다른 것이므로 주의<br/>
+> ORDER BY 의 desc와는 다른 것이므로 주의<br/>
 {:.prompt-danger}
 
 <br/>
