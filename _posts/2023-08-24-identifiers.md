@@ -239,7 +239,7 @@ tags: [sql, sqld, identifiers]
 
 ## 🎯 **추가 내용**
 
->### **💡 <span style="color:#3366ff">엔터티별로 데이터의 생명주기(LIFE CYCLE)을 다르게 관리할 경우</span>**
+>**<span style="color:#3366ff">엔터티별로 데이터의 생명주기(LIFE CYCLE)을 다르게 관리할 경우</span>**
 > 
 >**<span style="color:#ff6600">비식별자관계</span>**
 >- 부모엔터티의 인스턴스가 자식의 엔터티와 관계를 가지고 있었지만 자식만 남겨두고 먼저 소멸될 수 있는 경우
