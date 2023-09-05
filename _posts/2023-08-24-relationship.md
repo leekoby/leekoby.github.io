@@ -11,13 +11,12 @@ categories: [CERTIFICATION, SQLD]
 tags: [sql, sqld, relationship]
 ---
 
-
-> 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.<br />
+> 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.
 {:.prompt-info}
 
 <br />
 
-> 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.<br />
+> 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.
 {:.prompt-tip}
 
 <br />
@@ -80,7 +79,7 @@ tags: [sql, sqld, relationship]
 
 <br />
 
-### **🔍 관계명 (Membership)** <br />
+### **🔍 관계명 (Membership)**
 
 - 엔터티와 엔터티가 어떤 관계를 맺고 있는지 나타내주는 문장
 
@@ -181,7 +180,7 @@ M대N  관계는 두 개 엔터티가 서로 여러 개의 관계를 가지고 �
 
 ## 🎯 **추가 내용**
 
->### **💡 <span style="color:#3366ff">엔터티 간의 관계를 정의할 때 고려해야할 사항</span>**
+>**<span style="color:#3366ff">엔터티 간의 관계를 정의할 때 고려해야할 사항</span>**
 >
 > - 두 엔터티 사이를 이어주는 **<span style="color:#ff6600">`동사`가 존재</span>**
 > - **<span style="color:#ff6600">조합이 되는 정보가 존재</span>**
