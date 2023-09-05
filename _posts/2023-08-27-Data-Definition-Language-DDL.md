@@ -43,7 +43,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 |SQL문|설명|
 |:-:|:-|
 |Create Table|- 새로운 테이블을 생성한다. <br>- 테이블을 생성할 때 기본키, 외래키, 제약사항 등을 설정할 수 있다.|
-|Alter Table|- 생성된 테이블을 변경한다. <br>- 칼럼을 추가하거나 변경,삭제할 수 있다.<br>- 기본키를 설정하거나, 외래키를 설정할 수 있다.|
+|Alter Table|- 생성된 테이블을 변경한다. <br>- 컬럼을 추가하거나 변경,삭제할 수 있다.<br>- 기본키를 설정하거나, 외래키를 설정할 수 있다.|
 |Drop Table|- 해당 테이블을 삭제한다.<br>- 테이블의 데이터 구조뿐만 아니라 저장된 데이터도 모두 삭제한다.|
 
 <br/>
@@ -72,7 +72,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 |||
 |:-:|:-|
 |Create Table | - 새로운 테이블을 생성한다.<br/> - 테이블을 생성할 때 기본키, 외래키, 제약사항 등을 설정할 수 있다.|
-|Alter Table | - 생성된 테이블을 변경한다. <br/> - 칼럼을 추가하거나 변경,삭제할 수 있다. <br/> - 기본키를 설정하거나, 외래키를 설정할 수 있다.|
+|Alter Table | - 생성된 테이블을 변경한다. <br/> - 컬럼을 추가하거나 변경,삭제할 수 있다. <br/> - 기본키를 설정하거나, 외래키를 설정할 수 있다.|
 |Drop Table | - 해당 테이블을 삭제한다. <br/> - 테이블의 데이터 구조뿐만 아니라 저장된 데이터도 모두 삭제한다.|
 
 <br/>
@@ -101,7 +101,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 - 만약 위의 예에서 두 개의 기본키를 지정하고자 한다면 **`constraint emppk primary key(empno, ename)`**으로 지정하면 된다.
 
-- sal 칼럼은 **`number(10,2)로 지정`**했다. 이것은 **`소수점 둘째 자리까지 저장`**하게 된다.
+- sal 컬럼은 **`number(10,2)로 지정`**했다. 이것은 **`소수점 둘째 자리까지 저장`**하게 된다.
 
 - Oracle 데이터베이스에서 **`sysdate`**는 **`오늘의 날짜를 조회`**한다. 이를 `default` 옵션을 사용해서 오늘 날짜를 기본값으로 지정할 수 있다.
 
@@ -166,7 +166,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 >
 >**<span style="color:#3366ff">슬레이브(또는 자식)테이블</span>은  <span style="color:#ff6600">마스터(또는 부모)테이블을 참조하는 행을 가지고 있는 테이블</span>이다.**
 >
-> -  예를 들어, `사원 정보`가 저장된 'EMP'테이블을 생각해보면 각 사원에 대한 정보와 함께 해당 사원의 부서 ID도 저장된다. 이 경우, 'EMP'테이블은 슬레아비(자식)테일반이며, 그들의 부서 ID 칼럼은 'DEPT'(마스터/부모)텍스트을 참조한다.
+> -  예를 들어, `사원 정보`가 저장된 'EMP'테이블을 생각해보면 각 사원에 대한 정보와 함께 해당 사원의 부서 ID도 저장된다. 이 경우, 'EMP'테이블은 슬레아비(자식)테일반이며, 그들의 부서 ID 컬럼은 'DEPT'(마스터/부모)텍스트을 참조한다.
 >
 >**<span style="color:#3366ff">참조 무결성</span>은 <span style="color:#ff6600">이러한 관계를 유지하면서 데이터의 일관성을 보장하는 개념</span>**
 >
@@ -189,41 +189,41 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 ### **<span style="color:#ff6600">컬럼 추가</span>**
 
-생성된 EMP 테이블에 ALTER TABLE ~ ADD문을 사용해서 칼럼을 추가한다.
+생성된 EMP 테이블에 ALTER TABLE ~ ADD문을 사용해서 컬럼을 추가한다.
 
-![칼럼 추가 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/6956fda9-77c1-48a8-8416-6e4880ec9f33)
+![컬럼 추가 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/6956fda9-77c1-48a8-8416-6e4880ec9f33)
 
 <br/>
 
-### **칼럼 변경**
+### **컬럼 변경**
 
-**<span style="color:#ff6600">칼럼의 변경은 ALTER TABLE ~ MODIFY문을 사용</span>하면 된다. **
+**<span style="color:#ff6600">컬럼의 변경은 ALTER TABLE ~ MODIFY문을 사용</span>하면 된다. **
 
-칼럼 변경을 통해 데이터 타입을 변경하거나 데이터의 길이를 변경할 수 있다.
+컬럼 변경을 통해 데이터 타입을 변경하거나 데이터의 길이를 변경할 수 있다.
 
-칼럼을 변경할 때 제약조건을 설정할 수도 있다.
+컬럼을 변경할 때 제약조건을 설정할 수도 있다.
 
-칼럼의 데이터 타입을 변경할 때 기존 데이터가 있는 경우 에러가 발생한다. 
+컬럼의 데이터 타입을 변경할 때 기존 데이터가 있는 경우 에러가 발생한다. 
 
 - 예를 들어 숫자 타입이고 숫자 데이터가 저장되어 있는데 문자형 데이터 타입으로 변경하면 에러가 발생하는 것이다.
 
-![칼럼 변경 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/f9896d18-25ed-41b4-aa03-c09ccdb9cc63)
+![컬럼 변경 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/f9896d18-25ed-41b4-aa03-c09ccdb9cc63)
 
 <br/>
 
-### **칼럼 삭제**
+### **컬럼 삭제**
 
-**<span style="color:#ff6600">칼럼에 대한 삭제는 ALTER TABLE ~ DROP COLUMN문</span>으로 삭제한다.**
+**<span style="color:#ff6600">컬럼에 대한 삭제는 ALTER TABLE ~ DROP COLUMN문</span>으로 삭제한다.**
 
-![칼럼 삭제 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/a7e9a332-4e6d-478b-b6c3-53c404696f90)
+![컬럼 삭제 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/a7e9a332-4e6d-478b-b6c3-53c404696f90)
 
 <br/>
 
-### **칼럼명 변경**
+### **컬럼명 변경**
 
-**<span style="color:#ff6600">칼럼명 변경은 ALTER TABLE ~ RENAME COLUMN ~ TO 문</span>으로 변경할 수 있다.**
+**<span style="color:#ff6600">컬럼명 변경은 ALTER TABLE ~ RENAME COLUMN ~ TO 문</span>으로 변경할 수 있다.**
 
-![칼럼명 변경 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/414a2dcf-89b9-4323-98ee-78b0a2ab25f5)
+![컬럼명 변경 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/414a2dcf-89b9-4323-98ee-78b0a2ab25f5)
 
 <br/>
 
