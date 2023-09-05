@@ -25,9 +25,9 @@ tags: [sql, sqld, group function] # 소문자로 작성
 
 ## **💻 ROLLUP**
 
-**<span style="color:#ff6600">ROLLUP은 GROUP BY의 칼럼에 대해서 Subtotal을 만들어 준다.</span>**
+**<span style="color:#ff6600">ROLLUP은 GROUP BY의 컬럼에 대해서 Subtotal을 만들어 준다.</span>**
 
-ROLLUP을 할 때 GROUP BY구에 칼럼이 두 개 이상 오면 순서에 따라서 결과가 달라진다.
+ROLLUP을 할 때 GROUP BY구에 컬럼이 두 개 이상 오면 순서에 따라서 결과가 달라진다.
 
 ![ROLLUP](https://github.com/leekoby/leekoby.github.io/assets/118284808/c0202582-d8c7-4c7b-8f24-35ed50f56016){: width="500" height="500" }
 
@@ -43,7 +43,7 @@ ROLLUP을 할 때 GROUP BY구에 칼럼이 두 개 이상 오면 순서에 따�
 
 - 부서별, 직업별 ROLLUP을 실행하면 부서별 합계, 직업별 합계, 전체합계가 모두 조회된다.
 
-- ROLLUP으로 실행되는 칼럼별로 Subtotal을 만들어 준다.
+- ROLLUP으로 실행되는 컬럼별로 Subtotal을 만들어 준다.
 
 <br/>
 
@@ -69,9 +69,9 @@ ROLLUP을 할 때 GROUP BY구에 칼럼이 두 개 이상 오면 순서에 따�
 
 ## **💻 GROUPING SETS 함수**
 
-**<span style="color:#ff6600">GROUPING SETS 함수는 GROUP BY에 나오는 칼럼의 순서와 관계없이 다양한 소계를 만들 수 있다.</span>**
+**<span style="color:#ff6600">GROUPING SETS 함수는 GROUP BY에 나오는 컬럼의 순서와 관계없이 다양한 소계를 만들 수 있다.</span>**
 
-GROUPING SETS 함수는 GROUP BY에 나오는 칼럼의 순서와 관계없이 개별적으로 모두 처리한다.
+GROUPING SETS 함수는 GROUP BY에 나오는 컬럼의 순서와 관계없이 개별적으로 모두 처리한다.
 
 ![GROUPING SETS 함수](https://github.com/leekoby/leekoby.github.io/assets/118284808/6785da6b-dd30-4a4b-b01d-e1cd16dda8c5){: width="500" height="500" }
 
@@ -85,7 +85,7 @@ GROUPING SETS 함수는 GROUP BY에 나오는 칼럼의 순서와 관계없이 �
 
 ## **💻 CUBE 함수**
 
-**<span style="color:#ff6600">CUBE는 CUBE 함수에 제시한 칼럼에 대해서 결합 가능한 모든 집계를 계산</span>**한다.
+**<span style="color:#ff6600">CUBE는 CUBE 함수에 제시한 컬럼에 대해서 결합 가능한 모든 집계를 계산</span>**한다.
 
 다차원 집계를 제공하여 다양하게 데이터를 분석할 수 있게 한다.
 
