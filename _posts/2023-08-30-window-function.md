@@ -209,7 +209,7 @@ tags: [sql, sqld, window function] # 소문자로 작성
 |CUME_DIST|	- 파티션 전체 건수에서 현재 행보다 작거나 같은 건수에 대한 **<span style="color:#ff6600">누적 백분율을 조회</span>**한다.<br/> - 누적 분포상의 위치를 0~1사이의 값을 가진다. |
 |PERCENT_RANK	|파티션에서 제일 먼저 나온 것을 0으로 제일 늦게 나온 것을 1로 하여 <br/> 값이 아닌 행의 순서별 백분율을 조회한다.|
 |NTILE	|파티션별로 전체 건수를 ARGUMENT 값으로 N 등분한 결과를 조회한다.|
-|RATIO_TO_REPORT	|파티션 내에 전체 SUM에 대한 행 별 칼럼값의 백분율을 소수점가지 조회한다.|
+|RATIO_TO_REPORT	|파티션 내에 전체 SUM에 대한 행 별 컬럼값의 백분율을 소수점가지 조회한다.|
 
 ![PERCENT_RANK](https://github.com/leekoby/leekoby.github.io/assets/118284808/048731b8-ba03-4751-9698-7977a86442bc){: width="500" height="500" }
 
