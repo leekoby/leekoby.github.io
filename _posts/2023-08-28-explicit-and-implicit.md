@@ -23,7 +23,7 @@ tags: [sql, sqld, explicit, implicit] # 소문자로 작성
 
 # **🌈 명시적(Explicit) 형변환과 암시적(Implicit) 형변환**
 
-## **형변환**
+## **💻 형변환**
 
 **<span style="color:#ff6600">형변환이라는 것은 두 개의 데이터의 데이터 타입(형)이 일치하도록 변환하는 것</span>**이다.
 
@@ -31,18 +31,41 @@ tags: [sql, sqld, explicit, implicit] # 소문자로 작성
 
 **<span style="color:#ff6600">형변환은 명시적(Explicit) 형변환과 암시적(Implicit) 형변환</span>**이 있다.
 
->**<span style="color:#3366ff">명시적 형변환은</span> <span style="color:#ff6600">형변환 함수를 사용해서 데이터 타입을 일치시키는 것으로 개발자가 SQL을 사용할 때 형변환 함수를 사용해야 한다.</span>**
+> **<span style="color:#3366ff">명시적 형변환</span> : <span style="color:#ff6600">변환 함수를 사용하여 데이터 유형 반환을 명시적으로 나타냄</span>**
+> 
+> **<span style="color:#3366ff">암시적(암묵적) 형변환</span> : <span style="color:#ff6600">데이터베이스가 내부적으로 알아서 데이터 유형을 변환함</span>**
+{:.prompt-info}
 
-**형변환 함수**
+예를 들어 조건절에서 VARCHAR 유형의 BIRTHDAY 컬럼을 숫자와 비교할 경우
+
+- 데이터베이스는 오류가 발생하지 않고
+
+- 내부적으로 BIRTHDAY 컬럼을 NUMBER형으로 변환하게 되는데 이럴 때 쓰이는 것이 `암시적 형변환`이다.
+
+![암시적 형변환](https://github.com/leekoby/leekoby.github.io/assets/118284808/2f498be2-d287-4437-a036-6d859cf14ee2)
+
+> 암시적 형변환이 가능하다고 해서 컬럼의 데이터 유형을 고려하지 않고 SQL 작성을 하게 되면 성능 저하가 발생할 수 있고 
+> 때에 따라서는 에러가 발생하기 때문에 되도록 명시적 형변환을 사용하는 것이 좋다.
+{:.prompt-warning}
+
+<br/>
+
+## **💻 형변환 함수**
 
 |형변환 함수|설명|
 |:-|:-|
 |TO_NUMBER(문자열)|문자열을 숫자로 변환한다.|
-|TO_CHAR(숫자 혹은 날짜, [FORMAT])|숫자 혹은 날짜를 지정된 FORMAT의 문자로 변환한다.|
-|TO_DATE(문자열, FORMAT)|문자열을 지정된 FORMAT의 날짜형으로 변환한다.|
+|TO_CHAR(숫자 | 날짜[, 포맷])|숫자 혹은 날짜를 지정된 포맷의 문자로 변환한다.|
+|TO_DATE(문자열, 포맷)|문자열을 지정된 포맷의 날짜형으로 변환한다.|
 
+**날짜 포맷**
 
->**<span style="color:#3366ff">암시적(암묵적) 형변환은</span> <span style="color:#ff6600">개발자가 형변환을 하지 않은 경우 데이터베이스 관리 시스템이 자동으로 형변환하는 것을 의미한다.</span>**
+|포맷 표현|의미|포맷 표현|의미|
+|:-:|:-:|:-:|:-:|
+|YYYY|년|HH|시(12)|
+|MM|월|HH24|시(24)|
+|DD|일|MI|분|
+|||SS|초|
 
 <br/>
 
