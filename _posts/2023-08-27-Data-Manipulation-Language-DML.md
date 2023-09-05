@@ -21,8 +21,170 @@ tags: [sql, sqld, data manipulation language, dml] # 소문자로 작성
 
 <br />
 
-
 # **⚡ DML(Data Manipulation Language)**
+
+## **💻 SELECT 문**
+
+### **SELECT문**
+
+테이블에 입력된 데이터를 조회하기 위해서 SELECT문을 사용한다.
+
+SELECT문은 특정 컬럼이나 특정 행만을 조회할 수 있다.
+
+```sql
+SELECT 컬럼1, 컬럼2, ... FROM 테이블 WHERE 컬럼1 = '이꼬비';
+```
+
+```sql
+SELECT * FROM 테이블;
+```
+
+컬럼을 따로 명시하지 않고 * (Asterisk)를 쓰면 전체 컬럼이 조회되며 조회되는 컬럼의 순서는 테이블의 컬럼 순서와 동일하다.
+
+별도의 WHERE절이 없으면 테이블의 전체 ROW가 조회된다.
+
+![SELECT문 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/965cc971-cb3b-42bd-a8f0-bddc3b23b30a)
+
+- 위의 SELECT문에서 EMP 테이블의 모든 컬럼(`*`)을 출력한다.
+
+- 단, `WHERE절에 있는 조건문에 있는 행만 조회`한다.
+
+<br/>
+
+
+> **<span style="color:#3366ff">Alias</span>**
+> 
+> **<span style="color:#ff6600">Alias(별칭)는 테이블명이나 컬럼명이 너무 길어서 간략하게 할 때 사용</span>**한다.
+>
+> 여러 개의 테이블을 JOIN하거나 서브쿼리가 있을 때 컬럼명 앞에 테이블명을 같이 명시해야하는 경우 테이블명은 비교적 길기 때문에 짧게 줄여쓰기 위해 사용
+>
+> ![Alias](https://github.com/leekoby/leekoby.github.io/assets/118284808/31f9fe1d-b5f6-4137-bc2e-9bfe891f8029)
+{: .prompt-info }
+
+<br/>
+
+#### **SELECT 문법**
+
+|SELECT문 문법|설명|
+|-|-|
+|SELECT \*| - 모든 컬럼을 출력한다.<br/> - `‘*’`는 모든 컬럼을 의미한다.|
+|FROM EMP|- FROM절에는 테이블명을 쓴다.<br/> - 즉, EMP 테이블을 지정했다.|
+|WHERE 사원번호 = 1000|- EMP 테이블에서 사원번호가 1000번인 행을 조회한다.<br/> - 즉, 조건문을 지정한다.|
+
+
+#### **SELECT 컬럼 지정**
+
+|사용 예제|설명|
+|-|-|
+|SELECT EMPNO, ENAME FROM EMP;|EMP 테이블의 모든 행에서 EMPNO와 ENAME컬럼만 출력한다. |
+|SELECT * FROM EMP; |EMP 테이블의 모든 컬럼과 모든 행을 조회한다.|
+|SELECT ENAME \|\| ‘님’ FROM EMP;|- EMP 테이블의 모든 행에서 ENAME 컬럼을 조회한다. <br/> - 단, ENAME 컬럼 뒤에 ‘님’이라는 문자를 결합한다.<br/> - 예를 들어 임베스트 님이라고 출력된다.|
+
+<br/>
+
+> **<span style="color:#ff6600">SELECT 쿼리문 순행순서</span>**
+>
+> 1. **FROM**: 해당 테이블에서 데이터를 가져온다.
+> 
+> 2. **WHERE**: 가져온 데이터 중에서 특정 조건을 만족하는 행을 필터링한다.
+> 
+> 3. **GROUP BY**: 필터링된 결과를 특정 컬럼의 값에 따라 그룹화한다.
+> 
+> 4. **HAVING**: 그룹화된 결과 중에서 특정 조건을 만족하는 그룹을 필터링한다.
+> 
+> 5. **SELECT**: 최종적으로 출력할 컬럼들을 선택하고, 집계 함수(Aggregate Function)들이 적용된다.
+> 
+> 6. **ORDER BY**: 선택된 결과를 특정 컬럼의 값에 따라 정렬한다.
+> 
+> ![SELECT 쿼리문 순행순서image](https://github.com/leekoby/leekoby.github.io/assets/118284808/8847a7e0-2918-480a-8f74-f1213ecdfee2){: width="500" height="500" }<BR/>
+{:.prompt-info}
+
+
+<br/>
+
+### **ORDER BY 문**
+
+SELECT문을 사용할 때 Order by를 같이 사용할 수 있다.
+
+- 단, **<span style="color:#ff6600">Order by 구문은맨 마지막에 실행</span>**된다. 
+
+**<span style="color:#ff6600">Order by는 데이터를 오름차순(Ascending) 혹은 내림차순(Descending)으로 출력</span>**한다.
+
+Order by가 정렬을 하는 시점은 모든 실행이 끝난 후에 데이터를 출력해 주기 바로 전이다.
+
+Order by는 정렬을 하기 때문에 데이터베이스 메모리를 많이 사용하게 된다. 
+
+- 즉, 대량의 데이터를 정렬하게 되면 정렬로 인한 성능 저하가 발생된다.
+
+Oracle 데이터베이스는 정렬을 위해서 메모리 내부에 할당된 SORT_AREA_SIZE를 사용한다. 만약 SORT_AREA_SIZE가 너무 작으면 성능 저하가 발생한다.
+
+정렬을 회피하기 위해서 인덱스를 생성할 때 사용자가 원하는 형태로 오름차순 혹은 내림차순으로 생성해야 한다.
+
+**<span style="color:#ff6600">특별한 지정이 없으면 Order by는 오름차순으로 정렬</span>**한다.
+
+![Order byimage](https://github.com/leekoby/leekoby.github.io/assets/118284808/702dbf7f-fc64-4edb-8397-36ff49c1d8c4)
+
+- ENAME 부분은 ENAME ASC와 같다. 기본적으로 오름차순과 내림차순을 지정하지 않으면 오름차순으로 정렬한다.
+
+내림차순으로 정렬하고 싶을 때는 **`DESC`**를 사용한다.
+
+ORDER BY에서 1, 2, 3, ... 숫자가 나오면 추출할 컬럼명을 대신하여 사용할 수 있다. 
+
+오라클에서 정렬시 NULL값은 마지막에 정렬된다.
+
+NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
+
+`NULLS LAST`를 쓰면  NULL을 마지막에 정렬시킨다. 안쓴 경우와 동일한 결과가 나온다.
+
+
+### **Index를 사용한 정렬 회피**
+
+정렬은 Oracle 데이터베이스에 부하를 주므로, **<span style="color:#ff6600">인덱스를 사용해서 `Order by`를 회피할 수 있다.</span>**
+
+#### **정렬 테스트 데이터 입력**
+
+![정렬 테스트 데이터 입력](https://github.com/leekoby/leekoby.github.io/assets/118284808/a2c37d23-c010-4e42-a625-0806aaaac502)
+
+- 위와 같이 데이터를 입력하고 SELECT문을 실행하면 EMPNO로 오름차순 정렬되어서 조회된다.
+
+- 그 이유는 EMPNO가 기본키이기 때문에 자동으로 오름차순 인덱스가 생성된다
+
+![Index를 사용한 정렬 회피](https://github.com/leekoby/leekoby.github.io/assets/118284808/54949636-7e28-4e7a-b0ba-6109e018524f)
+
+- 위의 예를 보면 **`/*+ INDEX_DESC（A）*/`**를 사용했다. 
+
+- 즉, 힌트를 사용한 것이다. 
+
+- 그래서 EMP 테이블에 생성된 인덱스를 내림차순으로 읽게 지정한 것이다.
+
+- 따라서 SELECT문에 **`ORDER BY EMPNO DESC`**를 사용하지 않았다.
+
+![Index를 사용한 정렬 회피](https://github.com/leekoby/leekoby.github.io/assets/118284808/eda03671-21d6-48b3-a38f-3e2694d531ee)
+
+- 위의 예처럼 SQL문을 사용하면 EMPNO 인덱스를 내림차순으로 읽는다.
+
+- 인덱스를 스캔한 후에 해당 EMPNO의 값을 가지고 테이블의 데이터를 읽는다.
+
+- 테이블에서 해당 행을 찾으면 인출하여 사용자 화면에 조회된다.
+
+<br/>
+
+### **Distinct**
+
+**<span style="color:#ff6600">Distinct문은 컬럼명 앞에 지정하여 중복된 데이터를 한 번만 조회</span>**하게 한다.
+
+![Distinct 미사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/921932ab-f0de-459e-88e4-a959754dcf57)
+
+- 위의 예는 EMP 테이블의 DEPTNO 컬럼을 조회한 것이다. 
+
+- 조회 내용을 보면 DEPTNO가 중복으로 저장되어 있는 것을 확인할 수 있다.
+
+![Distinct 사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/748b0a24-3425-400b-89d4-c53eea869871)
+
+- Distinct를 사용하면 DEPTNO 값이 중복되지 않는다.
+
+<br/>
+
 
 ## **💻 INSERT 문**
 
@@ -32,21 +194,21 @@ INSERT문은 테이블에 데이터를 입력하는 DML문이다.
 
 ![INSERT 문 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/6a993272-6072-4103-bed8-6e7aff614e99)
 
-EMP 테이블에 데이터를 삽입하려면 테이블명, 칼럼명, 데이터 순으로 입력하면 된다.
+EMP 테이블에 데이터를 삽입하려면 테이블명, 컬럼명, 데이터 순으로 입력하면 된다.
 
 ![INSERT 문 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/5ecada15-3fb3-4454-91de-5e0af45bdf7f)
 
 데이터를 입력할 때 문자열을 입력하는 경우에는 **`작은따옴표(’  ’)`**를 사용해야 한다.
 
-만약 특정 테이블의 모든 칼럼에 대한 데이터를 삽입하는 경우에는 칼럼명을 생략할 수 있다.
+만약 특정 테이블의 모든 컬럼에 대한 데이터를 삽입하는 경우에는 컬럼명을 생략할 수 있다.
 
-모든 칼럼에 데이터를 입력한다.
+모든 컬럼에 데이터를 입력한다.
 
 ![INSERT 문 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/b09195c3-0659-4d76-ae70-6c5fecb2a4e3)
 
-- 위의 예처럼 칼럼명을 생략할 수 있다. 
+- 위의 예처럼 컬럼명을 생략할 수 있다. 
 
-- 단, 위의 예제에서 EMP 테이블의 칼럼은 숫자형 데이터 타입 한 개의 칼럼과 문자형 데이터 타입 한 개의 칼럼만 있어야 한다.
+- 단, 위의 예제에서 EMP 테이블의 컬럼은 숫자형 데이터 타입 한 개의 컬럼과 문자형 데이터 타입 한 개의 컬럼만 있어야 한다.
 
 - 주의 사항은 INSERT문을 실행했다고 데이터 파일에 저장되는 것은 아니다. 
 
@@ -136,151 +298,6 @@ DELETE문으로 데이터를 삭제한다고 해서 테이블의 용량이 초�
 |TRUNCATE TABLE TABLE|- 테이블의 모든 데이터를 삭제한다.<br/> - 데이터가 삭제되면 테이블의 용량은 초기화 된다.|
 
 
-## **💻 SELECT 문**
-
-### **SELECT문**
-
-테이블에 입력된 데이터를 조회하기 위해서 SELECT문을 사용한다.
-
-SELECT문은 특정 칼럼이나 특정 행만을 조회할 수 있다.
-
-![SELECT문 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/965cc971-cb3b-42bd-a8f0-bddc3b23b30a)
-
-- 위의 SELECT문에서 EMP 테이블의 **`모든 칼럼’*’을 출력`**한다.
-
-- 단, **`WHERE절에 있는 조건문에 있는 행만 조회`**한다.
-
-
-#### **SELECT 문법**
-
-|SELECT문 문법|설명|
-|-|-|
-|SELECT \*| - 모든 칼럼을 출력한다.<br/> - `‘*’`는 모든 칼럼을 의미한다.|
-|FROM EMP|- FROM절에는 테이블명을 쓴다.<br/> - 즉, EMP 테이블을 지정했다.|
-|WHERE 사원번호 = 1000|- EMP 테이블에서 사원번호가 1000번인 행을 조회한다.<br/> - 즉, 조건문을 지정한다.|
-
-
-#### **SELECT 칼럼 지정**
-
-|사용 예제|설명|
-|-|-|
-|SELECT EMPNO, ENAME FROM EMP;|EMP 테이블의 모든 행에서 EMPNO와 ENAME칼럼만 출력한다. |
-|SELECT * FROM EMP; |EMP 테이블의 모든 칼럼과 모든 행을 조회한다.|
-|SELECT ENAME \|\| ‘님’ FROM EMP;|- EMP 테이블의 모든 행에서 ENAME 칼럼을 조회한다. <br/> - 단, ENAME 칼럼 뒤에 ‘님’이라는 문자를 결합한다.<br/> - 예를 들어 임베스트 님이라고 출력된다.|
-
-<br/>
-
-> **<span style="color:#ff6600">SELECT 쿼리문 순행순서</span>**
->
-> 1. **FROM**: 해당 테이블에서 데이터를 가져온다.
-> 
-> 2. **WHERE**: 가져온 데이터 중에서 특정 조건을 만족하는 행을 필터링한다.
-> 
-> 3. **GROUP BY**: 필터링된 결과를 특정 칼럼의 값에 따라 그룹화한다.
-> 
-> 4. **HAVING**: 그룹화된 결과 중에서 특정 조건을 만족하는 그룹을 필터링한다.
-> 
-> 5. **SELECT**: 최종적으로 출력할 칼럼들을 선택하고, 집계 함수(Aggregate Function)들이 적용된다.
-> 
-> 6. **ORDER BY**: 선택된 결과를 특정 칼럼의 값에 따라 정렬한다.
-> 
-> ![SELECT 쿼리문 순행순서image](https://github.com/leekoby/leekoby.github.io/assets/118284808/8847a7e0-2918-480a-8f74-f1213ecdfee2){: width="500" height="500" }<BR/>
-{:.prompt-info}
-
-
-<br/>
-
-### **ORDER BY 문**
-
-SELECT문을 사용할 때 Order by를 같이 사용할 수 있다.
-
-- 단, **<span style="color:#ff6600">Order by 구문은맨 마지막에 실행</span>**된다. 
-
-**<span style="color:#ff6600">Order by는 데이터를 오름차순(Ascending) 혹은 내림차순(Descending)으로 출력</span>**한다.
-
-Order by가 정렬을 하는 시점은 모든 실행이 끝난 후에 데이터를 출력해 주기 바로 전이다.
-
-Order by는 정렬을 하기 때문에 데이터베이스 메모리를 많이 사용하게 된다. 
-
-- 즉, 대량의 데이터를 정렬하게 되면 정렬로 인한 성능 저하가 발생된다.
-
-Oracle 데이터베이스는 정렬을 위해서 메모리 내부에 할당된 SORT_AREA_SIZE를 사용한다. 만약 SORT_AREA_SIZE가 너무 작으면 성능 저하가 발생한다.
-
-정렬을 회피하기 위해서 인덱스를 생성할 때 사용자가 원하는 형태로 오름차순 혹은 내림차순으로 생성해야 한다.
-
-**<span style="color:#ff6600">특별한 지정이 없으면 Order by는 오름차순으로 정렬</span>**한다.
-
-![Order byimage](https://github.com/leekoby/leekoby.github.io/assets/118284808/702dbf7f-fc64-4edb-8397-36ff49c1d8c4)
-
-- ENAME 부분은 ENAME ASC와 같다. 기본적으로 오름차순과 내림차순을 지정하지 않으면 오름차순으로 정렬한다.
-
-내림차순으로 정렬하고 싶을 때는 **`DESC`**를 사용한다.
-
-ORDER BY에서 1, 2, 3, ... 숫자가 나오면 추출할 컬럼명을 대신하여 사용할 수 있다. 
-
-오라클에서 정렬시 NULL값은 마지막에 정렬된다.
-
-NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
-
-`NULLS LAST`를 쓰면  NULL을 마지막에 정렬시킨다. 안쓴 경우와 동일한 결과가 나온다.
-
-
-### **Index를 사용한 정렬 회피**
-
-정렬은 Oracle 데이터베이스에 부하를 주므로, **<span style="color:#ff6600">인덱스를 사용해서 `Order by`를 회피할 수 있다.</span>**
-
-#### **정렬 테스트 데이터 입력**
-
-![정렬 테스트 데이터 입력](https://github.com/leekoby/leekoby.github.io/assets/118284808/a2c37d23-c010-4e42-a625-0806aaaac502)
-
-- 위와 같이 데이터를 입력하고 SELECT문을 실행하면 EMPNO로 오름차순 정렬되어서 조회된다.
-
-- 그 이유는 EMPNO가 기본키이기 때문에 자동으로 오름차순 인덱스가 생성된다
-
-![Index를 사용한 정렬 회피](https://github.com/leekoby/leekoby.github.io/assets/118284808/54949636-7e28-4e7a-b0ba-6109e018524f)
-
-- 위의 예를 보면 **`/*+ INDEX_DESC（A）*/`**를 사용했다. 
-
-- 즉, 힌트를 사용한 것이다. 
-
-- 그래서 EMP 테이블에 생성된 인덱스를 내림차순으로 읽게 지정한 것이다.
-
-- 따라서 SELECT문에 **`ORDER BY EMPNO DESC`**를 사용하지 않았다.
-
-![Index를 사용한 정렬 회피](https://github.com/leekoby/leekoby.github.io/assets/118284808/eda03671-21d6-48b3-a38f-3e2694d531ee)
-
-- 위의 예처럼 SQL문을 사용하면 EMPNO 인덱스를 내림차순으로 읽는다.
-
-- 인덱스를 스캔한 후에 해당 EMPNO의 값을 가지고 테이블의 데이터를 읽는다.
-
-- 테이블에서 해당 행을 찾으면 인출하여 사용자 화면에 조회된다.
-
-<br/>
-
-### **Distinct**
-
-**<span style="color:#ff6600">Distinct문은 칼럼명 앞에 지정하여 중복된 데이터를 한 번만 조회</span>**하게 한다.
-
-![Distinct 미사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/921932ab-f0de-459e-88e4-a959754dcf57)
-
-- 위의 예는 EMP 테이블의 DEPTNO 칼럼을 조회한 것이다. 
-
-- 조회 내용을 보면 DEPTNO가 중복으로 저장되어 있는 것을 확인할 수 있다.
-
-![Distinct 사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/748b0a24-3425-400b-89d4-c53eea869871)
-
-- Distinct를 사용하면 DEPTNO 값이 중복되지 않는다.
-
-
-<br/>
-
-### **Alias**
-
-**<span style="color:#ff6600">Alias(별칭)는 테이블명이나 칼럼명이 너무 길어서 간략하게 할 때 사용</span>**한다.
-
-![Alias](https://github.com/leekoby/leekoby.github.io/assets/118284808/31f9fe1d-b5f6-4137-bc2e-9bfe891f8029)
-
-<br/>
 
 ## **💻 WHERE 문**
 
@@ -305,8 +322,8 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 |!=|같지 않은 것을 조회한다. |
 |^= | 같지 않은 것을 조회한다.|
 | <>| 같지 않은 것을 조회한다.|
-|NOT 칼럼명= |같지 않은 것을 조회한다. |
-| NOT 칼럼명>|크지 않은 것을 조회한다. |
+|NOT 컬럼명= |같지 않은 것을 조회한다. |
+| NOT 컬럼명>|크지 않은 것을 조회한다. |
 
 #### **논리 연산자**
 
@@ -398,7 +415,7 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 
 ![IN 문](https://github.com/leekoby/leekoby.github.io/assets/118284808/b25ef03e-b686-45ee-ba6c-2f203203a964)
 
-- 괄호를 사용하여 원하는 데이터를 칼럼명에 대응되도록 입력함으로써, IN문으로 여러 개의 칼럼에 대한 조건을 지정할 수 있다.
+- 괄호를 사용하여 원하는 데이터를 컬럼명에 대응되도록 입력함으로써, IN문으로 여러 개의 컬럼에 대한 조건을 지정할 수 있다.
 
 <br/>
 
@@ -429,8 +446,8 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 
 |||
 |:-|:-|
-|NVL 함수|- **<span style="color:#ff6600">NULL이면 다른 값으로 바꾸는 함수</span>**이다.<br/>- `NVL(MGR, 0)`은 MGR 칼럼이 NULL이면 0으로 바꾼다.|
-|NVL2 함수|- **<span style="color:#ff6600">함수와 DECODE 함수를 하나로 만든 것</span>**이다. <br/>- `NVL2(MGR, 1, 0)`은 MGR칼럼이 NULL이 아니면 1을, NULL이면 0을 반환한다.|
+|NVL 함수|- **<span style="color:#ff6600">NULL이면 다른 값으로 바꾸는 함수</span>**이다.<br/>- `NVL(MGR, 0)`은 MGR 컬럼이 NULL이면 0으로 바꾼다.|
+|NVL2 함수|- **<span style="color:#ff6600">함수와 DECODE 함수를 하나로 만든 것</span>**이다. <br/>- `NVL2(MGR, 1, 0)`은 MGR컬럼이 NULL이 아니면 1을, NULL이면 0을 반환한다.|
 |NULLIF 함수|- **<span style="color:#ff6600">두 개의 값이 같으면 NULL을, 같지 않으면 첫 번째 값을 반환</span>**한다. <br/> - `NULLIF(exp1, exp2)`은 exp1과 exp2가 같으면 NULL을, 같지 않으면 exp1을 반환한다.|
 |COALESCE| - **<span style="color:#ff6600">NULL이 아닌 최초의 인자 값을 반환</span>**한다. <br/> - `COALESCE(exp1, exp2, exp3, …)`은 exp1이 NULL이 아니면 exp1의 값을,  <br/> 그렇지 않으면 그 뒤의 값의 NULL 여부를 판단하여 값을 반환한다.|
 
