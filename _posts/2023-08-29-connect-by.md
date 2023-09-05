@@ -56,7 +56,7 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/9b0f734c-e192-4664-ac8b-ffaf040e82ed){: width="500" height="500" }
 
-- 위의 예에서 EMPNO와 MGR 칼럼 모두 사원번호가 입력되어 있다.
+- 위의 예에서 EMPNO와 MGR 컬럼 모두 사원번호가 입력되어 있다.
 
 - 하지만 MGR은 관리자 사원번호를 가지고 있다. 
 
