@@ -104,25 +104,40 @@ SELECT * FROM 테이블;
 
 ### **ORDER BY 문**
 
-SELECT문을 사용할 때 Order by를 같이 사용할 수 있다.
+SELECT문을 사용할 때 ORDER BY를 같이 사용할 수 있다.
 
-- 단, **<span style="color:#ff6600">Order by 구문은맨 마지막에 실행</span>**된다. 
+- 단, **<span style="color:#ff6600">ORDER BY 구문은맨 마지막에 실행</span>**된다. 
 
-**<span style="color:#ff6600">Order by는 데이터를 오름차순(Ascending) 혹은 내림차순(Descending)으로 출력</span>**한다.
+**<span style="color:#ff6600">ORDER BY는 데이터를 오름차순(Ascending) 혹은 내림차순(Descending)으로 출력</span>**한다.
 
-Order by가 정렬을 하는 시점은 모든 실행이 끝난 후에 데이터를 출력해 주기 바로 전이다.
+ORDER BY절을 따로 명시하지 않으면 데이터는 임의의 순서대로 출력된다.
 
-Order by는 정렬을 하기 때문에 데이터베이스 메모리를 많이 사용하게 된다. 
+> **<span style="color:#3366ff">ASC (ASCENDING)</span> : <span style="color:#ff6600">오름차순</span>**
+> 
+> **<span style="color:#3366ff">DESC (DESCENDING)</span> : <span style="color:#ff6600">내림차순</span>**
+> 
+> **<span style="color:#3366ff">옵션 생략 시</span> <span style="color:#ff6600">ASC가 기본값이 된다.</span>**
+{: .prompt-info }
+
+ORDER BY가 정렬을 하는 시점은 모든 실행이 끝난 후에 데이터를 출력해 주기 바로 전이다.
+
+ORDER BY 절은 논리적으로 SELECT 절 다음에 수행되기 때문에 SELECT 절에서 정의한 ALIAS를 사용할 수 있다.
+
+ODER BY 절의 옵션은 각 컬럼 다음에 하나씩 붙여서 작성
+
+ORDER BY는 정렬을 하기 때문에 데이터베이스 메모리를 많이 사용하게 된다. 
 
 - 즉, 대량의 데이터를 정렬하게 되면 정렬로 인한 성능 저하가 발생된다.
 
-Oracle 데이터베이스는 정렬을 위해서 메모리 내부에 할당된 SORT_AREA_SIZE를 사용한다. 만약 SORT_AREA_SIZE가 너무 작으면 성능 저하가 발생한다.
+Oracle 데이터베이스는 정렬을 위해서 메모리 내부에 할당된 SORT_AREA_SIZE를 사용한다. 
+
+만약 SORT_AREA_SIZE가 너무 작으면 성능 저하가 발생한다.
 
 정렬을 회피하기 위해서 인덱스를 생성할 때 사용자가 원하는 형태로 오름차순 혹은 내림차순으로 생성해야 한다.
 
-**<span style="color:#ff6600">특별한 지정이 없으면 Order by는 오름차순으로 정렬</span>**한다.
+**<span style="color:#ff6600">특별한 지정이 없으면 ORDER BY는 오름차순으로 정렬</span>**한다.
 
-![Order byimage](https://github.com/leekoby/leekoby.github.io/assets/118284808/702dbf7f-fc64-4edb-8397-36ff49c1d8c4)
+![ORDER BY image](https://github.com/leekoby/leekoby.github.io/assets/118284808/702dbf7f-fc64-4edb-8397-36ff49c1d8c4)
 
 - ENAME 부분은 ENAME ASC와 같다. 기본적으로 오름차순과 내림차순을 지정하지 않으면 오름차순으로 정렬한다.
 
@@ -136,10 +151,21 @@ NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
 
 `NULLS LAST`를 쓰면  NULL을 마지막에 정렬시킨다. 안쓴 경우와 동일한 결과가 나온다.
 
+> **<span style="color:#3366ff">정렬의 기준이 되는 컬럼에</span> <span style="color:#ff6600">NULL 데이터가 포함되어 있을 경우 </span>**
+>  
+> 데이터베이스 종류에 따라 정렬의 위치가 달라지는데 Oracle의 경우에는 NULL을 최대값으로 취급하기 때문에 오름차순으로 했을 경우 맨 마지막에 위치하게 된다(SQL Server는 반대). 
+> 
+> 만약 순서를 변경하고 싶다면 ORDER BY 절에 `NULLS FIRST`, `NULLS LAST` 옵션을 써서 NULL의 정렬산 순서를 변경할 수 있다.
+{: .prompt-tip }
+
+
+
+
+
 
 ### **Index를 사용한 정렬 회피**
 
-정렬은 Oracle 데이터베이스에 부하를 주므로, **<span style="color:#ff6600">인덱스를 사용해서 `Order by`를 회피할 수 있다.</span>**
+정렬은 Oracle 데이터베이스에 부하를 주므로, **<span style="color:#ff6600">인덱스를 사용해서 `ORDER BY`를 회피할 수 있다.</span>**
 
 #### **정렬 테스트 데이터 입력**
 
@@ -301,6 +327,10 @@ DELETE문으로 데이터를 삭제한다고 해서 테이블의 용량이 초�
 
 ## **💻 WHERE 문**
 
+INSERT를 제외한 DML문을 수행할 때 원하는 데이터만 골라 수행할 수 있도록 해주는 구문
+
+
+
 ### **WHERE문이 사용하는 연산**
 
 WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 연산자, 논리 연산자, SQL 연산자, 부정 SQL 연산자가 있다.
@@ -319,13 +349,15 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 
 |부정 비교 연산자 | 설명|
 | :-: | :-: |
-|!=|같지 않은 것을 조회한다. |
+|!=| 같지 않은 것을 조회한다. |
 |^= | 같지 않은 것을 조회한다.|
 | <>| 같지 않은 것을 조회한다.|
-|NOT 컬럼명= |같지 않은 것을 조회한다. |
-| NOT 컬럼명>|크지 않은 것을 조회한다. |
+| NOT 컬럼명 = |같지 않은 것을 조회한다. |
+| NOT 컬럼명 >|크지 않은 것을 조회한다. |
 
 #### **논리 연산자**
+
+> 논리 연산자는 SQL에 명시된 순서와는 관계없이 `()` => `NOT` => `AND` => `OR` 순
 
 |논리 연산자 | 설명|
 | :-: | :-: |
@@ -342,18 +374,18 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 
 |SQL 연산자 | 설명|
 | :- | :-|
-|LIKE ‘%비교 문자열%’ |- 비교 문자열을 조회한다. ‘%’는 모든 값을 의미한다. |
-| BETWEEN A AND B| - A와 B 사이의 값을 조회한다. <br/> - 연속적인 데이터 많이 사용|
-|IN (list) | - OR를 의미하며 list 값 중에 하나만 일치해도 조회된다. <br/> - 이산적데이터에 사용|
-|IS NULL |- NULL 값을 조회한다. |
+|LIKE ‘%비교 문자열%’ |- `비교 문자열을 조회`한다. ‘%’는 모든 값을 의미한다. |
+| BETWEEN A AND B| - `A와 B 사이의 값`을 조회한다. (`A,B 포함`) <br/> - 연속적인 데이터 많이 사용|
+|IN (LIST) | - OR를 의미하며 list 값 중에 `하나만 일치`해도 조회된다. <br/> - 이산적데이터에 사용|
+|IS NULL |- `NULL 값`을 조회한다. |
 
 #### **부정 SQL 연산자**
 
 | 부정 SQL 연산자| 설명|
 | :- | :- |
-|NOT BETWEEN A AND B | - A와 B 사이의 해당되지 않는 값을 조회한다.|
-| NOT IN (list)|- list와 불일치한 것을 조회한다. |
-|IS NOT NULL |- NULL 값이 아닌 것을 조회한다.|
+|NOT BETWEEN A AND B | - A와 B 사이의 해당되지 않는 값을 조회한다. (`A,B 미포함`)|
+| NOT IN (LIST)|- LIST와 `불일치한 것을 조회`한다. |
+|IS NOT NULL |- `NULL 값이 아닌 것을 조회`한다.|
 
 <br/>
 
@@ -440,16 +472,14 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 
 ![NOT NULL 값 조회](https://github.com/leekoby/leekoby.github.io/assets/118284808/7c42e200-2046-4e7f-8263-30506dbf07bf)
 
-
 #### **NULL 관련 함수**
-
 
 |||
 |:-|:-|
-|NVL 함수|- **<span style="color:#ff6600">NULL이면 다른 값으로 바꾸는 함수</span>**이다.<br/>- `NVL(MGR, 0)`은 MGR 컬럼이 NULL이면 0으로 바꾼다.|
-|NVL2 함수|- **<span style="color:#ff6600">함수와 DECODE 함수를 하나로 만든 것</span>**이다. <br/>- `NVL2(MGR, 1, 0)`은 MGR컬럼이 NULL이 아니면 1을, NULL이면 0을 반환한다.|
-|NULLIF 함수|- **<span style="color:#ff6600">두 개의 값이 같으면 NULL을, 같지 않으면 첫 번째 값을 반환</span>**한다. <br/> - `NULLIF(exp1, exp2)`은 exp1과 exp2가 같으면 NULL을, 같지 않으면 exp1을 반환한다.|
-|COALESCE| - **<span style="color:#ff6600">NULL이 아닌 최초의 인자 값을 반환</span>**한다. <br/> - `COALESCE(exp1, exp2, exp3, …)`은 exp1이 NULL이 아니면 exp1의 값을,  <br/> 그렇지 않으면 그 뒤의 값의 NULL 여부를 판단하여 값을 반환한다.|
+|NVL(인수1,인수2)|- **인수1의 값이<span style="color:#ff6600">NULL이면 인수2를 반환</span>** <br/> - **<span style="color:#ff6600">NULL이 아닐 경우 인수1</span>**을 반환 <br/>- `NVL(MGR, 0)`은 MGR 컬럼이 NULL이면 0으로 바꾼다.|
+|NVL2(컬럼,인수1,인수2)|- **<span style="color:#ff6600">함수와 DECODE 함수를 하나로 만든 것</span>** <br/>- `NVL2(MGR, 1, 0)`은 MGR컬럼이 NULL이 아니면 1을, <br/> NULL이면 0을 반환한다.|
+|NULLIF(인수1,인수2)|- **<span style="color:#ff6600">인수1과 인수2의 값이 같으면 NULL <br/> - 같지 않으면 인수1을 반환</span>** <br/> - `NULLIF(exp1, exp2)`은 exp1과 exp2가 같으면 NULL을, <br/> 같지 않으면 exp1을 반환한다.|
+|COALESCE(인수1,인수2,...)| - **<span style="color:#ff6600">NULL이 아닌 최초의 인수를 반환</span>**한다. <br/> - `COALESCE(exp1, exp2, exp3, …)`은 <br/> exp1이 NULL이 아니면 exp1의 값을,  <br/> 그렇지 않으면 그 뒤의 값의 NULL 여부를 판단하여 값을 반환|
 
 <br/>
 
