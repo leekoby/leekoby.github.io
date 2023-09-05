@@ -74,14 +74,14 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 
 **<span style="color:#ff6600">COUNT( ) 함수는 행 수를 계산하는 함수</span>**이다. 
   
-**<span style="color:#ff6600">COUNT(*)는 NULL 값을 포함한 모든 행 수를 계산한다. 하지만 COUNT(칼럼명)는 NULL 값을 제외한 행 수를 계산</span>**한다,
+**<span style="color:#ff6600">COUNT(*)는 NULL 값을 포함한 모든 행 수를 계산한다. 하지만 COUNT(컬럼명)는 NULL 값을 제외한 행 수를 계산</span>**한다,
 
 ![COUNT(*) 사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/3344a4d6-f8cf-4884-9c9e-6b0266500585){: width="500" height="500" }
 
 
 ![COUNT(MGR) 사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/492e5e23-1857-44b5-a87b-79fa6dc8ac45){: width="500" height="500" }
 
-- MGR 칼럼을 한 개의 NULL을 가지고 있다. 그래서 COUNT(MGR)로 하면 NULL이 제외되고 행 수를 계산한다.
+- MGR 컬럼을 한 개의 NULL을 가지고 있다. 그래서 COUNT(MGR)로 하면 NULL이 제외되고 행 수를 계산한다.
 
 ## **💻 GROUP BY 사용 예제**
 
