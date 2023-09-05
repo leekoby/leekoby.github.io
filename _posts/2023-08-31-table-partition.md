@@ -41,7 +41,7 @@ tags: [sql, sqld, table partition] # 소문자로 작성
 
 ## **💻 RANGE PARTITION**
 
-**<span style="color:#ff6600">Range Partition은 테이블의 칼럼 중에서 값의 범위를 기준으로 여러 개의 파티션으로 데이터를 나누어 저장하는 것이다.</span>**
+**<span style="color:#ff6600">Range Partition은 테이블의 컬럼 중에서 값의 범위를 기준으로 여러 개의 파티션으로 데이터를 나누어 저장하는 것이다.</span>**
 
 ![RANGE PARTITION](https://github.com/leekoby/leekoby.github.io/assets/118284808/4be2ab78-3d02-4cfc-ab1e-d6ee86bce487){: width="500" height="500" }
 
