@@ -52,6 +52,16 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 
 만약 WHERE절에 조건문을 사용하게 되면 조건을 충족하지 못하는 데이터들은 GROUP BY 대상에서 제외된다.
 
+HAVING절은 논리적으로 SELECT절 전에 수행되기 때문에 SELECT 절에 명시되지 않은 집계 함수로도 조건을 부여할 수 있다.
+
+- SELECT 절에서 정의한 ALIAS를 사용할 수 없다.
+
+WHERE 절에서 사용해도 되는 조건까지 HAVING절로 써버리면 성능상 불리할 수도 있다(오류는 발생하지 않음).
+
+- 왜냐하면 WHERE절에서 필터링이 선행되어야 GROUP BY할 데이터량이 줄어들기 때문
+
+- GROUP BY는 비교적 많은 비용이 드는 작업이므로 수행 전에 데이터량을 최소로 줄여놓는 것이 좋다. 
+
 >**<span style="color:#ff6600">중요한 것은 WHERE절에는 집계(SUM, AVG, MAX, MIN 등)함수를 사용하면 안된다.</span>**<br/>
 {:.prompt-warning}
 
@@ -63,12 +73,15 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 
 |집계함수|설명|
 |:-:|:-|
-|COUNT()|행 수를 조회한다.|
-|SUM()|합계를 계산한다.|
-|AVG()|평균을 계산한다.|
-|MAX() 와 MIN()|최댓값과 최솟값을 계산한다.|
-|STDDEV()|표준편차를 계산한다.|
-|VARIAN()|분산을 계산한다.|
+|COUNT(*)|- 전체 ROW를 COUNT하여 반환|
+|COUNT(컬럼)| - 컬럼값이 NULL인 ROW를 제외하고 COUNT하여 반환|
+|COUNT(DISTICT 컬럼)| - 컬럼값이 NULL이 아닌 ROW에서 중복을 제거한 COUNT를 반환|
+|SUM(컬럼)| - NULL인 ROW를 제외하고 컬럼값들의 합계를 계산한다.|
+|AVG(컬럼)| - NULL인 ROW를 제외하고 컬럼값들의 평균을 계산한다.|
+|MIN(컬럼)| - 컬럼값들의 최솟값을 반환|
+|MAX(컬럼)| - 컬럼값들의 최댓값을 반환|
+|STDDEV(컬럼)| - 컬럼값들의 표준편차를 계산한다.|
+|VARIAN(컬럼)| - 컬럼값들의 분산을 계산한다.|
 
 ### **COUNT 함수**
 
