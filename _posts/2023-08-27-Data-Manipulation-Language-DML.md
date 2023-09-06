@@ -23,6 +23,16 @@ tags: [sql, sqld, data manipulation language, dml] # 소문자로 작성
 
 # **⚡ DML(Data Manipulation Language)**
 
+**SQL 문장들의 종류**
+
+| 종류 | 명령어 | 설명 |
+|:-:|:-|:-|
+| 데이터 조작어 <br/> DML <br/> (Data Manipulation Language) | SELECT |데이터베이스에 들어 있는 데이터를 조회하거나 <br/> 검색하기 위한 명령어를 말하는 것으로 RETRIEVE 라고도 한다. |
+|  | INSERT <br/> UPDATE <br/> DELETE |데이터베이스의 테이블에 들어 있는 데이터에 변형을 하는 종류의 명령어들 <br/> 데이터를 테이블에 새로운 행을 집어넣거나 <br/> 원하지 않는 데이터를 수정/삭제하는 것들의 명령어들을 DML이라고 한다.|
+|데이터 정의어 <br/> DDL <br/> (Data Definition Language)|CREATE <br/> ALTER <br/> DROP <br/> RENAME| 테이블과 같은 데이터 구조를 정의하는데 사용되는 명령어들 <br/> 구조를 생성하거나 변경하거나 삭제하거나 <br/> 이름을 바꾸는 데이터 구조와 관련된 명령어들을 DDL 이라고 부른다.|
+|데이터 제어어 <br/> DCL <br/> (Data Control Language)| GRANT <br/> REVOKE| 데이터베이스에 접근하고 객체들을 사용하도록 권한을 주고 <br/> 회수하는 명령어를 DCL이라고 한다.|
+|트랜잭션 제어어 <br/> TCL <br/> (Transaction Control Language) | COMMIT <br/> ROLLBACK | 논리적인 작업의 단위를 묶어서 DML에 의해 조작된 결과를<br/> 작업단위(트랜잭션) 별로 제어하는 명령어|
+
 ## **💻 SELECT 문**
 
 ### **SELECT문**
@@ -113,6 +123,8 @@ SELECT문을 사용할 때 ORDER BY를 같이 사용할 수 있다.
 **<span style="color:#ff6600">ORDER BY는 데이터를 오름차순(Ascending) 혹은 내림차순(Descending)으로 출력</span>**한다.
 
 ORDER BY절을 따로 명시하지 않으면 데이터는 임의의 순서대로 출력된다.
+
+ORDER BY 절에는 컬럼명을 명시해줄 수도 있고 SELECT 절에 기술된 컬럼 순서를 숫자로 명시해줄 수도 있다.
 
 > **<span style="color:#3366ff">ASC (ASCENDING)</span> : <span style="color:#ff6600">오름차순</span>**
 > 
