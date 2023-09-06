@@ -54,8 +54,7 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 
 HAVING절은 논리적으로 SELECT절 전에 수행되기 때문에 SELECT 절에 명시되지 않은 집계 함수로도 조건을 부여할 수 있다.
 
-- SELECT 절에서 정의한 ALIAS를 사용할 수 없다.
-
+- SELECT 절에서 정의한 **<span style="color:#ff6600">ALIAS를 사용할 수 없다</span>**.
 WHERE 절에서 사용해도 되는 조건까지 HAVING절로 써버리면 성능상 불리할 수도 있다(오류는 발생하지 않음).
 
 - 왜냐하면 WHERE절에서 필터링이 선행되어야 GROUP BY할 데이터량이 줄어들기 때문
