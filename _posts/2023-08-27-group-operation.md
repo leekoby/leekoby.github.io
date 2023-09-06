@@ -50,6 +50,8 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 
 **<span style="color:#ff6600">GROUP BY에 조건절을 사용하려면 HAVING을 사용</span>**해야 한다. 
 
+HAVING 절은 주로 GROUP BY 뒤에 오면서 집계 데이터에 대한 조건을 부여하지만 테이블 전체가 한 개의 그룹이 되는 경우 HAVING만 단독으로 사용할 수 있다.
+
 만약 WHERE절에 조건문을 사용하게 되면 조건을 충족하지 못하는 데이터들은 GROUP BY 대상에서 제외된다.
 
 HAVING절은 논리적으로 SELECT절 전에 수행되기 때문에 SELECT 절에 명시되지 않은 집계 함수로도 조건을 부여할 수 있다.
