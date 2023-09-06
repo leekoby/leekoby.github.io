@@ -79,6 +79,23 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 <br/>
 
+> **<span style="color:#3366ff">테이블 생성의 주의사항</span>**
+>
+> - 테이블명은 객체를 의미할 수 있는 적절한 이름을 사용, 가능한 **<span style="color:#ff6600">단수형 권고</span>**
+> - 테이블명은 중복되지 않아야 한다.
+> - 한 테이블 내에서 컬럼명이 중복되게 지정될 수 없다.
+> - 테이블 이름을 지정하고 각 컬럼들은 괄호 `()`로 묶어 지정한다.
+> - 각 컬럼들은 콤마 `,`로 구분되고, 테이블 생성문의 끝은 항상 세미콜론 `;`으로 끝난다.
+> - 컬럼에 대해서는 다른 테이블까지 고려하여 데이터베이스 내에서는 일관성있게 사용하는 것이 좋다. (데이터 표준화 관점)
+> - 컬럼 뒤에 데이터 유형은 꼭 지정되어야 한다.
+> - 테이블명과 컬럼명은 반드시 문자로 시작해야하고, 벤더 길이에 대한 한계가 있다.
+> - 벤더에서 사전에 정의한 예약어(Reserved Word)는 사용할 수 없다.
+> - `A-Z`, `a-z`, `0-9`, `_`, `$`, `#` 문자만 허용한다.
+{: .prompt-warning }
+
+
+<br/>
+
 ### **Create Table문 구조**
 
 |||
@@ -191,9 +208,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 ### **테이블명 변경**
 
-**<span style="color:#ff6600">테이블명 변경은 ALTER TABLE ~ RENAME TO 문을 사용</span>하면 된다.**
-
-
+**<span style="color:#ff6600">테이블명 변경은 ALTER TABLE ~ RENAME `TO` 문을 사용</span>하면 된다.**
 
 ![테이블명 변경 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/c6cd10e6-8d20-482a-a888-142446f550d5)
 
@@ -201,9 +216,12 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 ### **<span style="color:#ff6600">컬럼 추가</span>**
 
-생성된 EMP 테이블에 ALTER TABLE ~ ADD문을 사용해서 컬럼을 추가한다.
+생성된 EMP 테이블에 `ALTER TABLE ~ ADD`문을 사용해서 컬럼을 추가한다.
 
 ![컬럼 추가 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/6956fda9-77c1-48a8-8416-6e4880ec9f33)
+
+> 삽입 컬럼을 명시하지 않았을 경우 모든 컬럼을 삽입해야 한다.
+{:.prompt-warning}
 
 <br/>
 
@@ -223,7 +241,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 <br/>
 
-### **컬럼 삭제**
+### **컬럼 삭제** 
 
 **<span style="color:#ff6600">컬럼에 대한 삭제는 ALTER TABLE ~ DROP COLUMN문</span>으로 삭제한다.**
 
@@ -236,6 +254,18 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 **<span style="color:#ff6600">컬럼명 변경은 ALTER TABLE ~ RENAME COLUMN ~ TO 문</span>으로 변경할 수 있다.**
 
 ![컬럼명 변경 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/414a2dcf-89b9-4323-98ee-78b0a2ab25f5)
+
+
+> **테이블 컬럼에 대한 정의 변경**
+> 
+> **<span style="color:#3366ff">ORACLE</span>** 
+>
+> ALTER TABLE 테이블명 `MODIFY`(칼럼명 데이터 유형 [DEFAULT 식] [NOT NULL], 칼럼명2 데이터 유형...);
+>
+> **<span style="color:#3366ff">SQL Server</span>** 
+>
+> ALTER TABLE 테이블명 `ALTER`(칼럼명 데이터 유형 [DEFAULT 식] [NOT NULL], 칼럼명2 데이터 유형...);
+{: .prompt-info }
 
 <br/>
 
@@ -266,6 +296,7 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 - 기본키(Primary Key) 제약사항은 테이블 당 하나만 제약할 수 있다.
 
 - Check 제약조건(Constraint)은 특정 값만 입력되게 제안한다. 
+  - 데이터베이스에서 데이터의 무결성을 유지하기 위하여 테이블의 특정 컬럼(COLUMN)에 설정하는 제약
 
 - 고유키(Unique Key)제약조건으로 NULL은 허용하는데 단 1개만 허용한다. NOT NULL 일 경우 하나도 불가능
 
