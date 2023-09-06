@@ -31,13 +31,28 @@ tags: [sql, sqld, built in function] # 소문자로 작성
 
 **<span style="color:#ff6600">내장형 함수로는 앞서 배운 형변환 함수, 문자열 및 숫자형 함수, 날짜형 함수</span>**가 있다.
 
+|단일행 함수|다중행 함수|
+|:-:|:-:|
+|함수의 입력 행수가 1개|함수의 입력 행수가 여러개|
+|`1개`의 결과값|여러 행을 바탕으로 `1개`의 결과값|
+|각 행에 대한 조작결과를 리턴||
+|만약 5개를 입력하면 5개 출력|만약 5개를 입력하면 1개가 출력|
+|SELECT, WHERE. ORDER BY, <br/>UPDATE의 SET절에 사용 가능||
+||여러행이 결과로 나오는 열은 사용불가|
+|lower, upper, substr, length, trim, replace|	sum, count, max, min, avg|
+|- 문자열 함수 <br/> - 숫자형 함수 <br/> - 날짜형 함수 <br/> - 변환형 함수 <br/> - NULL관련 함수| - 집계함수 <br/> - 그룹함수 <br/> - 윈도우 함수|
+
+<br/>
+
 ## **💻 DUAL 테이블**
 
 **<span style="color:#ff6600">DUAL 테이블은 Oracle 데이터베이스에 의해서 자동으로 생성되는 테이블</span>**이다.
 
 Oracle 데이터베이스 사용자가 임시로 사용할 수 있는 테이블로 내장형 함수를 실행할 때도 사용할 수 있다
 
-Oracle 데이터베이스의 모든 사용자가 사용할 수 있다.
+사용자 SYS가 소유하며 모든 사용자가 액세스 가능한 테이블이다.
+
+`SELECT ~ FROM ~` 의 형식을 갖추기 위한 일종의 DUMMY
 
 ![DUAL 테이블](https://github.com/leekoby/leekoby.github.io/assets/118284808/4ab9d301-5df6-4a73-8aea-54009d2abcdb){: width="500" height="500" }
 
@@ -47,8 +62,7 @@ DUAL 테이블에 문자형 내장형 함수를 사용하면 다음과 같다.
 
 ASCII 함수는 문자에 대한 ASCII 코드 값을 알려준다. ASCII 코드는 대문자 A를 기준으로 A(65), B(66), C(67)등의 값이다.
 
-SUBSTR 함수는 지정된 위치의 문자열을 자르는 함수이고 LENGTH 함수, LEN 함수는 문
-자열의 길이를 계산한다.
+SUBSTR 함수는 지정된 위치의 문자열을 자르는 함수이고 LENGTH 함수, LEN 함수는 문자열의 길이를 계산한다.
 
 LTRIM 함수를 사용하면 문자열의 왼쪽 공백을 제거할 수 있다. 또한 함수를 중첩해서 사용해도 된다.( LENGTH(LTRIM(’ABC’)))
 
