@@ -61,12 +61,22 @@ tags: [sql, sqld, transaction] # 소문자로 작성
 
 모든 작업이 성공적으로 마무리되면 그 변경사항들은 데이터베이스에 반영된다(이를 `커밋(Commit)`한다고 한다).
 
+> **<span style="color:#3366ff">BEGIN TRANSACTION</span>(BEGIN TRAN으로도 가능)으로 <span style="color:#ff6600">트랜잭션을 시작</span>**
+> 
+> **<span style="color:#3366ff">COMMIT TRANSACTION</span>(TRANSACTION 생략 가능) 또는 <span style="color:#3366ff">ROLLBACK TRANSACTION</span>(TRANSACTION 생략 가능)으로 <span style="color:#ff6600">트랜잭션 종료</span>**
+> 
+> **<span style="color:#3366ff">ROLLBACK</span>구문을 만나면 <span style="color:#ff6600">최초의 `BEGIN` 시점 또는 SAVEPOINT</span>까지 모두 ROLLBACK이 수행된다.**
+> 
+{:.prompt-info }
+
+<br/>
+
 >**<span style="color:#3366ff">데이터베이스 트랜잭션</span>은 <span style="color:#ff6600">`ACID`라는 특성</span>을 가지고 있다.**
 
 |트랜잭션 특성|설명|
 |:-:|:-|
 |`원자성`<br/>(`Atomicity`)| - 트랜잭션은 데이터베이스 연산의 전부가 `실행되거나` <br/> 전혀 `실행되지 않아야 한다.` <br/>- 즉, 트랜잭션의 처리가 완전히 끝나지 않았을 경우는 <br/> 실행되지 않은 상태와 같아야 한다.|
-|`일관성`<br/>(`Consistency`)|- 트랜잭션 실행 결과로 데이터베이스의 상태가 모순되지 않아야 한다.<br/>- 트랜잭션 실행 후에도 일관성이 유지되어야 한다.|
+|`일관성`<br/>(`Consistency`)|- 트랜잭션 실행 결과로 데이터베이스의 상태가 모순되지 않아야 한다.<br/>- 트랜잭션 실행 후에도 일관성이 유지되어야 한다. |
 |`고립성`/<br/>`격리성`/<br/>`독립성`<br/>(`Isolation`)|- 트랜잭션 실행 중에 생성하는 연산의 중간결과는 <br/> `다른 트랜잭션이 접근할 수 없다.`<br/>- 즉, 부분적인 실행 결과를 `다른 트랜잭션이 볼 수 없다.`|
 |`영속성`/<br/>`지속성`<br/>(`Durability`)|- 트랜잭션이 그 실행을 `성공적으로 완료`하면 <br/>그 `결과는 영구적 보장`이 되어야 한다.|
 
@@ -180,6 +190,19 @@ tags: [sql, sqld, transaction] # 소문자로 작성
 - 격리성을 지키는 각 트랜젝션은 철저히 독립적이기 때문에, 다른 트랜젝션의 작업 내용을 알 수 없다.
 
 -  그리고 트랜잭션이 동시에 실행될 때와 연속으로 실행될 때의 데이터베이스 상태가 동일해야 한다.
+
+
+<br/>
+
+> **<span style="color:#3366ff">격리성이 낮을 경우 발생할 수 있는 문제점</span>** 
+> 
+> **<span style="color:#ff6600">DIRTY READ</span> :** 다른 트랜잭션에 의해 수정되었지만 아직 커밋되지 않은 데이터를 읽는 것을 말한다.
+> 
+> **<span style="color:#ff6600">NON-REPEATABLE READ</span> :** 한 트랜잭션 내에서 같은 쿼리를 두 번 수행했는데, 그 사이에 다른 트랜잭션이 값을 수정 또는 삭제하는 바람에 두 쿼리 결과가 다르게 나타나는 현상
+> 
+> **<span style="color:#ff6600">PHANTOM READ</span> :** 한 트랜잭션 내에서 같은 쿼리를 두번 수행했는데 첫번째 쿼리에서 없던 유령 레코드가 두번째 쿼리에서 나타나는 현상
+{:.prompt-warning }
+
 
 <br/>
 
