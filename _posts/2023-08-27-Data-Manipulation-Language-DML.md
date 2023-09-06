@@ -58,6 +58,8 @@ SELECT * FROM 테이블;
 >
 > 여러 개의 테이블을 JOIN하거나 서브쿼리가 있을 때 컬럼명 앞에 테이블명을 같이 명시해야하는 경우 테이블명은 비교적 길기 때문에 짧게 줄여쓰기 위해 사용
 >
+> ALIAS를 별도로 지정해주지 않으면 컬럼명이 `대문자`로 출력된다.
+>
 > ![Alias](https://github.com/leekoby/leekoby.github.io/assets/118284808/31f9fe1d-b5f6-4137-bc2e-9bfe891f8029)
 {: .prompt-info }
 
