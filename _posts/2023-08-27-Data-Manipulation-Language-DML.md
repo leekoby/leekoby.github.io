@@ -111,6 +111,21 @@ SELECT * FROM 테이블;
 > ![SELECT 쿼리문 순행순서image](https://github.com/leekoby/leekoby.github.io/assets/118284808/8847a7e0-2918-480a-8f74-f1213ecdfee2){: width="500" height="500" }<BR/>
 {:.prompt-info}
 
+<br/>
+
+### **Distinct**
+
+**<span style="color:#ff6600">Distinct문은 컬럼명 앞에 지정하여 중복된 데이터를 한 번만 조회</span>**하게 한다.
+
+![Distinct 미사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/921932ab-f0de-459e-88e4-a959754dcf57)
+
+- 위의 예는 EMP 테이블의 DEPTNO 컬럼을 조회한 것이다. 
+
+- 조회 내용을 보면 DEPTNO가 중복으로 저장되어 있는 것을 확인할 수 있다.
+
+![Distinct 사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/748b0a24-3425-400b-89d4-c53eea869871)
+
+- Distinct를 사용하면 DEPTNO 값이 중복되지 않는다.
 
 <br/>
 
@@ -172,11 +187,6 @@ NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
 > 만약 순서를 변경하고 싶다면 ORDER BY 절에 `NULLS FIRST`, `NULLS LAST` 옵션을 써서 NULL의 정렬산 순서를 변경할 수 있다.
 {: .prompt-tip }
 
-
-
-
-
-
 ### **Index를 사용한 정렬 회피**
 
 정렬은 Oracle 데이터베이스에 부하를 주므로, **<span style="color:#ff6600">인덱스를 사용해서 `ORDER BY`를 회피할 수 있다.</span>**
@@ -206,22 +216,6 @@ NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
 - 인덱스를 스캔한 후에 해당 EMPNO의 값을 가지고 테이블의 데이터를 읽는다.
 
 - 테이블에서 해당 행을 찾으면 인출하여 사용자 화면에 조회된다.
-
-<br/>
-
-### **Distinct**
-
-**<span style="color:#ff6600">Distinct문은 컬럼명 앞에 지정하여 중복된 데이터를 한 번만 조회</span>**하게 한다.
-
-![Distinct 미사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/921932ab-f0de-459e-88e4-a959754dcf57)
-
-- 위의 예는 EMP 테이블의 DEPTNO 컬럼을 조회한 것이다. 
-
-- 조회 내용을 보면 DEPTNO가 중복으로 저장되어 있는 것을 확인할 수 있다.
-
-![Distinct 사용](https://github.com/leekoby/leekoby.github.io/assets/118284808/748b0a24-3425-400b-89d4-c53eea869871)
-
-- Distinct를 사용하면 DEPTNO 값이 중복되지 않는다.
 
 <br/>
 
@@ -343,6 +337,12 @@ DELETE문으로 데이터를 삭제한다고 해서 테이블의 용량이 초�
 
 INSERT를 제외한 DML문을 수행할 때 원하는 데이터만 골라 수행할 수 있도록 해주는 구문
 
+WHERE 절은 FROM 절 다음에 위치하며, 조건식은 아래 내용으로 구성된다.
+
+- 컬럼(COLUMN)명 (보통 조건식의 좌측에 위치)
+- 비교 연산자
+- 문자, 숫자, 표현식 (보통 조건식의 우측에 위치)
+- 비교 칼럼명 (JOIN 사용 시)
 
 
 ### **WHERE문이 사용하는 연산**
@@ -371,7 +371,7 @@ WHERE문이 사용할 수 있는 연산자는 비교 연산자, 부정 비교 �
 
 #### **논리 연산자**
 
-> 논리 연산자는 SQL에 명시된 순서와는 관계없이 `()` => `NOT` => `AND` => `OR` 순
+> 논리 연산자는 SQL에 명시된 순서와는 관계없이 `()` => `NOT` => `비교연산자(>,>=,<,<=)와 SQL 비교연산자(BETWEEN, IN, LIKE, IS NULL)`=> `AND` => `OR` 순
 
 |논리 연산자 | 설명|
 | :-: | :-: |
