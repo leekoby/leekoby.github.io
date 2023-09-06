@@ -62,7 +62,27 @@ tags: [sql, sqld, identifiers]
 |후보키<br/>(Candidate Key)|- 후보키는 **<span style="color:#ff6600">유일성</span>**과 **<span style="color:#ff6600">최소성</span>**을 만족하는 키이다. 불변성[x]|
 |슈퍼키<br/>(Super Key)|슈퍼키는 **<span style="color:#ff6600">유일성은 만족</span>**하지만 **<span style="color:#ff6600">최소성을 만족하지 않는 키</span>**이다.|
 |대체키<br/>(Alternate Key)|- 대체키는 여러 개의 후보키 중에서 **<span style="color:#ff6600">기본키를 선정하고 남은 키</span>**이다.|
-|외래키<br/>(Foreign Key)|- 하나 혹은 다수의 다른 테이블의 기본키 필드를 가리키는 것으로 <br/>**<span style="color:#ff6600">참조 무결성을 확인하기 위해서 사용되는 키</span>**이다.<br/> - 즉, **<span style="color:#ff6600">허용된 데이터값만</span>** 데이터베이스에 **<span style="color:#ff6600">저장하기 위해서 사용</span>**된다.|
+|외래키<br/>(Foreign Key)|- 하나 혹은 다수의 다른 테이블의 기본키 필드를 가리키는 것으로 <br/>**<span style="color:#ff6600">참조 무결성을 확인하기 위해서 사용되는 키</span>**이다.<br/> - 즉, **<span style="color:#ff6600">허용된 데이터값만</span>** 데이터베이스에 **<span style="color:#ff6600">저장하기 위해서 사용</span>**된다. <br/> - 외래키 값은 **<span style="color:#ff6600">NULL 값을 가질 수 있다.</span>** <br/> - 한 테이블에 **<span style="color:#ff6600">여러 개 존재할 수 있다.</span>**|
+
+> **<span style="color:#3366ff">키 설정 옵션</span>** 
+> 
+> **<span style="color:#ff6600">수정/삭제</span>**
+>
+> - CASCADE : MASTER 삭제 시 CHILD 같이 삭제
+> - SET NULL : MASTER 삭제 시 CHILD 해당 필드 NULL
+> - SET DEFAULT : MASTER 삭제 시 CHILD 해당 필드 DEFAULT 값으로 변경 
+> - RESTRICT : CHILD 테이블에 PK 값이 없는 경우만 MASTER 삭제 허용
+> - NO ACTION : 참조무결성을 위반하는 삭제/수정 액션을 취하지 않음 
+> 
+> **<span style="color:#ff6600">생성</span>**
+>
+> - AUTOMATIC : MASTER 테이블에 PK가 없는 경우 MASTER PK 생성 후 CHILD 입력
+> - SET NULL : MASTER 테이블에 PK가 없는 경우 CHILD 외부키를 NULL 값으로 처리
+> - SET DEFAULT : MASTER 테이블에 PK가 없는 경우 CHILD 외부키를 지정된 기본값으로 입력
+> - DEPENDENT : MASTER 테이블에 PK가 존재할 때만 CHILD 입력 허용
+> - NO ACTION : 참조무결성을 위반하는 입력 액션을 취하지 않음
+{: .prompt-info }
+
 
 <br />
 
