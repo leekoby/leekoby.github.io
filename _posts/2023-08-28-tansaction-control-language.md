@@ -70,7 +70,7 @@ COMMIT이 완료되면 다른 모든 데이터베이스 사용자는 변경된 �
 
 ## **💻 ROLLBACK**
 
-**<span style="color:#ff6600">ROLLBACK을 실행하면 데이터에 대한 변경 사용을 모두 취소하고 트랜잭션을 종료한다.</span>**
+**<span style="color:#ff6600">ROLLBACK을 실행하면 COMMIT 이전에 데이터에 대한 변경 사용을 모두 취소하고 트랜잭션을 종료한다.</span>**
 
 **<span style="color:#ff6600">INSERT, UPDATE, DELETE문의 작업을 모두 취소한다. </span>**
 
