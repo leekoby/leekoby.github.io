@@ -54,6 +54,35 @@ CASE 문의 조건 내부에서는 별칭을 사용할 수 없다.
 
 <br/>
 
+> **<span style="color:#3366ff">SEARCHED CASE EXPRESSION vs. SIMPLE CASE EXPRESSION</span>** 
+> 
+> **<span style="color:#ff6600">SEARCHED CASE EXPRESSION</span>**
+> 
+> SELECT t.id,<br/>
+> `CASE WHEN t.color = 1 THEN 'Red'`<br/>
+>      WHEN t.color = 2 THEN 'Blue'<br/>
+>      WHEN t.color = 3 THEN 'Green'<br/>
+>      ELSE 'NoColor' END AS color<br/>
+> FROM @t t<br/>
+> 
+> - 위의 예시를 보면 Searched Case Expression에서는 t.color의 **<span style="color:#ff6600">조건에 따라</span>** 결과값을 리턴해주는 것을 확인할 수 있다.
+>
+> 
+> **<span style="color:#ff6600">SIMPLE CASE EXPRESSION</span>**
+>
+> SELECT t.id,<br/>
+> `CASE t.color WHEN 1 THEN 'Red'`<br/>
+>             WHEN 2 THEN 'Blue'<br/>
+>             WHEN 3 THEN 'Green'<br/>
+>             ELSE 'NoColor' END AS Color<br/>
+> FROM @t t<br/>
+> 
+> - 위의 예시를 보면 Simple Case Expression에서는 t.color가 **<span style="color:#ff6600">무슨 값인지에 따라</span>**서 리턴값이 정해진다.
+{:.prompt-info }
+
+
+<br/>
+
 ## 🎯 **추가 내용**
 
 ### ❌
