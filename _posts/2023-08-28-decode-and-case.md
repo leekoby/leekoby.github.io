@@ -44,6 +44,8 @@ tags: [sql, sqld, decode, case] # 소문자로 작성
 
 조건을 `WHEN`구에 사용하고 `THEN`은 해당 조건이 참이면 실행되고 거짓이면 `ELSE`구가 실행된다.
 
+CASE 문의 조건 내부에서는 별칭을 사용할 수 없다.
+
 ![CASE](https://github.com/leekoby/leekoby.github.io/assets/118284808/4fc3b102-3631-4928-8399-f5d3659e6e6c){: width="500" height="500" }
 
 ![CASE](https://github.com/leekoby/leekoby.github.io/assets/118284808/096724d6-c0f5-496b-b2df-b03275c5188b){: width="500" height="500" }
