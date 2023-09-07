@@ -33,9 +33,17 @@ tags: [sql, sqld, data manipulation language, dml] # 소문자로 작성
 |데이터 제어어 <br/> DCL <br/> (Data Control Language)| GRANT <br/> REVOKE| 데이터베이스에 접근하고 객체들을 사용하도록 권한을 주고 <br/> 회수하는 명령어를 DCL이라고 한다.|
 |트랜잭션 제어어 <br/> TCL <br/> (Transaction Control Language) | COMMIT <br/> ROLLBACK | 논리적인 작업의 단위를 묶어서 DML에 의해 조작된 결과를<br/> 작업단위(트랜잭션) 별로 제어하는 명령어|
 
-## **💻 SELECT 문**
+>  **<span style="color:#3366ff">INSERT, UPDATE, DELETE</span>**
+>
+> 명령어를 날리고 별도의 COMMIT 명령어를 실행시켜 주어야 데이터가 반영되며 ROLLBACK도 가능하다. 
+>
+> **<span style="color:#ff6600">🚨 SQL Server의 경우는 DML도 AUTO COMMIT 된다.</span>**
+{:.prompt-tip }
 
-### **SELECT문**
+
+## **💻 SELECT**
+
+### **SELECT**
 
 테이블에 입력된 데이터를 조회하기 위해서 SELECT문을 사용한다.
 
@@ -79,7 +87,7 @@ SELECT * FROM 테이블;
 
 |SELECT문 문법|설명|
 |-|-|
-|SELECT \*| - 모든 컬럼을 출력한다.<br/> - `‘*’`는 모든 컬럼을 의미한다.|
+|SELECT \*| - 모든 컬럼을 출력한다.<br/> - `*`는 모든 컬럼을 의미한다.|
 |FROM EMP|- FROM절에는 테이블명을 쓴다.<br/> - 즉, EMP 테이블을 지정했다.|
 |WHERE 사원번호 = 1000|- EMP 테이블에서 사원번호가 1000번인 행을 조회한다.<br/> - 즉, 조건문을 지정한다.|
 
@@ -246,9 +254,13 @@ NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
 <br/>
 
 
-## **💻 INSERT 문**
+## **💻 INSERT**
 
-### **INSERT 문**
+### **INSERT**
+
+```sql
+INSERT INTO 테이블명 (컬럼명1, 컬럼명2, ...) VALUES (데이터1, 데이터2, ...); 
+```
 
 INSERT문은 테이블에 데이터를 입력하는 DML문이다.
 
@@ -284,7 +296,7 @@ EMP 테이블에 데이터를 삽입하려면 테이블명, 컬럼명, 데이터
 
 <br/>
 
-### **SELECT 문**
+### **SELECT**
 
 SELECT문을 사용하여 데이터를 조회해서 해당 테이블에 바로 삽입할 수 있다.
 
@@ -295,7 +307,7 @@ SELECT문을 사용하여 데이터를 조회해서 해당 테이블에 바로 �
 
 <br/>
 
-### **Nologging 문**
+### **Nologging**
 
 데이터베이스에 데이터를 입력하려면 로그파일에 그 정보를 기록한다.
 
@@ -309,7 +321,11 @@ Nologging 옵션은 Buffer Cache라는 메모리 영역을 생략하고 기록�
 
 <br/>
 
-## **💻 UPDATE 문**
+## **💻 UPDATE**
+
+```sql
+UPDATE 테이블명 SET 컬럼명 = 새로운 데이터 (WHERE 수정할 데이터에 대한 조건);
+```
 
 입력된 데이터의 값을 수정하려면, UPDATE문을 사용한다.
 
@@ -319,13 +335,17 @@ UPDATE문을 사용하여 원하는 조건으로 데이터를 검색해서 해�
 
 ![UPDATE 문 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/473945bb-2e51-45ad-978c-017516a97720)
 
-UPDATE문에서 주의사항은 데이터를 수정할 때 조건절에서 검색되는 행 수만큼 수정된다는 것이다.
+UPDATE문에서 주의사항은 데이터를 수정할 때 WHERE절에서 검색되는 행 수만큼 수정된다는 것이다.
 
 - 위의 예에서 EMPNO가 100번인 직원이 두 명이라면 두 명의 ENAME은 모두 ‘조조’로 수정된다.
 
 <br/>
 
-## **💻 DELETE 문**
+## **💻 DELETE**
+
+```sql
+DELETE FROM 테이블명 (WHERE 삭제할 데이터에 대한 조건)
+```
 
 DELETE문은 원하는 조건을 검색해서 해당되는 행을 삭제한다.
 
@@ -357,7 +377,26 @@ DELETE문으로 데이터를 삭제한다고 해서 테이블의 용량이 초�
 |DELETE FROM TABLE|- 테이블의 모든 데이터를 삭제한다. <br/>- 데이터가 삭제되어도 테이블의 용량은 감소하지 않는다. |
 |TRUNCATE TABLE TABLE|- 테이블의 모든 데이터를 삭제한다.<br/> - 데이터가 삭제되면 테이블의 용량은 초기화 된다.|
 
+<br/>
 
+## **💻 MERGE**
+
+테이블에 새로운 데이터를 입력하거나 이미 저장되어 있는 데이터에 대한 변경 작업을 한 번에 할 수 있도록 해주는 명령어
+
+```sql
+MERGE 
+  INTO 타겟 테이블명
+  USING 비교 테이블명
+    ON 조건
+  WHEN MATCHED THEN
+    UPDATE
+      SET 컬럼명 = 새로운 데이터 [, 컬럼명 = 새로운 데이터 ...]
+  WHEN NOT MATCHED THEN 
+    INSERT [(컬럼명1, 컬럼명2, ...)]
+    VALUES (데이터1, 데이터2, ...)
+```
+
+<br/>
 
 ## **💻 WHERE 문**
 
