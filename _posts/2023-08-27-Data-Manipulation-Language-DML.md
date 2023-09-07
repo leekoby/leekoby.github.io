@@ -131,11 +131,20 @@ SELECT * FROM 테이블;
 
 ### **ORDER BY 문**
 
+```sql
+SELECT 컬럼명 [ALIAS명]
+FROM 테이블명
+[WHERE 조건식]
+[GROUP BY 컬럼이나 표현식]
+[HAVING 그룹조건식]
+[ORDER BY 컬럼이나 표현식 [ASC 또는 DESC]]
+```
+
 SELECT문을 사용할 때 ORDER BY를 같이 사용할 수 있다.
 
 - 단, **<span style="color:#ff6600">ORDER BY 구문은맨 마지막에 실행</span>**된다. 
 
-**<span style="color:#ff6600">ORDER BY는 데이터를 오름차순(Ascending) 혹은 내림차순(Descending)으로 출력</span>**한다.
+**<span style="color:#ff6600">ORDER BY는 데이터를 `ASC` 오름차순(Ascending) 혹은 `DESC` 내림차순(Descending)으로 출력</span>**한다.
 
 ORDER BY절을 따로 명시하지 않으면 데이터는 임의의 순서대로 출력된다.
 
@@ -180,12 +189,29 @@ NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
 
 `NULLS LAST`를 쓰면  NULL을 마지막에 정렬시킨다. 안쓴 경우와 동일한 결과가 나온다.
 
-> **<span style="color:#3366ff">정렬의 기준이 되는 컬럼에</span> <span style="color:#ff6600">NULL 데이터가 포함되어 있을 경우 </span>**
->  
-> 데이터베이스 종류에 따라 정렬의 위치가 달라지는데 Oracle의 경우에는 NULL을 최대값으로 취급하기 때문에 오름차순으로 했을 경우 맨 마지막에 위치하게 된다(SQL Server는 반대). 
+<br/>
+
+> **<span style="color:#3366ff">ORDER BY 절의 특징</span>**
+>
+> - 기본적인 정렬순서는 **<span style="color:#ff6600">오름차순(ASC)</span>**이다.
+>
+> - 숫자형 데이터 타입은 오름차순으로 정렬했을 경우 가장 작은 값부터 출력된다.
+>   - 예를 들어 `01-JAN-2012`는 `01-SEP-2012`보다 먼저 출력된다.
+>
+> - **<span style="color:#ff6600">ORACLE에서는 NULL값을 가장 큰 값으로 간주</span>**하여 오름차순으로 정렬했을 경우 가장 마지막에, 내림차순으로 정렬했을 경우에는 가장 먼저 위치한다.
+>
+> - 반면 SQL Server에서는 NULL 값을 가장 작은 값으로 간주하여 오름차순으로 정렬했을 경우에는 가장 먼저, 내림차순으로 정렬했을 경우에는 가장 마지막에 위치한다.
 > 
-> 만약 순서를 변경하고 싶다면 ORDER BY 절에 `NULLS FIRST`, `NULLS LAST` 옵션을 써서 NULL의 정렬산 순서를 변경할 수 있다.
-{: .prompt-tip }
+> - 만약 순서를 변경하고 싶다면 ORDER BY 절에 `NULLS FIRST`, `NULLS LAST` 옵션을 써서 NULL의 정렬산 순서를 변경할 수 있다.
+>
+> - ORDER BY 절에 컬럼명 대신 ALIAS 명이나 컬럼 순서를 나타내는 정수를 혼용하여 사용할 수 있다.
+>
+> - GROUP BY 절을 사용하는 경우 ODER BY 절에 집계 함수를 사용할 수 있다.
+>
+> - TOP N 질의문에서 N에 해당하는 값이 동일한 경우 함께 출력되도록 하려면 `WITH TIES` 옵션을 ORDER BY절과 함께 사용해야 한다.
+{:.prompt-info }
+
+<br/>
 
 ### **Index를 사용한 정렬 회피**
 
