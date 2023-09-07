@@ -35,7 +35,7 @@ tags: [sql, sqld, rownum, rowid, with] # 소문자로 작성
 
 ### **인라인 뷰(Inline view)**
 
-- **<span style="color:#ff6600">인라인뷰는 SELECT문에서 FROM절에 사용되는 서브쿼리를 의미</span>**한다.
+- **<span style="color:#ff6600">인라인뷰는 FROM절에 사용되는 서브쿼리를 의미</span>**한다.
 ![인라인 뷰(Inline view)](https://github.com/leekoby/leekoby.github.io/assets/118284808/09e34072-62c8-4163-b8a2-9b4177b06c06){: width="500" height="500" }
 - **<span style="color:#ff6600">ROWNUM의 값을 1, 2, 3, 4, 5, 6.... 같이 순차적으로 증가하는 ROWNUM 데이터를 얻고 싶을 때 인라인 뷰를 사용하는 것</span>**이다.
 ![인라인 뷰(Inline view)](https://github.com/leekoby/leekoby.github.io/assets/118284808/30dc6785-edeb-4f13-807c-7e4fdde290b5){: width="500" height="500" }
