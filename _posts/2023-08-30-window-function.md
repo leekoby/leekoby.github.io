@@ -25,6 +25,15 @@ tags: [sql, sqld, window function] # 소문자로 작성
 
 ## **💻 WINDOW FUNCTION (윈도우 함수)**
 
+OVER 키워드와 함께 사용되며 역할에 따라 다음과 같이 나눌 수 있다. 
+
+|||
+|:-|:-|
+|순위 함수| RANK, DENSE_RANK, ROW_NUMBER|
+|집계 함수| SUM, MAX, MIN, AVG, COUNT|
+|행 순서 함수| FIRST_VALUE, LAST_VALUE, LAG, LEAD|
+|비율 함수| CUME_DIST, PERCENT_RANK, NTILE, RATIO_TO_REPORT|
+
 **<span style="color:#ff6600">윈도우 함수는 행과 행 간의 관계를 정의하기 위해서 제공되는 함수이다.</span>**
 
 윈도우 함수를 사용해서 순위, 합계, 평균, 행 위치 등을 조작할 수 있다.
@@ -100,9 +109,9 @@ tags: [sql, sqld, window function] # 소문자로 작성
 **순위 관련 윈도우 함수**
 
 |순위 함수	| 설명|
-|RANK|	- 특정 항목 및 파티션에 대해서 순위를 계산한다.<br/> - 동일한 순위는 동일한 값이 부여된다.|
-|DENSE_RANK| -	동일한 순위를 하나의 건수로 계산한다.|
-|ROW_NUMBER	| - 동일한 순위에 대해서 고유의 순위를 부여한다.|
+|RANK|	- 특정 항목 및 파티션에 대해서 순위를 계산한다.<br/> - 동일한 순위는 동일한 값이 부여된다. <br/> - 같은 순위가 존재하면 존재하는 수만큼 다음 순위를 건너뛴다.|
+|DENSE_RANK| -	동일한 순위를 하나의 건수로 계산한다. <br/> - 같은 순위가 존재하더라도 다음 순위를 건너뛰지 않고 이어서 매긴다.|
+|ROW_NUMBER	| - 동일한 순위에 대해서 고유의 순위를 부여한다. <br/> - 즉, 순위를 매기면서 동일한 값이라도 각기 다른 순위를 부여한다.|
 
 ![순위 함수](https://github.com/leekoby/leekoby.github.io/assets/118284808/ddff8cc3-c15e-4e6f-8fc1-a8f88f650e7b){: width="500" height="500" }
 
@@ -137,9 +146,77 @@ tags: [sql, sqld, window function] # 소문자로 작성
 |COUNT|	파티션 별로 행 수를 계산한다.|
 |MAX와 MIN	|파티션 별로 최댓값과 최솟값을 계산한다.|
 
+### **🍳 SUM** 
+
+ORACLE의 경우 OVER절 내에 ORDER BY 절을 써서 데이터의 누적값을 구할 수 있다.
+
+![OVER절 내에 ORDER BY 절](https://github.com/leekoby/leekoby.github.io/assets/118284808/70da4ec1-bc52-4b4f-8d1c-b9aa691c1800){: width="500" height="500" }
+
+SUM 하는 컬럼을 OVER 절에서 ORDER BY 절에 명시해주게 되면 `RANGE UNBOUNDED PRECENDING` 구문이 없어도 누적합이 집계된다.
+
+![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/97242982-b126-4075-a0f5-e9981fc0f99d){: width="500" height="500" }
+
+<br/>
+
+집계 함수 SUM()와 OVER절에서 MGR파티션을 만들고 같은 관리자를 가지고 있는 합계를 계산하고 있다.
+
 ![집계 함수](https://github.com/leekoby/leekoby.github.io/assets/118284808/3577a989-e863-4218-af56-489dc22af17c){: width="500" height="500" }
 
-- 집계 함수 SUM()와 OVER절에서 MGR파티션을 만들고 같은 관리자를 가지고 있는 합계를 계산하고 있다.
+<br/>
+
+> **<span style="color:#3366ff">윈도우 함수 사용 옵션</span>**
+> 
+> **<span style="color:#ff6600">WINDOWING 절을 이용하여 집계하려는 데이터의 범위를 지정할 수 있다.</span>**
+>
+> **RANGE ROW**
+> - BETWEEN UNBOUNDED PRECEDING AND n PRECEDING
+> - BETWEEN UNBOUNDED AND CURRENT ROW
+> - BETWEEN UNBOUNDED PRECEDING AND n FOLLOWING
+> - BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+> - BETWEEN n PRECEDING AND n PRECEDING
+> - BETWEEN n PRECEDING AND CURRNET ROW
+> - BETWEEN n PRECEDING AND n FOLLOWING
+> - BETWEEN n PRECEDING AND n UNBOUNDED FOLLOWING
+> - BETWEEN CURRENT ROW AND n FOLLOWING
+> - BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING
+> - BETWEEN n FOLLOWING ROW AND n FOLLOWING
+> - BETWEEN n FOLLOWING ROW AND UNBOUNDED FOLLOWING
+> - UNBOUNDED PRECEDING 
+>   - \*RANGE UNBOUNDED PRECEDING이 DEFAULT
+> - n PRECEDING
+> - CURRENT ROW
+>
+> **범위**
+> 
+> UNBOUNDED PRECEDING : 위쪽 끝 행
+>
+> UNBOUNDED FOLLOWING : 아래쪽 끝행
+>
+> CURRENT ROW : 현재 행
+>
+> n PRECEDING : 현재 행에서 위로 n 만큼 이동 
+>
+> n FOLLOWING : 현재 행에서 아래로 n 만큼 이동 
+>
+> **기준**
+> 
+> ROWS : 행 자체가 기준이 된다.
+>
+> RANGE : 행이 가지고 있는 데이터 값이 기준이 된다. 
+>
+> - RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW 
+>   - 처음행부터 현재 행까지, RANGE UNBOUNDED PRECEDING과 같음 
+>
+> - RANGE BETWEEN 10 PRECEDING AND CURRENT ROW
+>   - 현재 행이 가지고 있는 값보다 10만큼 적은 행부터 현재 행까지, RANGE 10 PRECEDING과 같음
+>
+> - ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING
+>   - 현재 행부터 끝까지
+>
+> - ROWS BEWEEN CURRENT ROW AND 5 FOLLOWING
+>   - 현재 행부터 아래로 5만큼 이동한 행까지
+{:.prompt-info }
+
 
 <br/>
 
@@ -156,8 +233,8 @@ tags: [sql, sqld, window function] # 소문자로 작성
 |행 순서	| 설명|
 |FIRST_VALUE	| - 파티션에서 **<span style="color:#ff6600">가장 처음에 나오는 값</span>**을 구한다.<br/> - **<span style="color:#ff6600">MIN 함수</span>**를 사용해서 같은 결과를 구할 수 있다.|
 |LAST_VALUE	 | - 파티션에서 **<span style="color:#ff6600">가장 나중에 나오는 값</span>**을 구한다. <br/> - **<span style="color:#ff6600">MAX 함수</span>**를 사용해서 같은 결과를 구할 수 있다.|
-|LAG	|**<span style="color:#ff6600">이전 행</span>**을 가지고 온다.|
-|LEAD|	- 윈도우에서 **<span style="color:#ff6600">특정 위치의 행을 가지고 온다. </span>**<br/> - 기본값은 1이다.|
+|LAG	| **파티션 별로 특정 수만큼 <span style="color:#ff6600">앞선 데이터</span>**를 가지고 온다.<br/> - 기본값은 1이다.|
+|LEAD|	- **파티션 별로 특정 수만큼 <span style="color:#ff6600">뒤에 있는 데이터</span>**를 가지고 온다.<br/> - 기본값은 1이다.|
 
 ![FIRST_VALUE](https://github.com/leekoby/leekoby.github.io/assets/118284808/9e845207-dbe0-4019-94d5-cbd32d89bd52){: width="500" height="500" }
 
@@ -184,7 +261,9 @@ tags: [sql, sqld, window function] # 소문자로 작성
 
 ![LAG](https://github.com/leekoby/leekoby.github.io/assets/118284808/f0e2e190-6af3-408c-a04d-b63d4c100dbe)
 
-- LAG 함수는 이전 값을 가지고 오는 것이다. 
+- LAG 함수는 특정 행 수만큼 앞선 데이터를 가지고 오는 것이다. 
+
+- LAG함수의 두번째 인자를 생략하면 DEFAULT는 1이 된다.
 
 - 예를 들어 PRE_SAL의 5000값은 SAL의 이전 데이터이다.
 
@@ -207,9 +286,9 @@ tags: [sql, sqld, window function] # 소문자로 작성
 |비율 함수|	설명|
 |:- |:- |
 |CUME_DIST|	- 파티션 전체 건수에서 현재 행보다 작거나 같은 건수에 대한 **<span style="color:#ff6600">누적 백분율을 조회</span>**한다.<br/> - 누적 분포상의 위치를 0~1사이의 값을 가진다. |
-|PERCENT_RANK	|파티션에서 제일 먼저 나온 것을 0으로 제일 늦게 나온 것을 1로 하여 <br/> 값이 아닌 행의 순서별 백분율을 조회한다.|
+|PERCENT_RANK	| - 해당 파티션의 맨 위 끝 행을 0, 맨아래 끝 행을 1로 놓고 <br/> 현재 행이 위치하는 백분위 순위 값을 구하는 함수|
 |NTILE	|파티션별로 전체 건수를 ARGUMENT 값으로 N 등분한 결과를 조회한다.|
-|RATIO_TO_REPORT	|파티션 내에 전체 SUM에 대한 행 별 컬럼값의 백분율을 소수점가지 조회한다.|
+|RATIO_TO_REPORT	| - 파티션 별 합계에서 차지하는 비율을 구하는 함수|
 
 ![PERCENT_RANK](https://github.com/leekoby/leekoby.github.io/assets/118284808/048731b8-ba03-4751-9698-7977a86442bc){: width="500" height="500" }
 
