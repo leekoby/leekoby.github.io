@@ -29,9 +29,18 @@ tags: [sql, sqld, rownum, rowid, with] # 소문자로 작성
 
 **<span style="color:#ff6600">ROWNUM은 조회되는 `행 수`를 `제한`할 때 많이 사용</span>**된다.
 
+`=`은 성립될 수 없고 항상 `<` 조건이나 `<=` 조건을 사용해야 한다.
+
+
 **<span style="color:#ff6600">ROWNUM은 화면에 데이터를 출력할 때 부여되는 논리적 순번</span>**이다.
 
 - 만약 ROWNUM을 사용해서 페이지 단위 출력을 하기 위해서는 인라인 뷰(Inline view)를 사용해야 한다.
+
+> Top-N 쿼리를 작성할 때 주의해야할 사항은 ORDER BY 절이 WHERE 절보다 나중에 수행되기 떄문에 ROWNUM으로 순서를 지정할 때에는 ORDER BY 절 바깥에서 해야한다는 점이다.
+>
+> ROWNUM과 ORDER BY를 같은 단락에서 작성하게 될 경우 ROWNUM으로 랜덤하게 순서가 지정된 후 ORDER BY로 정렬되기 때문에 사실상 의미 있는 데이터라고 볼 수 없다.
+{:.prompt-warning }
+
 
 ### **인라인 뷰(Inline view)**
 
