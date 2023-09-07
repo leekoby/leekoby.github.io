@@ -161,7 +161,7 @@ ORDER BY가 정렬을 하는 시점은 모든 실행이 끝난 후에 데이터�
 
 ORDER BY 절은 논리적으로 SELECT 절 다음에 수행되기 때문에 SELECT 절에서 정의한 ALIAS를 사용할 수 있다.
 
-ODER BY 절의 옵션은 각 컬럼 다음에 하나씩 붙여서 작성
+ORDER BY 절의 옵션은 각 컬럼 다음에 하나씩 붙여서 작성
 
 ORDER BY는 정렬을 하기 때문에 데이터베이스 메모리를 많이 사용하게 된다. 
 
@@ -206,7 +206,7 @@ NULL값을 처음에 정렬되게 하려면 ORDER BY 컬럼 `NULLS FIRST`
 >
 > - ORDER BY 절에 컬럼명 대신 ALIAS 명이나 컬럼 순서를 나타내는 정수를 혼용하여 사용할 수 있다.
 >
-> - GROUP BY 절을 사용하는 경우 ODER BY 절에 집계 함수를 사용할 수 있다.
+> - GROUP BY 절을 사용하는 경우 ORDER BY 절에 집계 함수를 사용할 수 있다.
 >
 > - TOP N 질의문에서 N에 해당하는 값이 동일한 경우 함께 출력되도록 하려면 `WITH TIES` 옵션을 ORDER BY절과 함께 사용해야 한다.
 {:.prompt-info }
