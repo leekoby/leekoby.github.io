@@ -25,6 +25,30 @@ tags: [sql, sqld, connect by] # 소문자로 작성
 
 ## **💻 계층형 조회**
 
+> **<span style="color:#3366ff">계층형 쿼리</span>**
+> 
+> **<span style="color:#ff6600">LEVEL</span>** : 현재의 DEPTH를 반환한다. 루트 노드는 `1`이 된다.
+> 
+> **<span style="color:#ff6600">SYS_CONNECT_bY_PATH(컬럼, 구분자)</span>** : 루트 노드부터 현재 노드까지의 경로를 출력해주는 함수
+> 
+> **<span style="color:#ff6600">START_WITH</span>** : 경로가 시작되는 루트 노드를 생성해주는 절
+> 
+> **<span style="color:#ff6600">CONNECT BY</span>** : 루트로부터 자식 노드를 생성해주는 절. 조건에 만족하는 데이터가 없을 때까지 노드 생성
+> 
+> **<span style="color:#ff6600">PRIOR</span>** : 바로 앞에 있는 부모 노드의 값을 반환
+>
+> **<span style="color:#ff6600">CONNECT_BY_ROOT 컬럼</span>** : 루트 노드의 주어진 컬럼 값을 반환한다.
+>
+> **<span style="color:#ff6600">CONNECT_BY_ISLEAF</span>** : `가장 하위 노드인 경우 1을 반환`하고 그 외에는 0을 반환
+>
+> **<span style="color:#ff6600">CONNECT BY 절로 순방향/역방향</span>**
+> 
+> **<span style="color:#ff6600">ORDER SIBLINGS BY</span>** : 같은 레벨끼리 묶어서 정렬 수행 
+>
+> 
+{:.prompt-info }
+
+
 **<span style="color:#ff6600">­계층형 조회는 Oracle 데이터베이스에서 지원하는 것으로 계층형으로 데이터를 조회</span>**할 수 있다.
 
 예를 들어 부장에서 차장, 차장에서 과장, 과장에서 대리, 대리에서 사원 순으로 트리 형태의 구조를 위에서 아래로 탐색하면서 조회하는 것이다. 
