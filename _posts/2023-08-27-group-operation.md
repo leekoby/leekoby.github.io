@@ -26,6 +26,14 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 
 ## **💻 GROUP BY 문**
 
+```sql
+SELECT [DISTINCT] 칼럼명 [ALIAS명]
+FROM 테이블명
+[WHERE 조건식]
+[GROUP BY 컬럼이나 표현식]
+[HAVING 그룹조건식]
+```
+
 **<span style="color:#ff6600">GROUP BY는 테이블에서 소규모 행을 그룹화하여 `합계`, `평균`, `최댓값`, `최솟값` 등을 계산</span>**할
 수 있다.
 
@@ -43,6 +51,29 @@ tags: [sql, sqld, group operation] # 소문자로 작성
 - ③번은 그룹별 합계를 계산하라는 뜻이다.
 
 - ④번은 부서 별 합계를 계산하게 된다.
+
+<br/>
+
+> **<span style="color:#3366ff">GROUP BY 절과 HAVING 절의 특성</span>** 
+>
+> -**<span style="color:#ff6600"> GROUP BY 절을 통해 소그룹별 기준</span>**을 정한 후, **<span style="color:#ff6600">SELECT 절에 집계 함수를 사용</span>**한다.
+> 
+> - 집계 함수의 통계정보는 **<span style="color:#ff6600">NULL 값을 가진 행을 제외</span>**하고 수행한다.
+> 
+> - GROUP BY 절에서는 SELECT 절과는 달리 **<span style="color:#ff6600">ALIAS 명을 사용할 수 없다.</span>**
+>
+> - **<span style="color:#ff6600">집계 함수는 WHERE 절에는 올 수 없다. </span>**
+>   - (집계 함수를 사용할 수 있는 GROUP BY 절보다 WHERE 절이 먼저 실행된다.) 
+> 
+> - WHERE 절은 전체 데이터를 GROUP으로 나누기 전에 **<span style="color:#ff6600">행들을 미리 제거</span>**시킨다.
+> 
+> - **<span style="color:#ff6600">HAVING 절은</span>** GROUP BY 절의 기준 항목이나 소그룹의 **<span style="color:#ff6600">집계 함수를 이용한 조건을 표시</span>**할 수 있다.
+> 
+> - GROUP BY 절에 의한 소그룹별로 만들어진 집계 데이터 중, HVAING 절에서 제한 조건을 두어 조건을 만족하는 내용만 출력한다.
+> 
+> - HAVING 절은 일반적으로 GROUP BY 절 뒤에 위치한다.
+{:.prompt-info }
+
 
 <br/>
 
