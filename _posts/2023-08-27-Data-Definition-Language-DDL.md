@@ -98,6 +98,18 @@ tags: [sql, sqld, data definition language, ddl] # 소문자로 작성
 
 ### **Create Table문 구조**
 
+```sql
+CREATE TABLE 테이블명 (
+  컬럼명 1 데이터 타입 (DEFAULT / NULL 여부)
+  ...
+)
+```
+
+> - NULL : 공백('')과는 다르며 존재하지 않는 값이란 의미
+> - DEFAULT : 데이터의 기본값을 의미한다.
+{:.prompt-tip }
+
+
 |||
 |:-:|:-|
 |Create Table | - 새로운 테이블을 생성한다.<br/> - 테이블을 생성할 때 기본키, 외래키, 제약사항 등을 설정할 수 있다.|
