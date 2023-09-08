@@ -41,7 +41,7 @@ tags: [sql, sqld, tansaction control language, tcl] # 소문자로 작성
 
 - 즉, A 값을 B로 변경하고 COMMIT을 하면 A 값은 잃어버리고 B 값을 반영한다.
 
-다른 모든 데이터베이스 사용자는 변경된 데이터를 볼 수 있다.
+다른 사용자는 변경된 값을 조회할 수 **<span style="color:#ff6600">없다.</span>**
 
 **<span style="color:#ff6600">COMMIT이 완료되면 데이터베이스 변경으로 인한 LOCK이 해제(UNLOCK)된다.</span>**
 
