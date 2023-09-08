@@ -23,7 +23,7 @@ title: KobyDev # the main title
 tagline: 한걸음 한 걸음씩 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  FE 개발자, FE 개발자의 블로그, koby의 블로그, leekoby, koby
+  취준생 개발의 블로그, koby의 블로그, leekoby, koby
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: https://leekoby.github.io
