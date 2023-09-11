@@ -14,12 +14,12 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 > 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.
 {:.prompt-info}
 
-<br />
+<br/>
 
 > 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.
 {:.prompt-tip}
 
-<br />
+<br/>
 
 # **🌈 반정규화 (De-Normalization)**
 
@@ -112,7 +112,7 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 > - 조회 시에 인접 블록을 연속적으로 읽기 때문에 성능이 향상된다.
 {:.prompt-info}
 
-<br />
+<br/>
 
 ## **💻 계산된 컬럼 추가**
 
@@ -177,7 +177,7 @@ tags: [sql, sqld, de-normalization] # 소문자로 작성
 | Plus Type<br/>(슈퍼 + 서브타입) | - 슈퍼 타입과 서브 타입 테이블로 도출한다. <br/> - 조인이 발생하고 관리가 어렵다. |
 | Single Type<br/>(All In One 타입) | - 슈퍼 타입과 서브 타입을 **`하나의 테이블로 도출`** 한다. <br/> - 조인 성능이 좋고 관리가 편리하지만, 입출력 성능이 나쁘다. |
 
-<br />
+<br/>
 
 ### **🔍 테이블 분할**
 

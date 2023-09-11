@@ -11,15 +11,15 @@ categories: [CERTIFICATION, SQLD]
 tags: [sql, sqld, identifiers]
 ---
 
-> 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.<br />
+> 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.<br/>
 {:.prompt-info}
 
-<br />
+<br/>
 
-> 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.<br />
+> 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.<br/>
 {:.prompt-tip}
 
-<br />
+<br/>
 
 # **🌈 식별자 (Identifiers)**
 
@@ -33,7 +33,7 @@ tags: [sql, sqld, identifiers]
 
 - 일반적으로 회원ID, 계좌번호, 주민등록번호, 외국인 등록번호, 여권 번호 등이 있다.
 
-<br />
+<br/>
 
 ## **💻 주식별자** 
 
@@ -84,7 +84,7 @@ tags: [sql, sqld, identifiers]
 {: .prompt-info }
 
 
-<br />
+<br/>
 
 ## **💻 분류** 
 

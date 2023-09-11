@@ -14,12 +14,12 @@ tags: [sql, sqld, relationship]
 > 해당 포스트는 `SQLD`를 학습하며 정리한 내용에 대한 포스트입니다.
 {:.prompt-info}
 
-<br />
+<br/>
 
 > 이론을 학습한 내용을 정리하고 퀴즈, 기출문제 등을 기록하려고 합니다.
 {:.prompt-tip}
 
-<br />
+<br/>
 
 # **🌈 관계 (Relationship)**
 
@@ -33,7 +33,7 @@ tags: [sql, sqld, relationship]
 
 - 행위 관계는 두 개의 엔터티가 어떤 **<span style="color:#ff6600">행위에 의한 관련성</span>**이 있는 것
 
-<br />
+<br/>
 
 ## **💻 관계의 종류**
 
@@ -51,7 +51,7 @@ tags: [sql, sqld, relationship]
 
 ![존재 관계 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/a296d705-2761-455e-b105-e76b582d4c29)
 
-<br />
+<br/>
 
 ### **🔍 행위 관계**
 
@@ -67,7 +67,7 @@ tags: [sql, sqld, relationship]
 
 ![행위 관계 image](https://github.com/leekoby/leekoby.github.io/assets/118284808/cb1e6033-bd8d-48b8-bff0-b5eb946c381d)
 
-<br />
+<br/>
 
 ## **💻 표기법** 
 
@@ -77,7 +77,7 @@ tags: [sql, sqld, relationship]
 | 관계차수 <br/>(Cardinality)   | - 관계에 참여하는 수 <br/> - `1:1`, `1:M`, `M:N`과 같은 관계의 `기수성`을 나타낸다.   |
 | 관계선택사양(선택성) <br/>(Optionality)   | - 관계가 필수 관계인지, 선택 관계인지 나타낸다.  |      
 
-<br />
+<br/>
 
 ### **🔍 관계명 (Membership)**
 
@@ -89,9 +89,9 @@ tags: [sql, sqld, relationship]
 
 ![관계명 (Membership) image](https://github.com/leekoby/leekoby.github.io/assets/118284808/2600b122-832c-4598-b279-a63c55ad92b0)
 
-<br />
+<br/>
 
-> 관계명은 반드시 `명확한 문장`으로 표현해야하며 `현재형`이여야 한다. <br />
+> 관계명은 반드시 `명확한 문장`으로 표현해야하며 `현재형`이여야 한다. <br/>
 {:.prompt-warning}
 
 | 바람직하지 않은 관계명  | 바람직한 관계명 | 
@@ -100,7 +100,7 @@ tags: [sql, sqld, relationship]
 | 관계가 있다.   | 소속된다.   |       
 | 출석을 했다.   | 출석을 한다.   |       
 
-<br />
+<br/>
 
 ### **🔍 관계차수 (Cardinality)** 
 
@@ -118,7 +118,7 @@ tags: [sql, sqld, relationship]
 |  일대다(1:M)  | ![일대다(1:M) image](https://github.com/leekoby/leekoby.github.io/assets/118284808/17c35b13-8190-492b-b663-b06a0234b1e6)   |      
 |  다대다(M:N)  |  ![다대다(M:N) image](https://github.com/leekoby/leekoby.github.io/assets/118284808/cafd13b4-9321-4040-9f06-03526e3c2eb9)  |      
 
-<br />
+<br/>
 
 **1대1 관계**
 
@@ -135,7 +135,7 @@ tags: [sql, sqld, relationship]
 |완전 1대1|하나의 엔터티에 관계되는 엔터티의 관계가 하나인 경우로, <br/>반드시 존재한다.|
 |선택적 1대1|하나의 엔터티에 관계되는 엔터티의 관계가 하나이거나 없을 수도 있다.|
 
-<br />
+<br/>
 
 **1대N 관계** 
 
@@ -143,7 +143,7 @@ tags: [sql, sqld, relationship]
 
 - 예를 들어 고객은 여러 개의 계좌를 가질 수 있다.
 
-<br />
+<br/>
 
 **M대N 관계**
 
@@ -155,7 +155,7 @@ M대N  관계는 두 개 엔터티가 서로 여러 개의 관계를 가지고 �
 
 - M대N 관게를 `1대N`, `N대1`로 해소해야 한다.
 
-<br />
+<br/>
 
 ### **🔍 관계선택사양 (Optionality)**
 
