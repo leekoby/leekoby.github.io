@@ -1,13 +1,13 @@
 ---
 layout: post
-title: NODE 시작하기
+title: 1. NODE 시작하기
 author: admin
 date: 2023-04-20 00:00:00 +900
 lastmod: 2023-04-20 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [STUDY, NODEJS]  # 대문자로 작성
+categories: [NODEJS, STUDY]  # 대문자로 작성
 tags: [node, nodejs, 노드교과서] # 소문자로 작성
 ---
 
