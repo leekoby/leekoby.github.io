@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 알아두어야할 자바스크립트
+title: 2. 알아두어야할 자바스크립트
 author: admin
 date: 2023-04-20 06:00:00 +900
 lastmod: 2023-04-20 06:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [STUDY, NODEJS]  # 대문자로 작성
+categories: [NODEJS, STUDY]  # 대문자로 작성
 tags: [node, nodejs, 노드교과서] # 소문자로 작성
 ---
 
