@@ -148,7 +148,7 @@ setInterval(() => {
 
 ```sh
 $ node error3
-[Error: ENOENT: no such file or directory, unlink 'C:\Users\zerochobcdefg.js'] {
+[Error: ENOENT: no such file or directory, unlink 'C:\Users\zerocho\abcdefg.js'] {
   errno: -4058,
   code:  'ENOENT',
   syscall:  'unlink',
