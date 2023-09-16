@@ -310,7 +310,7 @@ npm install 시 node_modules 폴더 생성
 
 ### **1️⃣ npm 회원가입**
 
-[npmjs.com](npmjs.com){:target="_blank"}에 접속해서 회원가입
+[npmjs.com](https://npmjs.com){:target="_blank"}에 접속해서 회원가입
 
 ![npm 회원가입](https://github.com/leekoby/leekoby.github.io/assets/118284808/44f49871-b341-4d8b-bf91-94af18700c65)
 
