@@ -8,7 +8,7 @@ sitemap:
   changefreq: monthly
   priority: 0.5
 categories: [ERROR, NODE]
-tags: [error]
+tags: [error, node]
 ---
 
 > **해당 카테고리는 `error`를 만났을때 해결 방법을 기록해두기 위한 것입니다.**<br/>
