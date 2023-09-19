@@ -436,5 +436,5 @@ MySQL 8.0에서는 모든 기능이 InnoDB 스토리지 엔진 기반으로 재�
 >백은빈, and 이성욱. Real MySQL 8.0 : 개발자와 DBA를 위한 MySQL 실전 가이드. 2 / 백은빈, 이성욱 지음 (2021). Web.
 {:.prompt-info}
 
->[innodb_flush_log_at_trx_commit | 또리장군](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=parkjy76&logNo=220580358147){:target="_blank"}
+>[innodb_flush_log_at_trx_commit \| 또리장군](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=parkjy76&logNo=220580358147){:target="_blank"}
 {:.prompt-info}
