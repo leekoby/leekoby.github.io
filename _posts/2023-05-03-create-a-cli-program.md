@@ -216,16 +216,13 @@ commander(CLI)와 inquirer(사용자와 상호작용)를 사용해서 예제를 
 
 14.1의 프로그램을 commander와 inquirer로 재작성할 것
 
-```sh
-npm i commander@9 inquirer@8
-```
+![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/9797d625-2cbb-44e2-91cb-051819efd18c)
 
 <br/>
 
 ### **🍳 commander 사용하기**
 
 command.js 파일 작성 후 pakage.json 수정하기
-
 
 - `version`: 프로그램의 버전 설정(--version 또는 -v로 확인)
 
