@@ -61,29 +61,13 @@ node-cli 폴더 안에 package.json과 index.js 생성
 
 - index.js 첫 줄의 주석에 주목(윈도에서는 의미 없음)
 
-- 리눅스나 맥 같은 유닉스 기반 운영체제에서는 /usr/bin/env에 등록된 node 명령어로 이 파일을 실행하라는 뜻
+- 리눅스나 맥 같은 유닉스 기반 운영체제에서는 `/usr/bin/env`에 등록된 node 명령어로 이 파일을 실행하라는 뜻
 
 🔻 package.json
 
-```js
-{
-  "name": "ch15",
-  "version": "1.0.0",
-  "description": "nodejs cli program",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "leekoby",
-  "license": "ISC",
-  "bin": {
-    "cli": "./index.js"
-  }
-}
-```
+![pakagejson](https://github.com/leekoby/leekoby.github.io/assets/118284808/7957f174-1930-4aab-a219-ad31e48c4266)
 
-![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/1c34b5d8-3362-45f5-8c13-72e7984d2f3c)
+![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/1c34b5d8-3362-45f5-8c13-72e7984d2f3c){: width="300" height="150" }
 
 
 <br/>
@@ -94,7 +78,7 @@ node-cli 폴더 안에 package.json과 index.js 생성
 
 ![index](https://github.com/leekoby/leekoby.github.io/assets/118284808/b77849f7-e787-428a-b127-f03bf1377a8d)
 
-![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/0ba2f1f5-0284-4755-8cdf-117924d53354)
+![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/0ba2f1f5-0284-4755-8cdf-117924d53354){: width="300" height="150" }
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/4e478a01-7d80-4513-8931-e28a6642af0b)
 
@@ -102,7 +86,6 @@ node-cli 폴더 안에 package.json과 index.js 생성
 ### **🍳 명령어에 옵션 붙이기**
 
 process.argv로 명령어에 어떤 옵션이 주어졌는지 확인 가능(배열로 표시)
-
 
 - 코드가 바뀔 때마다 전역 설치할 필요는 없음
 
@@ -114,7 +97,7 @@ process.argv로 명령어에 어떤 옵션이 주어졌는지 확인 가능(배�
 
 ![index](https://github.com/leekoby/leekoby.github.io/assets/118284808/606087f5-8b77-46af-86b5-8f320387528f)
 
-![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/f40436a9-ff10-4c23-b1dc-e390a7380576)
+![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/f40436a9-ff10-4c23-b1dc-e390a7380576){: width="300" height="150" }
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/f2e78ec3-2d90-48c5-b93b-ccae91b58076)
 
@@ -133,8 +116,6 @@ process.argv로 명령어에 어떤 옵션이 주어졌는지 확인 가능(배�
 🔻 index.js
 
 ![index](https://github.com/leekoby/leekoby.github.io/assets/118284808/71fe0097-d335-428b-a58b-6047e95b7298)
-
-![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/de1447dd-c25e-44d1-b92e-4ef850860130)
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/066f487f-a799-4313-bc53-c27b7083c523)
 
@@ -162,25 +143,7 @@ process.argv로 명령어에 어떤 옵션이 주어졌는지 확인 가능(배�
 
 🔻 package.json
 
-```js
-{
-  "name": "ch15",
-  "version": "1.0.0",
-  "description": "nodejs cli program",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "leekoby",
-  "license": "ISC",
-  "bin": {
-    "cli": "./template.js"
-  }
-}
-```
-
-![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/557355bc-3a78-4876-ab8e-7cb8e6a6b646)
+![pakagejson](https://github.com/leekoby/leekoby.github.io/assets/118284808/8acb140c-81f1-4320-a0de-0c46b06e0396)
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/b1a3a1da-9c5c-49b0-b91d-0b2d3d1dc884)
 
@@ -200,7 +163,7 @@ commander(CLI)와 inquirer(사용자와 상호작용)를 사용해서 예제를 
 
 14.1의 프로그램을 commander와 inquirer로 재작성할 것
 
-![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/9797d625-2cbb-44e2-91cb-051819efd18c)
+![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/9797d625-2cbb-44e2-91cb-051819efd18c){: width="300" height="150" }
 
 <br/>
 
@@ -325,7 +288,7 @@ readline보다 간결해짐
 
 만든 CLI 프로그램을 공유하고 싶다면 5장의 과정대로 npm에 배포하면 됨
 
-- 다른 사용자가 npm i –g <패키지명>을 한다면 다운로드 받아 사용할 수 있음
+- 다른 사용자가 `npm i –g <패키지명>`을 한다면 다운로드 받아 사용할 수 있음
 
 <br/>
 
