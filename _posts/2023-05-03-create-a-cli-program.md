@@ -146,9 +146,7 @@ npx cli one two three four
 
 ![index](https://github.com/leekoby/leekoby.github.io/assets/118284808/71fe0097-d335-428b-a58b-6047e95b7298)
 
-```sh
-npx cli
-```
+![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/de1447dd-c25e-44d1-b92e-4ef850860130)
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/066f487f-a799-4313-bc53-c27b7083c523)
 
@@ -194,9 +192,8 @@ npx cli
 }
 ```
 
-```sh
-npm i -g
-```
+![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/557355bc-3a78-4876-ab8e-7cb8e6a6b646)
+
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/b1a3a1da-9c5c-49b0-b91d-0b2d3d1dc884)
 
