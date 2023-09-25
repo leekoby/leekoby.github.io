@@ -83,9 +83,8 @@ node-cli 폴더 안에 package.json과 index.js 생성
 }
 ```
 
-```sh
-npm i -g
-```
+![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/1c34b5d8-3362-45f5-8c13-72e7984d2f3c)
+
 
 <br/>
 
@@ -93,14 +92,9 @@ npm i -g
 
 🔻 index.js
 
-```js
-#!/usr/bin/env node
-console.log('hello cli');
-```
+![index](https://github.com/leekoby/leekoby.github.io/assets/118284808/b77849f7-e787-428a-b127-f03bf1377a8d)
 
-```sh
-npx cli
-```
+![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/0ba2f1f5-0284-4755-8cdf-117924d53354)
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/4e478a01-7d80-4513-8931-e28a6642af0b)
 
@@ -118,21 +112,15 @@ process.argv로 명령어에 어떤 옵션이 주어졌는지 확인 가능(배�
 
 🔻 index.js
 
-```js
-#!/usr/bin/env node
-console.log('hello cli', process.argv);
-```
+![index](https://github.com/leekoby/leekoby.github.io/assets/118284808/606087f5-8b77-46af-86b5-8f320387528f)
 
-```sh
-npx cli one two three four
-```
+![npx](https://github.com/leekoby/leekoby.github.io/assets/118284808/f40436a9-ff10-4c23-b1dc-e390a7380576)
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/f2e78ec3-2d90-48c5-b93b-ccae91b58076)
 
 ### **🍳 사용자로부터 입력 받기**
 
 노드 내장 모듈 readline 사용
-
 
 - createInterface 메서드로 rl 객체를 만듦
 
@@ -193,7 +181,6 @@ npx cli one two three four
 ```
 
 ![install](https://github.com/leekoby/leekoby.github.io/assets/118284808/557355bc-3a78-4876-ab8e-7cb8e6a6b646)
-
 
 ![image](https://github.com/leekoby/leekoby.github.io/assets/118284808/b1a3a1da-9c5c-49b0-b91d-0b2d3d1dc884)
 
