@@ -711,9 +711,10 @@ program
     }
   })
   .parse(process.argv);
+
 ```
 
-### **🍳 nquirer API**
+### **🍳 Inquirer API**
 
 readline보다 간결해짐
 
