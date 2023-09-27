@@ -147,7 +147,7 @@ const solOrDate= soldierOrDate[0]
 
 <br/>
 
-### **6.2.1 🚨 주의사항 : 불안정한 멤버**
+### **🚨 6.2.1 주의사항 : 불안정한 멤버**
 
 - 타입스크립트의 타입 시스템은 기술적으로 불안정하다고 알려져 있다.
 
@@ -274,6 +274,7 @@ const ageAndName = [false, "koby"]
 - 타입스크립트는 `spread operator` 나머지 매개변수로 전달된 튜플에 정학환 타입 검사를 제공할 수 있다.
 
 - 나머지 매개 변수 튜플을 사용하고 싶다면 여러 번 함수를 호출하는 인수 목록을 배열에 저장해 함께 사용 가능하다.
+
 ```ts
 function logTrio(name: string, value: [number, boolean]){
     console.log(name)
