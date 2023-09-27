@@ -47,7 +47,7 @@ let result2 = buildName("Bob", "Adams", "Sr.");  // 오류, 너무 많은 매개
 let result3 = buildName("Bob", "Adams");         // 정확함
 ```
 
-</br>
+<br/>
 
 ### **5.1.1 필수 매개변수**
 
@@ -59,7 +59,7 @@ let result3 = buildName("Bob", "Adams");         // 정확함
 
 - 함수에 필수 매개변수를 제공하도록 강제하면 예상되는 모든 인숫값을 함수내에 존재하도록 만들어 타입 안정성 강화한다.
 
-</br>
+<br/>
 
 
 ### **5.1.2 선택적 매개변수** 
@@ -101,7 +101,7 @@ function announceSong(song?:string, singer : string) {
   // ❌ Error : A required parameter cannot follow an optional parameter.
 ```
 
-</br>
+<br/>
 
 ### **5.1.3 기본 매개변수**  
 
@@ -128,7 +128,7 @@ rateSong("Header", "100")
 ```
 - `rating`은 `number` 타입으로 `Inference`되지만, 함수를 호출하는 코드에서 선택적 `number | undefined`가 된다.
 
-</br>
+<br/>
 
 ### **5.1.4 나머지 매개변수**
 
@@ -147,11 +147,11 @@ const mapping = (...args: number) => args.map(Number);
 const mapping2 = (...args: number[]) => args.map(Number);
 ```
 
-</br>
+<br/>
 
 ---
 
-</br>
+<br/>
 
 ## 📖 **5.2 반환 타입**
 
@@ -179,7 +179,7 @@ function getSongAt(songs: string[], index: number) {
 }
 ```
 
-</br>
+<br/>
 
 ## **5.2.1 명시적 반환 타입**
 
@@ -210,11 +210,11 @@ const singSongRecursive = (songs: string[], count =0): number =>
     songs.length ? singSongRecursive(songs.slice(1), count +1) : count;
 ```
 
-</br>
+<br/>
 
 ---
 
-</br>
+<br/>
 
 ## **📖 5.3 함수 타입**
 
@@ -263,7 +263,7 @@ runOnSongs(logSong);
 // assignable to parameter of type '(index: number) => string'.
 ```
 
-</br>
+<br/>
 
 ### **5.3.1 함수 타입 괄호**
 
@@ -279,7 +279,7 @@ let returnStringOrundefinde: () => string | undefined;
 let test: (() => string) | undefined;
 ```
 
-</br>
+<br/>
 
 ### **5.3.2 매개변수 타입 추론**
 
@@ -306,7 +306,7 @@ songs.forEach((song,index) => {
 })
 ```
 
-</br>
+<br/>
 
 ## **5.3.3 함수 타입 별칭**
 
@@ -329,18 +329,18 @@ StringToNumber = (input) => input.toUpperCase();
 //❌ Error : Type 'string' is not assignable to type 'number'.
 ```
 
-</br>
+<br/>
 
 ---
 
-</br>
+<br/>
 
 ## **📖 5.4 그 외 반환 타입**
 
 - void
 - never
 
-</br>
+<br/>
 
 ### **5.4.1 void 반환 타입**
 
@@ -414,7 +414,7 @@ function saveRecords(newRecords: string[]) {
 - `void` 타입은 함수의 반환값이 자체적으로 반환될 수 있는 값도 아니고, 사용하기 위한 것도 아니라는 표시라는 것을 기억하자.
 
 
-</br>
+<br/>
 
 ### **5.4.2 never 반환 타입**
 
@@ -446,11 +446,11 @@ function workWithUnsafeParam(param: unknown){
 > - `never`은 <strong style="color:#ff6600">절대 반환하지 않는 함수</strong>를 위한 것
 {:.prompt-tip}
 
-</br>
+<br/>
 
 ---
 
-</br>
+<br/>
 
 ## **📖 5.5 함수 오버로드**
 
@@ -489,7 +489,7 @@ creatDate(4, 1);
 {:.prompt-warning}
 
 
-</br>
+<br/>
 
 ### **5.5.1 호출 시그니처 호환성**
 
@@ -511,11 +511,11 @@ function format(data:string, needle?:string,haystack?:string){
 }
 ```
 
-</br>
+<br/>
 
 ---
 
-</br>
+<br/>
 
 ## **📚 레퍼런스**
 
