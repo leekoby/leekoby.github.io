@@ -9,6 +9,11 @@ sitemap:
   priority: 0.5
 categories: [TYPESCRIPT, LEARNING TYPESCRIPT] # 대문자로 작성
 tags: [typescript, learning typescript] # 소문자로 작성
+image:
+  path: https://www.hanbit.co.kr/data/books/B9711663545_l.jpg
+  width: 400
+  height: 250
+  alt: 러닝 타입스크립트
 ---
 
 > 기존 블로그에 작성했던 스터디 포스트를 이전한 글입니다.
