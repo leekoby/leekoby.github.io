@@ -1,13 +1,13 @@
 ---
 layout: post
-title: node_env 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다
+title: ERROR - node_env 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다
 author: admin
 date: 2023-08-23 21:00:00 +900
 lastmod: 2023-08-23 21:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [ERROR, NODE]
+categories: [ERROR, NODE ERROR]
 tags: [error, node]
 ---
 
