@@ -1,13 +1,13 @@
 ---
 layout: post
-title: SequelizeConnectionError Unknown database 'db이름'
+title: ERROR - SequelizeConnectionError Unknown database 'db이름'
 author: admin
 date: 2023-09-17 09:00:00 +900
 lastmod: 2023-09-17 09:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [ERROR, MYSQL]
+categories: [ERROR, MYSQL ERROR]
 tags: [error, mysql, node]
 ---
 
