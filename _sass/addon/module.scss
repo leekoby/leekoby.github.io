@@ -51,7 +51,8 @@
 %table-cell {
   padding: 0.4rem 1rem;
   font-size: 95%;
-  white-space: nowrap;
+  // white-space: nowrap; // 테이블 스크롤 안생기게 수정
+  word-break: keep-all;
 }
 
 %link-hover {
