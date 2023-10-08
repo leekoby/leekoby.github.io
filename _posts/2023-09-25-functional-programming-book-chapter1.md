@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 1. 쏙쏙 들어오는 함수형 코딩에 오신 것을 환영합니다.
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 1.
 author: admin
 date: 2023-09-25 06:00:00 +900
 lastmod: 2023-09-25 06:00:00 +900

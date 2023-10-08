@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 3. 액션과 계산, 데이터의 차이를 알기
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 3.
 author: admin
 date: 2023-09-27 00:00:00 +900
 lastmod: 2023-09-27 00:00:00 +900

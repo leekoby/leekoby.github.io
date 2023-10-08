@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 6. 변경 가능한 데이터 구조를 가진 언어에서 불변성 유지하기
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 6.
 author: admin
 date: 2023-10-07 00:00:00 +900
 lastmod: 2023-10-07 00:00:00 +900

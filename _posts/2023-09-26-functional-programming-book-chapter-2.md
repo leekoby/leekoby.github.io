@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2. 현실에서의 함수형 사고
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 2.
 author: admin
 date: 2023-09-26 00:00:00 +900
 lastmod: 2023-09-26 00:00:00 +900

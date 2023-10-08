@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 9. 계층형 설계 2
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 9.
 author: admin
 date: 2023-10-07 18:00:00 +900
 lastmod: 2023-10-07 18:00:00 +900

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 5. 더 좋은 액션 만들기
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 5.
 author: admin
 date: 2023-10-03 09:00:00 +900
 lastmod: 2023-10-03 09:00:00 +900

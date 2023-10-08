@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 7. 신뢰할 수 없는 코드를 쓰면서 불변성 지키기
+title: 쏙쏙 들어오는 함수형 코딩 - CHAPTER 7.
 author: admin
 date: 2023-10-07 09:00:00 +900
 lastmod: 2023-10-07 09:00:00 +900
