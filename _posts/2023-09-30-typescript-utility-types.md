@@ -7,8 +7,8 @@ lastmod: 2023-09-30 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [TYPESCRIPT, COMMON] # 대문자로 작성
-tags: [typescript, util] # 소문자로 작성
+categories: [TYPESCRIPT, UTILITY TYPES] # 대문자로 작성
+tags: [typescript, utility types] # 소문자로 작성
 ---
 
 > 해당 포스트는 `typescript util`의 사용법에 부족함을 느껴서 필요한 내용을 정리한 포스트입니다.<br/>
