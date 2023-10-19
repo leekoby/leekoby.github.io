@@ -7,7 +7,7 @@ lastmod: 2023-10-08 12:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [FUNCTIONAL PROGRAMMING, 쏙쏙 들어오는 함수형 코딩]  # 대문자로 작성
+categories: [STUDY, 쏙쏙 들어오는 함수형 코딩]  # 대문자로 작성
 tags: [functional programming, 쏙쏙 들어오는 함수형 코딩] # 소문자로 작성
 ---
 
