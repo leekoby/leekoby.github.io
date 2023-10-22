@@ -7,7 +7,7 @@ lastmod: 2023-02-23 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [FRONT, REACT]  # 대문자로 작성
+categories: [FRONTEND, REACT]  # 대문자로 작성
 tags: [react, props drilling] # 소문자로 작성
 ---
 
