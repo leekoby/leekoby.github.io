@@ -7,7 +7,7 @@ lastmod: 2023-08-24 06:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [CERTIFICATION, SQLD]
+categories: [STUDY, SQLD]
 tags: [sql, sqld, relationship]
 ---
 

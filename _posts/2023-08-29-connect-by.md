@@ -7,7 +7,7 @@ lastmod: 2023-08-29 04:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [CERTIFICATION, SQLD]  # 대문자로 작성
+categories: [STUDY, SQLD]  # 대문자로 작성
 tags: [sql, sqld, connect by] # 소문자로 작성
 ---
 
