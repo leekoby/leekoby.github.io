@@ -7,7 +7,7 @@ lastmod: 2023-03-13 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [TYPESCRIPT, LEARNING TYPESCRIPT] # 대문자로 작성
+categories: [STUDY, LEARNING TYPESCRIPT] # 대문자로 작성
 tags: [typescript, learning typescript] # 소문자로 작성
 ---
 
