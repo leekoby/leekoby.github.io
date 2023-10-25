@@ -7,7 +7,7 @@ lastmod: 2023-04-20 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [NODE, NODEJS교과서]  # 대문자로 작성
+categories: [STUDY, NODEJS교과서]  # 대문자로 작성
 tags: [node, nodejs, 노드교과서] # 소문자로 작성
 ---
 
