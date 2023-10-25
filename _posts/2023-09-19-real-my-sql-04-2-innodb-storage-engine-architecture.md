@@ -7,7 +7,7 @@ lastmod: 2023-09-19 00:00:00 +900
 sitemap:
   changefreq: monthly
   priority: 0.5
-categories: [DATABASE, REAL MYSQL]  # 대문자로 작성
+categories: [STUDY, REAL MYSQL]  # 대문자로 작성
 tags: [database, mysql, real mysql] # 소문자로 작성
 ---
 
