@@ -18,12 +18,12 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: KobyDev # the main title
+title: KobyBlog # the main title
 
 tagline: 한걸음 한 걸음씩 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  취준생 개발의 블로그, koby의 블로그, leekoby, koby
+  연구개발의 블로그, koby의 블로그, leekoby, koby
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: https://leekoby.github.io
@@ -38,7 +38,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: 이호승
-  email: abc2752@naver.com # change to your email address
+  email: abc2752@snu.ac.kr # change to your email address
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username # change to your twitter homepage
