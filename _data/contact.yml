@@ -6,9 +6,9 @@
 # - type: twitter
 #   icon: "fab fa-twitter"
 
-- type: portfolio
-  icon: "fa-solid fa-house"
-  url: "https://leehs-portfolio.vercel.app/"
+#- type: portfolio
+#  icon: "fa-solid fa-house"
+# url: "https://leehs-portfolio.vercel.app/"
 
 - type: baekjoon-online-judge
   icon: "fa-sharp fa-solid fa-code"
